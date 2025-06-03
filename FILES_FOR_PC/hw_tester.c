@@ -13,35 +13,57 @@
  *  6) Separate flags like `-u "msg"` are allowed; same rules for message.
  */
 
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <netdb.h>
+#include <unistd.h>
+#include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
 
+#define UUT_ADDR "10.0.1.100"
+#define PORT 54321
+#define BUFSIZE 263 // Max possible size of OutMsg
+
+#define TEST_TIM 1
+#define TEST_UART 2
+#define TEST_SPI 4
+#define TEST_I2C 8
+#define TEST_ADC 16
+
+#define TEST_SUCCESS 0x01
+#define TEST_FAILED 0xff
+
+static struct OutMsg
+{
+	uint32_t test_id; 
+	uint8_t peripheral;
+	uint8_t n_iter;
+	uint8_t p_len;
+	char payload[256];
+}out_msg;
+
+static struct InMsg
+{
+	uint32_t test_id;
+	uint8_t test_result;
+}in_msg;
+
 static const char *DEFAULT_U_MSG = "Hello UART";
 static const char *DEFAULT_S_MSG = "Hello SPI";
 static const char *DEFAULT_I_MSG = "Hello I2C";
 
-void print_usage(const char *progname) {
-    fprintf(stdout,
-        "Usage: %s [OPTIONS]\n"
-        "OPTIONS:\n"
-        "  -u [\"msg\"]   Run UART test (with optional message, default if none)\n"
-        "  -s [\"msg\"]   Run SPI test (with optional message, default if none)\n"
-        "  -i [\"msg\"]   Run I2C test (with optional message, default if none)\n"
-        "  -a             Run ADC test (no message allowed)\n"
-        "  -t             Run TIM test (no message allowed)\n"
-        "  --all [\"msg\"]  Run all five tests (u,s,i use msg or their defaults)\n"
-        "  -h, --help    Show this help and exit\n\n"
-        "Flags u, s, i may be stacked (e.g. -usi). If stacked, you may supply exactly\n"
-        "one message immediately after the entire stack (applies to all of u,s,i). Example:\n"
-        "    %s -si \"shared message\" -a -t\n"
-        "Flags a and t may be stacked with each other (e.g. -at), but if a or t appear\n"
-        "in a stack, you cannot follow that stack with a message.\n\n"
-        "At least one of u, s, i, a, t (or --all) must be provided. No letter may appear twice.\n",
-        progname, progname
-    );
-}
+static int sock;
+static struct sockaddr_in server_addr;
+static struct hostent *host;
+static char send_data[BUFSIZE];
+
+void print_usage(const char *progname);
+void init_network();
 
 int main(int argc, char *argv[]) {
     bool want_u = false, want_s = false, want_i = false, want_a = false, want_t = false;
@@ -157,7 +179,9 @@ int main(int argc, char *argv[]) {
         return EXIT_FAILURE;
     }
 
-    // Assign defaults
+
+    // If reached here, then all the flags are ok
+
     if (want_u && !have_msg_u) {
         msg_u = DEFAULT_U_MSG;
     }
@@ -168,7 +192,10 @@ int main(int argc, char *argv[]) {
         msg_i = DEFAULT_I_MSG;
     }
 
-    // Send tests
+
+    // Init network
+    
+    
 
     if (want_u) {
         printf("[UART] message = \"%s\"\n", msg_u);
@@ -192,4 +219,41 @@ int main(int argc, char *argv[]) {
     }
 
     return EXIT_SUCCESS;
+}
+
+void print_usage(const char *progname) {
+    fprintf(stdout,
+        "Usage: %s [OPTIONS]\n"
+        "OPTIONS:\n"
+        "  -u [\"msg\"]   Run UART test (with optional message, default if none)\n"
+        "  -s [\"msg\"]   Run SPI test (with optional message, default if none)\n"
+        "  -i [\"msg\"]   Run I2C test (with optional message, default if none)\n"
+        "  -a             Run ADC test (no message allowed)\n"
+        "  -t             Run TIM test (no message allowed)\n"
+        "  --all [\"msg\"]  Run all five tests (u,s,i use msg or their defaults)\n"
+        "  -h, --help    Show this help and exit\n\n"
+        "Flags u, s, i may be stacked (e.g. -usi). If stacked, you may supply exactly\n"
+        "one message immediately after the entire stack (applies to all of u,s,i). Example:\n"
+        "    %s -si \"shared message\" -a -t\n"
+        "Flags a and t may be stacked with each other (e.g. -at), but if a or t appear\n"
+        "in a stack, you cannot follow that stack with a message.\n\n"
+        "At least one of u, s, i, a, t (or --all) must be provided. No letter may appear twice.\n",
+        progname, progname
+    );
+}
+
+void init_network()
+{
+    host = (struct hostent *) gethostbyname((char *)UUT_ADDR);
+
+    if ((sock = socket(AF_INET, SOCK_DGRAM, 0)) == -1)
+    {
+        perror("socket");
+        exit(EXIT_FAILURE);
+    }
+
+    server_addr.sin_family = AF_INET;
+    server_addr.sin_port = htons(PORT);
+    server_addr.sin_addr = *((struct in_addr *)host->h_addr);
+    bzero(&(server_addr.sin_zero),8);
 }
