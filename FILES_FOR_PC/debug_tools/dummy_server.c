@@ -1,4 +1,9 @@
-// udp_dummy_server.c
+/**
+ * Dummy server to test hw_tester.
+ * Replies success to any message.
+ * Make sure you change the IP in main.c to localhost
+ * if you want to test hw_tester locally.
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
