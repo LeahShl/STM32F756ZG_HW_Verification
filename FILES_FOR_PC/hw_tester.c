@@ -38,6 +38,8 @@
 #define TEST_SUCCESS 0x01
 #define TEST_FAILED 0xff
 
+#define N_ITERATIONS 20
+
 static struct OutMsg
 {
 	uint32_t test_id; 
@@ -60,14 +62,18 @@ static const char *DEFAULT_I_MSG = "Hello I2C";
 static int sock;
 static struct sockaddr_in server_addr;
 static struct hostent *host;
-static char send_data[BUFSIZE];
+static char buf[BUFSIZE];
 
-void print_usage(const char *progname);
-void init_network();
+static void print_usage(const char *progname);
+static void init_network();
+static void send_data();
+static void receive_data();
 
 int main(int argc, char *argv[]) {
-    bool want_u = false, want_s = false, want_i = false, want_a = false, want_t = false;
-    bool seen_u = false, seen_s = false, seen_i = false, seen_a = false, seen_t = false;
+    bool want_u = false, want_s = false, want_i = false,
+         want_a = false, want_t = false;
+    bool seen_u = false, seen_s = false, seen_i = false,
+         seen_a = false, seen_t = false;
     bool used_all = false;
     const char *msg_u = NULL, *msg_s = NULL, *msg_i = NULL;
     bool have_msg_u = false, have_msg_s = false, have_msg_i = false;
@@ -142,7 +148,6 @@ int main(int argc, char *argv[]) {
                 }
             }
 
-            bool stack_any_us_i = stack_has_u || stack_has_s || stack_has_i;
             bool stack_any_a_t   = stack_has_a || stack_has_t;
 
             // Check for message string
@@ -191,29 +196,39 @@ int main(int argc, char *argv[]) {
     if (want_i && !have_msg_i) {
         msg_i = DEFAULT_I_MSG;
     }
-
-
-    // Init network
     
-    
+    init_network();
 
-    if (want_u) {
-        printf("[UART] message = \"%s\"\n", msg_u);
+    if (want_u)
+    {
+        printf("[UART] sending test message = \"%s\"\n", msg_u);
         
+        // load out_msg
+        out_msg.test_id = 0; //TODO: add persistant test_id implementation
+        out_msg.peripheral = TEST_UART;
+        out_msg.n_iter = N_ITERATIONS;
+        out_msg.p_len = strlen(msg_u);
+        strncpy(out_msg.payload, msg_u, strlen(msg_u));
+        
+        send_data();
     }
-    if (want_s) {
+    if (want_s)
+    {
         printf("[SPI] message = \"%s\"\n", msg_s);
         
     }
-    if (want_i) {
+    if (want_i)
+    {
         printf("[I2C] message = \"%s\"\n", msg_i);
         
     }
-    if (want_a) {
+    if (want_a)
+    {
         printf("[ADC] (no message)\n");
         
     }
-    if (want_t) {
+    if (want_t)
+    {
         printf("[TIM] (no message)\n");
         
     }
@@ -221,7 +236,7 @@ int main(int argc, char *argv[]) {
     return EXIT_SUCCESS;
 }
 
-void print_usage(const char *progname) {
+static void print_usage(const char *progname) {
     fprintf(stdout,
         "Usage: %s [OPTIONS]\n"
         "OPTIONS:\n"
@@ -242,7 +257,7 @@ void print_usage(const char *progname) {
     );
 }
 
-void init_network()
+static void init_network()
 {
     host = (struct hostent *) gethostbyname((char *)UUT_ADDR);
 
@@ -256,4 +271,44 @@ void init_network()
     server_addr.sin_port = htons(PORT);
     server_addr.sin_addr = *((struct in_addr *)host->h_addr);
     bzero(&(server_addr.sin_zero),8);
+}
+
+// up to main() to load out_msg before calling!
+static void send_data()
+{	
+	// load buffer
+	size_t n_bytes = 0;
+	
+	memcpy(&buf[0], &out_msg.test_id, sizeof(int32_t));
+	n_bytes += sizeof(int32_t);
+	
+	buf[n_bytes++] = out_msg.peripheral;
+	buf[n_bytes++] = out_msg.n_iter;
+	buf[n_bytes++] = out_msg.p_len;
+	
+	// has payload
+	if(out_msg.p_len > 0)
+	{
+		memcpy(&buf[n_bytes], out_msg.payload, out_msg.p_len);
+		n_bytes += out_msg.p_len;
+	}
+	
+	// send
+	int sent_bytes = sendto(sock, buf, n_bytes, 0, (struct sockaddr *)&server_addr,
+	                         sizeof(struct sockaddr));
+	if (sent_bytes < 0)
+	{
+		perror("send_data: socket error");
+		exit(EXIT_FAILURE);
+	}
+	if ((size_t)sent_bytes != n_bytes)
+	{
+		perror("send_data: incomplete transaction");
+		exit(EXIT_FAILURE);
+	}
+}
+
+static void receive_data()
+{
+	
 }

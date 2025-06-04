@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 EXECUTABLE="./hw_tester"
 
-$EXECUTABLE --all
+$EXECUTABLE --all 
 
 # Below are usage examples.
 # Uncomment the following lines to run them
