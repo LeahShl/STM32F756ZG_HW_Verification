@@ -1,5 +1,5 @@
 /*
- * @file hw_tester.c
+ * @file main.c
  *
  * @brief Tester program for Linux, accompanying an STM32F756ZG testing project.
  *
@@ -15,8 +15,10 @@
 
 #include <sys/types.h>
 #include <sys/socket.h>
+#include <sys/time.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
+#include <time.h>
 #include <netdb.h>
 #include <unistd.h>
 #include <errno.h>
@@ -24,6 +26,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
+#include "tests_db.h"
 
 #define UUT_ADDR "10.0.1.100"
 #define PORT 54321
@@ -65,6 +68,9 @@ static struct hostent *host;
 static char buf[BUFSIZE];
 
 static void print_usage(const char *progname);
+static void proccess_test(uint8_t peripheral, const char *msg);
+static void format_timestamp(struct timeval *tv, char *buffer, size_t size);
+static double get_elapsed_seconds(struct timeval start, struct timeval end);
 static void init_network();
 static void send_data();
 static void receive_data();
@@ -96,7 +102,7 @@ int main(int argc, char *argv[]) {
         // Handle --all flag
         if (strcmp(arg, "--all") == 0) {
             if (used_all) {
-                fprintf(stderr, "Error: '--all' cannot be repeated.\n");
+                perror("Error: '--all' cannot be repeated");
                 return EXIT_FAILURE;
             }
             used_all = true;
@@ -123,23 +129,23 @@ int main(int argc, char *argv[]) {
                 char c = arg[k];
                 switch (c) {
                     case 'u':
-                        if (seen_u) { fprintf(stderr, "Error: '-u' repeated.\n"); return EXIT_FAILURE; }
+                        if (seen_u) { perror("Error: '-u' repeated"); return EXIT_FAILURE; }
                         seen_u = true; want_u = true; stack_has_u = true;
                         break;
                     case 's':
-                        if (seen_s) { fprintf(stderr, "Error: '-s' repeated.\n"); return EXIT_FAILURE; }
+                        if (seen_s) { perror("Error: '-s' repeated"); return EXIT_FAILURE; }
                         seen_s = true; want_s = true; stack_has_s = true;
                         break;
                     case 'i':
-                        if (seen_i) { fprintf(stderr, "Error: '-i' repeated.\n"); return EXIT_FAILURE; }
+                        if (seen_i) { perror("Error: '-i' repeated"); return EXIT_FAILURE; }
                         seen_i = true; want_i = true; stack_has_i = true;
                         break;
                     case 'a':
-                        if (seen_a) { fprintf(stderr, "Error: '-a' repeated.\n"); return EXIT_FAILURE; }
+                        if (seen_a) { perror("Error: '-a' repeated"); return EXIT_FAILURE; }
                         seen_a = true; want_a = true; stack_has_a = true;
                         break;
                     case 't':
-                        if (seen_t) { fprintf(stderr, "Error: '-t' repeated.\n"); return EXIT_FAILURE; }
+                        if (seen_t) { perror("Error: '-t' repeated"); return EXIT_FAILURE; }
                         seen_t = true; want_t = true; stack_has_t = true;
                         break;
                     default:
@@ -148,7 +154,7 @@ int main(int argc, char *argv[]) {
                 }
             }
 
-            bool stack_any_a_t   = stack_has_a || stack_has_t;
+            bool stack_any_a_t = stack_has_a || stack_has_t;
 
             // Check for message string
             bool next_is_msg = false;
@@ -158,7 +164,7 @@ int main(int argc, char *argv[]) {
 
             if (next_is_msg) {
                 if (stack_any_a_t) {
-                    fprintf(stderr, "Error: Cannot supply a message to a stack containing 'a' or 't'.\n");
+                    perror("Error: Cannot supply a message to a stack containing 'a' or 't'");
                     return EXIT_FAILURE;
                 }
 
@@ -179,7 +185,7 @@ int main(int argc, char *argv[]) {
     }
 
     if (!(want_u || want_s || want_i || want_a || want_t)) {
-        fprintf(stderr, "Error: At least one of -u, -s, -i, -a, -t, or --all must be provided.\n");
+        perror("Error: At least one of -u, -s, -i, -a, -t, or --all must be provided");
         print_usage(argv[0]);
         return EXIT_FAILURE;
     }
@@ -198,45 +204,53 @@ int main(int argc, char *argv[]) {
     }
     
     init_network();
+    int db_success = init_db();
+    if (!db_success)
+    {
+		perror("databse init failed");
+		exit(EXIT_FAILURE);
+	}
 
     if (want_u)
     {
         printf("[UART] sending test message = \"%s\"\n", msg_u);
         
-        // load out_msg
-        out_msg.test_id = 0; //TODO: add persistant test_id implementation
-        out_msg.peripheral = TEST_UART;
-        out_msg.n_iter = N_ITERATIONS;
-        out_msg.p_len = strlen(msg_u);
-        strncpy(out_msg.payload, msg_u, strlen(msg_u));
-        
-        send_data();
+        proccess_test(TEST_UART, msg_u);
+		print_log_by_id(out_msg.test_id);
     }
     if (want_s)
     {
         printf("[SPI] message = \"%s\"\n", msg_s);
         
+        proccess_test(TEST_SPI, msg_s);
+		print_log_by_id(out_msg.test_id);
     }
     if (want_i)
     {
         printf("[I2C] message = \"%s\"\n", msg_i);
         
+        proccess_test(TEST_I2C, msg_i);
+		print_log_by_id(out_msg.test_id);
     }
     if (want_a)
     {
         printf("[ADC] (no message)\n");
         
+        proccess_test(TEST_ADC, "");
+		print_log_by_id(out_msg.test_id);
     }
     if (want_t)
     {
         printf("[TIM] (no message)\n");
         
+        proccess_test(TEST_TIM, "");
+		print_log_by_id(out_msg.test_id);
     }
 
     return EXIT_SUCCESS;
 }
 
-static void print_usage(const char *progname) {
+static void print_usage (const char *progname) {
     fprintf(stdout,
         "Usage: %s [OPTIONS]\n"
         "OPTIONS:\n"
@@ -257,7 +271,55 @@ static void print_usage(const char *progname) {
     );
 }
 
-static void init_network()
+static void proccess_test(uint8_t peripheral, const char *msg)
+{
+	// Load out_msg
+    int load_success = get_next_id(&out_msg.test_id);
+    if (!load_success)
+    {
+		perror("loading id from database failed");
+		exit(EXIT_FAILURE);
+	}
+    out_msg.peripheral = peripheral;
+    out_msg.n_iter = N_ITERATIONS;
+    out_msg.p_len = strlen(msg);
+    strncpy(out_msg.payload, msg, strlen(msg));
+        
+    // Perform test
+    struct timeval start_time, end_time;
+        
+    gettimeofday(&start_time, NULL);
+    send_data();
+    receive_data();
+    gettimeofday(&end_time, NULL);
+        
+    // Save log
+    char timestamp[64];
+    format_timestamp(&start_time, timestamp, 64);
+    int result = in_msg.test_result == TEST_SUCCESS? 1 : 0;
+    double duration = get_elapsed_seconds(start_time, end_time);
+        
+    int log_success = log_test(out_msg.test_id, timestamp, duration, result);
+    if(!log_success)
+    {
+	perror("error logging to database");
+	exit(EXIT_FAILURE);
+	}
+}
+
+static void format_timestamp (struct timeval *tv, char *buffer, size_t size)
+{
+	struct tm *tm_info = localtime(&tv->tv_sec);
+    strftime(buffer, size, "%Y-%m-%d %H:%M:%S", tm_info);
+}
+
+static double get_elapsed_seconds (struct timeval start, struct timeval end)
+{
+	return (double)(end.tv_sec - start.tv_sec) +
+           (double)(end.tv_usec - start.tv_usec) / 1e6;
+}
+
+static void init_network ()
 {
     host = (struct hostent *) gethostbyname((char *)UUT_ADDR);
 
@@ -274,7 +336,7 @@ static void init_network()
 }
 
 // up to main() to load out_msg before calling!
-static void send_data()
+static void send_data ()
 {	
 	// load buffer
 	size_t n_bytes = 0;
@@ -310,5 +372,26 @@ static void send_data()
 
 static void receive_data()
 {
+	int addr_len = sizeof(struct sockaddr);
+	char recv_buf[sizeof(in_msg)];
+	
+	int bytes_read = recvfrom(sock, recv_buf, sizeof(in_msg), 0,
+	                          (struct sockaddr *)&server_addr,
+	                          (socklen_t * restrict)&addr_len);
+	
+	if (bytes_read < 0)
+	{
+		perror("receive_data: socket error");
+		exit(EXIT_FAILURE);
+	}
+	if (bytes_read != sizeof(in_msg))
+	{
+		perror("receive_data: incomplete transaction");
+		exit(EXIT_FAILURE);
+	}
+	
+	// load in_msg
+	memcpy(&in_msg.test_id, recv_buf, sizeof(in_msg.test_id));
+	in_msg.test_result = recv_buf[sizeof(in_msg.test_id)];
 	
 }
