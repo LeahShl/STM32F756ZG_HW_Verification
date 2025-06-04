@@ -25,7 +25,7 @@
 #include <string.h>
 #include <stdbool.h>
 
-#define UUT_ADDR "10.0.1.100"
+#define UUT_ADDR "127.0.0.1"
 #define PORT 54321
 #define BUFSIZE 263 // Max possible size of OutMsg
 
@@ -211,6 +211,9 @@ int main(int argc, char *argv[]) {
         strncpy(out_msg.payload, msg_u, strlen(msg_u));
         
         send_data();
+        receive_data();
+        printf("Result for test %d: %s\n", in_msg.test_id,
+               in_msg.test_result == TEST_SUCCESS? "OK" : "NOK");
     }
     if (want_s)
     {
@@ -310,5 +313,26 @@ static void send_data()
 
 static void receive_data()
 {
+	int addr_len = sizeof(struct sockaddr);
+	char recv_buf[sizeof(in_msg)];
+	
+	int bytes_read = recvfrom(sock, recv_buf, sizeof(in_msg), 0,
+	                          (struct sockaddr *)&server_addr,
+	                          (socklen_t * restrict)&addr_len);
+	
+	if (bytes_read < 0)
+	{
+		perror("receive_data: socket error");
+		exit(EXIT_FAILURE);
+	}
+	if (bytes_read != sizeof(in_msg))
+	{
+		perror("receive_data: incomplete transaction");
+		exit(EXIT_FAILURE);
+	}
+	
+	// load in_msg
+	memcpy(&in_msg.test_id, recv_buf, sizeof(in_msg.test_id));
+	in_msg.test_result = recv_buf[sizeof(in_msg.test_id)];
 	
 }
