@@ -8,8 +8,7 @@
 
 void HW_Verification_Proccess(void)
 {
-	struct OutMsg out_msg;
-	struct InMsg in_msg;
+
 
 	UDP_Server_Init();
 	while(1)

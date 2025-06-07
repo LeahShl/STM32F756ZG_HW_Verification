@@ -10,23 +10,28 @@
 #include <string.h>
 
 struct udp_pcb *upcb;
+struct InMsg in_msg;
+struct OutMsg out_msg;
+
+uint8_t perform_test();
+void send_result(uint8_t result);
 
 void UDP_Server_Init(void)
 {
 	err_t err;
 
-	/* Create a new UDP control block  */
+	// Create a new UDP control block
 	upcb = udp_new();
 
 	if (upcb)
 	{
-		/* Bind the upcb to the UDP_PORT port */
-		/* Using IP_ADDR_ANY allow the upcb to be used by any local interface */
+		// Bind the upcb to the UDP_PORT port
+		// Using IP_ADDR_ANY allow the upcb to be used by any local interface
 		err = udp_bind(upcb, IP_ADDR_ANY, SERVER_PORT);
 
 		if(err == ERR_OK)
 		{
-			/* Set a receive callback for the upcb */
+			// Set a receive callback for the upcb
 			udp_recv(upcb, UDP_Recv_Callback, NULL);
 		}
 		else
@@ -39,26 +44,44 @@ void UDP_Server_Init(void)
 void UDP_Recv_Callback(void* arg, struct udp_pcb* upcb, struct pbuf* p,
 		               const ip_addr_t* addr, u16_t port)
 {
-	/* Connect to the remote client */
-	//udp_connect(upcb, addr, port);
+	// Load data to in_msg
+	in_msg.upcb = upcb;
+	in_msg.addr = addr;
+	in_msg.port = port;
 
-	/* send test ok regardless */
-	uint8_t response[5];
-	memcpy(response, p->payload, 4);  // test id
-	response[4] = 1;                  // result ok
+	int n_read = 0;
+	memcpy(&in_msg.test_id, p->payload, sizeof(in_msg.test_id));
+	n_read += sizeof(in_msg.test_id);
+
+	in_msg.peripheral = &((uint8_t *)p->payload)[n_read++];
+	in_msg.n_iter = &((uint8_t *)p->payload)[n_read++];
+	in_msg.p_len = &((uint8_t *)p->payload)[n_read++];
+
+	memcpy(&in_msg.payload, &((char *)p->payload)[n_read], in_msg.p_len);
+
+	uint8_t result = perform_test();
+	send_result(result);
+
+	// Free the p buffer
+	pbuf_free(p);
+}
+
+uint8_t perform_test()
+{
+	return TEST_SUCCESS;
+}
+
+void send_result(uint8_t result)
+{
+	uint8_t response[RESPONSE_SIZE];
+	memcpy(response, &in_msg.test_id, sizeof(in_msg.test_id));
+	response[sizeof(in_msg.test_id)] = result;
+
 	struct pbuf *resp_buf = pbuf_alloc(PBUF_TRANSPORT, sizeof(response), PBUF_RAM);
 	if (resp_buf != NULL)
 	{
 		memcpy(resp_buf->payload, response, sizeof(response));
-		udp_sendto(upcb, resp_buf, addr, port);
+		udp_sendto(in_msg.upcb, resp_buf, in_msg.addr, in_msg.port);
 	    pbuf_free(resp_buf);
 	}
-
-	/* free the UDP connection, so we can accept new clients */
-	//udp_disconnect(upcb);
-
-	/* Free the p buffer */
-	pbuf_free(p);
 }
-
-

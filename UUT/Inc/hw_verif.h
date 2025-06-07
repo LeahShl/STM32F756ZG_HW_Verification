@@ -21,25 +21,6 @@
 extern UART_HandleTypeDef huart3;
 #define UART_DEBUG &huart3
 
-struct InMsg
-{
-	// message data
-	uint32_t test_id;
-	uint8_t peripheral;
-	uint8_t n_iter;
-	uint8_t p_len;
-	char payload[256];
-
-	// destination data
-
-};
-
-struct OutMsg
-{
-	uint32_t test_id;
-	uint8_t test_result;
-};
-
 /**
  *
  */

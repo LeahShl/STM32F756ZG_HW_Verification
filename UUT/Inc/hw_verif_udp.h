@@ -11,9 +11,37 @@
 #include <stdint.h>
 
 #define SERVER_PORT 54321
+#define RESPONSE_SIZE 5 // Response is always 5 bytes
 
-extern struct InMsg in_msg;
-extern struct OutMsg out_msg;
+#define TEST_TIM 1
+#define TEST_UART 2
+#define TEST_SPI 4
+#define TEST_I2C 8
+#define TEST_ADC 16
+
+#define TEST_SUCCESS 0x01
+#define TEST_FAILED 0xff
+
+struct InMsg
+{
+	// message source data
+	struct udp_pcb* upcb;
+	const ip_addr_t* addr;
+	u16_t port;
+
+	// message data
+	uint32_t test_id;
+	uint8_t peripheral;
+	uint8_t n_iter;
+	uint8_t p_len;
+	char payload[256];
+};
+
+struct OutMsg
+{
+	uint32_t test_id;
+	uint8_t test_result;
+};
 
 /**
  * Inits the udp server
