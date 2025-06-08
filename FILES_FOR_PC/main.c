@@ -31,6 +31,7 @@
 #define UUT_ADDR "10.0.1.100"
 #define PORT 54321
 #define BUFSIZE 263 // Max possible size of OutMsg
+#define IN_MSG_SIZE 5 // Incoming msg is always 5 bytes
 
 #define TEST_TIM 1
 #define TEST_UART 2
@@ -384,7 +385,7 @@ static void receive_data()
 		perror("receive_data: socket error");
 		exit(EXIT_FAILURE);
 	}
-	if (bytes_read != sizeof(in_msg))
+	if (bytes_read != IN_MSG_SIZE)
 	{
 		perror("receive_data: incomplete transaction");
 		exit(EXIT_FAILURE);
