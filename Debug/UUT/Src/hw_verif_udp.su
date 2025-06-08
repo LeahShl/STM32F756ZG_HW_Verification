@@ -1,2 +1,4 @@
-../UUT/Src/hw_verif_udp.c:14:6:UDP_Server_Init	16	static
-../UUT/Src/hw_verif_udp.c:39:6:UDP_Recv_Callback	40	static
+../UUT/Src/hw_verif_udp.c:20:6:UDP_Server_Init	16	static
+../UUT/Src/hw_verif_udp.c:45:6:UDP_Recv_Callback	32	static
+../UUT/Src/hw_verif_udp.c:69:9:perform_test	8	static
+../UUT/Src/hw_verif_udp.c:97:6:send_result	32	static

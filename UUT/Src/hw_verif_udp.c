@@ -7,6 +7,7 @@
 #include "lwip/pbuf.h"
 #include "lwip/udp.h"
 #include "hw_verif_udp.h"
+#include "uart_test.h"
 #include <string.h>
 
 struct udp_pcb *upcb;
@@ -53,10 +54,9 @@ void UDP_Recv_Callback(void* arg, struct udp_pcb* upcb, struct pbuf* p,
 	memcpy(&in_msg.test_id, p->payload, sizeof(in_msg.test_id));
 	n_read += sizeof(in_msg.test_id);
 
-	in_msg.peripheral = &((uint8_t *)p->payload)[n_read++];
-	in_msg.n_iter = &((uint8_t *)p->payload)[n_read++];
-	in_msg.p_len = &((uint8_t *)p->payload)[n_read++];
-
+	memcpy(&in_msg.peripheral, &((uint8_t *)p->payload)[n_read++], 1);
+	memcpy(&in_msg.n_iter, &((uint8_t *)p->payload)[n_read++], 1);
+	memcpy(&in_msg.p_len, &((uint8_t *)p->payload)[n_read++], 1);
 	memcpy(&in_msg.payload, &((char *)p->payload)[n_read], in_msg.p_len);
 
 	uint8_t result = perform_test();
@@ -68,7 +68,28 @@ void UDP_Recv_Callback(void* arg, struct udp_pcb* upcb, struct pbuf* p,
 
 uint8_t perform_test()
 {
-	return TEST_SUCCESS;
+	switch (in_msg.peripheral) {
+		case TEST_TIM:
+			return TEST_SUCCESS;
+			break;
+		case TEST_UART:
+			return UART_Test_N_Perform(in_msg.payload, in_msg.p_len, in_msg.n_iter);
+			break;
+		case TEST_SPI:
+			return TEST_SUCCESS;
+			break;
+		case TEST_I2C:
+			return TEST_SUCCESS;
+			break;
+		case TEST_ADC:
+			return TEST_SUCCESS;
+			break;
+		default:
+			return TEST_FAILED;
+			break;
+	}
+
+	return TEST_FAILED;
 }
 
 void send_result(uint8_t result)

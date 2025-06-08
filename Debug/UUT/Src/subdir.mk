@@ -6,8 +6,8 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../UUT/Src/adc_test.c \
-../UUT/Src/crc.c \
 ../UUT/Src/hw_verif.c \
+../UUT/Src/hw_verif_crc.c \
 ../UUT/Src/hw_verif_udp.c \
 ../UUT/Src/i2c_test.c \
 ../UUT/Src/spi_test.c \
@@ -16,8 +16,8 @@ C_SRCS += \
 
 OBJS += \
 ./UUT/Src/adc_test.o \
-./UUT/Src/crc.o \
 ./UUT/Src/hw_verif.o \
+./UUT/Src/hw_verif_crc.o \
 ./UUT/Src/hw_verif_udp.o \
 ./UUT/Src/i2c_test.o \
 ./UUT/Src/spi_test.o \
@@ -26,8 +26,8 @@ OBJS += \
 
 C_DEPS += \
 ./UUT/Src/adc_test.d \
-./UUT/Src/crc.d \
 ./UUT/Src/hw_verif.d \
+./UUT/Src/hw_verif_crc.d \
 ./UUT/Src/hw_verif_udp.d \
 ./UUT/Src/i2c_test.d \
 ./UUT/Src/spi_test.d \
@@ -42,7 +42,7 @@ UUT/Src/%.o UUT/Src/%.su UUT/Src/%.cyclo: ../UUT/Src/%.c UUT/Src/subdir.mk
 clean: clean-UUT-2f-Src
 
 clean-UUT-2f-Src:
-	-$(RM) ./UUT/Src/adc_test.cyclo ./UUT/Src/adc_test.d ./UUT/Src/adc_test.o ./UUT/Src/adc_test.su ./UUT/Src/crc.cyclo ./UUT/Src/crc.d ./UUT/Src/crc.o ./UUT/Src/crc.su ./UUT/Src/hw_verif.cyclo ./UUT/Src/hw_verif.d ./UUT/Src/hw_verif.o ./UUT/Src/hw_verif.su ./UUT/Src/hw_verif_udp.cyclo ./UUT/Src/hw_verif_udp.d ./UUT/Src/hw_verif_udp.o ./UUT/Src/hw_verif_udp.su ./UUT/Src/i2c_test.cyclo ./UUT/Src/i2c_test.d ./UUT/Src/i2c_test.o ./UUT/Src/i2c_test.su ./UUT/Src/spi_test.cyclo ./UUT/Src/spi_test.d ./UUT/Src/spi_test.o ./UUT/Src/spi_test.su ./UUT/Src/timer_test.cyclo ./UUT/Src/timer_test.d ./UUT/Src/timer_test.o ./UUT/Src/timer_test.su ./UUT/Src/uart_test.cyclo ./UUT/Src/uart_test.d ./UUT/Src/uart_test.o ./UUT/Src/uart_test.su
+	-$(RM) ./UUT/Src/adc_test.cyclo ./UUT/Src/adc_test.d ./UUT/Src/adc_test.o ./UUT/Src/adc_test.su ./UUT/Src/hw_verif.cyclo ./UUT/Src/hw_verif.d ./UUT/Src/hw_verif.o ./UUT/Src/hw_verif.su ./UUT/Src/hw_verif_crc.cyclo ./UUT/Src/hw_verif_crc.d ./UUT/Src/hw_verif_crc.o ./UUT/Src/hw_verif_crc.su ./UUT/Src/hw_verif_udp.cyclo ./UUT/Src/hw_verif_udp.d ./UUT/Src/hw_verif_udp.o ./UUT/Src/hw_verif_udp.su ./UUT/Src/i2c_test.cyclo ./UUT/Src/i2c_test.d ./UUT/Src/i2c_test.o ./UUT/Src/i2c_test.su ./UUT/Src/spi_test.cyclo ./UUT/Src/spi_test.d ./UUT/Src/spi_test.o ./UUT/Src/spi_test.su ./UUT/Src/timer_test.cyclo ./UUT/Src/timer_test.d ./UUT/Src/timer_test.o ./UUT/Src/timer_test.su ./UUT/Src/uart_test.cyclo ./UUT/Src/uart_test.d ./UUT/Src/uart_test.o ./UUT/Src/uart_test.su
 
 .PHONY: clean-UUT-2f-Src
 

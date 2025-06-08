@@ -8,8 +8,6 @@
 
 void HW_Verification_Proccess(void)
 {
-
-
 	UDP_Server_Init();
 	while(1)
 	{
