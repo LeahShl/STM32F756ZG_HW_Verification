@@ -57,8 +57,7 @@ UUT/Src/hw_verif_udp.o: ../UUT/Src/hw_verif_udp.c \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/ip6.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/ip.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/udp.h \
- ../UUT/Inc/hw_verif_udp.h ../UUT/Inc/uart_test.h ../Core/Inc/usart.h \
- ../Core/Inc/main.h
+ ../UUT/Inc/hw_verif_udp.h ../UUT/Inc/uart_test.h
 ../Middlewares/Third_Party/LwIP/src/include/lwip/pbuf.h:
 ../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h:
 ../LWIP/Target/lwipopts.h:
@@ -120,5 +119,3 @@ UUT/Src/hw_verif_udp.o: ../UUT/Src/hw_verif_udp.c \
 ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/udp.h:
 ../UUT/Inc/hw_verif_udp.h:
 ../UUT/Inc/uart_test.h:
-../Core/Inc/usart.h:
-../Core/Inc/main.h:

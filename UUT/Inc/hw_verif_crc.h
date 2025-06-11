@@ -7,6 +7,7 @@
 
 #ifndef INC_HW_VERIF_CRC_H_
 #define INC_HW_VERIF_CRC_H_
+#include <stdint.h>
 
 #define CRC_MATCH_OK 1
 #define CRC_MATCH_FAIL 0

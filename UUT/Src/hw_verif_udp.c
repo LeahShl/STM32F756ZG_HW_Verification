@@ -73,7 +73,7 @@ uint8_t perform_test()
 			return TEST_SUCCESS;
 			break;
 		case TEST_UART:
-			return UART_Test_N_Perform(in_msg.payload, in_msg.p_len, in_msg.n_iter);
+			return UART_Test_N_Perform((uint8_t *)in_msg.payload, in_msg.p_len, in_msg.n_iter);
 			break;
 		case TEST_SPI:
 			return TEST_SUCCESS;
