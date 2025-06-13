@@ -38,7 +38,7 @@ uint8_t UART_Test_Perform(uint8_t *msg, uint8_t msg_len)
 		printf("uart4 -> uart5 RX1 failed\n");
 		return TEST_FAILED;
 	}
-	if (HAL_UART_Transmit_DMA(&huart4, msg, msg_len) != HAL_OK)
+	if (HAL_UART_Transmit_IT(&huart4, msg, msg_len) != HAL_OK)
 	{
 		printf("uart4 -> uart5 TX failed\n");
 		return TEST_FAILED;
@@ -51,7 +51,7 @@ uint8_t UART_Test_Perform(uint8_t *msg, uint8_t msg_len)
 		printf("uart5 -> uart4 RX failed\n");
 		return TEST_FAILED;
 	}
-	if (HAL_UART_Transmit_DMA(&huart5, uart5_rx, msg_len) != HAL_OK)
+	if (HAL_UART_Transmit_IT(&huart5, uart5_rx, msg_len) != HAL_OK)
 	{
 		printf("uart5 -> uart4 TX failed\n");
 		return TEST_FAILED;

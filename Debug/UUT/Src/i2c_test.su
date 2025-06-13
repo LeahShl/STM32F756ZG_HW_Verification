@@ -1,0 +1,4 @@
+../UUT/Src/i2c_test.c:25:9:I2C_Test_Perform	544	static
+../UUT/Src/i2c_test.c:77:9:I2C_Test_N_Perform	24	static
+../UUT/Src/i2c_test.c:92:6:HAL_I2C_SlaveRxCpltCallback	16	static
+../UUT/Src/i2c_test.c:97:6:HAL_I2C_MasterRxCpltCallback	16	static
