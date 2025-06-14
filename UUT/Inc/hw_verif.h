@@ -17,9 +17,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Define the UART debug port
-extern UART_HandleTypeDef huart3;
-#define UART_DEBUG &huart3
 
 /**
  *

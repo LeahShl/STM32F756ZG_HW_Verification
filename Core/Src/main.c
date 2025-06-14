@@ -20,6 +20,7 @@
 #include "main.h"
 #include "crc.h"
 #include "dma.h"
+#include "i2c.h"
 #include "lwip.h"
 #include "usart.h"
 #include "gpio.h"
@@ -36,7 +37,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define UART_DEBUG &huart3
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -106,6 +107,8 @@ int main(void)
   MX_CRC_Init();
   MX_UART4_Init();
   MX_UART5_Init();
+  MX_I2C1_Init();
+  MX_I2C2_Init();
   /* USER CODE BEGIN 2 */
   HW_Verification_Proccess();
   /* USER CODE END 2 */
