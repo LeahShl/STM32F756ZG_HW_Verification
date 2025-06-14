@@ -12,6 +12,4 @@
 
 uint8_t I2C_Test_Perform(uint8_t *msg, uint8_t msg_len);
 
-uint8_t I2C_Test_N_Perform(uint8_t *msg, uint8_t msg_len, uint8_t n);
-
 #endif /* INC_I2C_TEST_H_ */

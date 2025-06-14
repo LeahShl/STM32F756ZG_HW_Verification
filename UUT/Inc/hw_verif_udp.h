@@ -19,9 +19,6 @@
 #define TEST_I2C 8
 #define TEST_ADC 16
 
-#define TEST_SUCCESS 0x01
-#define TEST_FAILED 0xff
-
 struct InMsg
 {
 	// message source data

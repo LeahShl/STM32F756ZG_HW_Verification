@@ -7,13 +7,9 @@
 #include "hw_verif_crc.h"
 #include "stm32f7xx_hal.h"
 #include "main.h"
+#include "test_consts.h"
 #include <stdio.h>
 #include <stdint.h>
-
-#define TEST_SUCCESS 0x01
-#define TEST_FAILED 0xff
-
-#define MAX_BUF 256
 
 extern I2C_HandleTypeDef hi2c1; // Master
 extern I2C_HandleTypeDef hi2c2; // Slave

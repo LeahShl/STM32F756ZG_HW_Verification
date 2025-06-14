@@ -8,8 +8,10 @@
 #include "lwip/udp.h"
 #include "hw_verif_udp.h"
 #include "tests.h"
+#include "test_consts.h"
 #include "uart_test.h"
 #include "i2c_test.h"
+#include "spi_test.h"
 #include <string.h>
 
 struct udp_pcb *upcb;
