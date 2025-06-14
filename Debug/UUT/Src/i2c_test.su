@@ -1,7 +1,4 @@
-../UUT/Src/i2c_test.c:27:9:I2C_Test_Perform	544	static
-../UUT/Src/i2c_test.c:81:9:I2C_Test_N_Perform	24	static
-../UUT/Src/i2c_test.c:96:6:HAL_I2C_ErrorCallback	16	static
-../UUT/Src/i2c_test.c:110:6:HAL_I2C_MasterTxCpltCallback	16	static
-../UUT/Src/i2c_test.c:115:6:HAL_I2C_MasterRxCpltCallback	16	static
-../UUT/Src/i2c_test.c:120:6:HAL_I2C_SlaveTxCpltCallback	16	static
-../UUT/Src/i2c_test.c:125:6:HAL_I2C_SlaveRxCpltCallback	16	static
+../UUT/Src/i2c_test.c:25:9:I2C_Test_Perform	544	static
+../UUT/Src/i2c_test.c:77:9:I2C_Test_N_Perform	24	static
+../UUT/Src/i2c_test.c:92:6:HAL_I2C_SlaveRxCpltCallback	16	static
+../UUT/Src/i2c_test.c:97:6:HAL_I2C_MasterRxCpltCallback	16	static

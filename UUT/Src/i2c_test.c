@@ -68,7 +68,8 @@ uint8_t I2C_Test_Perform(uint8_t *msg, uint8_t msg_len)
 		printf("i2c2 -> i2c1 TX failed\n");
 		return TEST_FAILED;
 	}
-	while (!i2c1_rx_done || !i2c2_tx_done);
+	HAL_Delay(10);
+	//while (!i2c1_rx_done);
 
 	// compare crc
 	int crc_result = Match_CRC(msg, msg_len, i2c1_rx, msg_len);
@@ -91,20 +92,6 @@ uint8_t I2C_Test_N_Perform(uint8_t *msg, uint8_t msg_len, uint8_t n)
 	}
 
 	return TEST_SUCCESS;
-}
-
-void HAL_I2C_ErrorCallback(I2C_HandleTypeDef *hi2c)
-{
-    printf("I2C Error on %s: 0x%08lX\r\n",
-           (hi2c->Instance == I2C1) ? "I2C1" : "I2C2",
-           hi2c->ErrorCode);
-
-    // Print specific error details
-    if (hi2c->ErrorCode & HAL_I2C_ERROR_BERR) printf("  - Bus Error\r\n");
-    if (hi2c->ErrorCode & HAL_I2C_ERROR_ARLO) printf("  - Arbitration Lost\r\n");
-    if (hi2c->ErrorCode & HAL_I2C_ERROR_AF) printf("  - Acknowledge Failure\r\n");
-    if (hi2c->ErrorCode & HAL_I2C_ERROR_OVR) printf("  - Overrun/Underrun\r\n");
-    if (hi2c->ErrorCode & HAL_I2C_ERROR_TIMEOUT) printf("  - Timeout\r\n");
 }
 
 void HAL_I2C_MasterTxCpltCallback(I2C_HandleTypeDef *hi2c)
