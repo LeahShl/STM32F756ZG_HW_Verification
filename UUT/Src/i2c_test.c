@@ -79,21 +79,6 @@ uint8_t I2C_Test_Perform(uint8_t *msg, uint8_t msg_len)
 	return TEST_FAILED;
 }
 
-uint8_t I2C_Test_N_Perform(uint8_t *msg, uint8_t msg_len, uint8_t n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		if (I2C_Test_Perform(msg, msg_len) == TEST_FAILED)
-		{
-			printf("TEST %d: i2c test failed\n", i+1);
-			return TEST_FAILED;
-		}
-		else printf("TEST %d: i2c test success\n", i+1);
-	}
-
-	return TEST_SUCCESS;
-}
-
 void HAL_I2C_MasterTxCpltCallback(I2C_HandleTypeDef *hi2c)
 {
 	if (hi2c == &hi2c1) i2c1_tx_done = 1;

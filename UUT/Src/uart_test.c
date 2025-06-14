@@ -66,21 +66,6 @@ uint8_t UART_Test_Perform(uint8_t *msg, uint8_t msg_len)
 	return TEST_FAILED;
 }
 
-uint8_t UART_Test_N_Perform(uint8_t *msg, uint8_t msg_len, uint8_t n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		if (UART_Test_Perform(msg, msg_len) == TEST_FAILED)
-		{
-			printf("TEST %d: uart test failed\n", i+1);
-			return TEST_FAILED;
-		}
-		else printf("TEST %d: uart test success\n", i+1);
-	}
-
-	return TEST_SUCCESS;
-}
-
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
     if (huart == &huart4) uart4_rx_done = 1;
     if (huart == &huart5) uart5_rx_done = 1;
