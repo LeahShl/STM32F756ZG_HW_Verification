@@ -22,7 +22,9 @@ volatile uint8_t i2c2_rx_done;
 
 uint8_t I2C_Test_Perform(uint8_t *msg, uint8_t msg_len)
 {
+#ifdef PRINT_TESTS_DEBUG
 	printf("Performing i2c test\n");
+#endif
 
 	HAL_StatusTypeDef status;
 
@@ -38,14 +40,18 @@ uint8_t I2C_Test_Perform(uint8_t *msg, uint8_t msg_len)
 	status = HAL_I2C_Slave_Receive_DMA(&hi2c2, i2c2_rx, msg_len);
 	if (status != HAL_OK)
 	{
+#ifdef PRINT_TESTS_DEBUG
 		printf("i2c1 -> i2c2 RX failed\n");
+#endif
 		return TEST_FAILED;
 	}
 
 	status = HAL_I2C_Master_Transmit_DMA(&hi2c1, 10<<1, msg, msg_len);
 	if (status != HAL_OK)
 	{
+#ifdef PRINT_TESTS_DEBUG
 		printf("i2c1 -> i2c2 TX failed\n");
+#endif
 		return TEST_FAILED;
 	}
 	while (!i2c2_rx_done || !i2c1_tx_done);
@@ -54,14 +60,18 @@ uint8_t I2C_Test_Perform(uint8_t *msg, uint8_t msg_len)
 	status = HAL_I2C_Master_Receive_DMA(&hi2c1, 10<<1, i2c1_rx, msg_len);
 	if (status != HAL_OK)
 	{
+#ifdef PRINT_TESTS_DEBUG
 		printf("i2c2 -> i2c1 RX failed\n");
+#endif
 		return TEST_FAILED;
 	}
 
 	status = HAL_I2C_Slave_Transmit_DMA(&hi2c2, i2c2_rx, msg_len);
 	if (status != HAL_OK)
 	{
+#ifdef PRINT_TESTS_DEBUG
 		printf("i2c2 -> i2c1 TX failed\n");
+#endif
 		return TEST_FAILED;
 	}
 	while (!i2c1_rx_done || !i2c2_tx_done);

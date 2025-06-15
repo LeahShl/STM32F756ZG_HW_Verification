@@ -25,7 +25,9 @@ volatile uint8_t spi4_rx_done;
 
 uint8_t SPI_Test_Perform(uint8_t *msg, uint8_t msg_len)
 {
+#ifdef PRINT_TESTS_DEBUG
 	printf("Performing SPI test\n");
+#endif
 
 	HAL_StatusTypeDef status;
 
@@ -41,13 +43,17 @@ uint8_t SPI_Test_Perform(uint8_t *msg, uint8_t msg_len)
 	status = HAL_SPI_Receive_DMA(&hspi4, spi4_rx_tx, msg_len);
 	if (status != HAL_OK)
 	{
+#ifdef PRINT_TESTS_DEBUG
 		printf("spi1 -> spi4 RX failed\n");
+#endif
 		return TEST_FAILED;
 	}
 	status = HAL_SPI_Transmit_DMA(&hspi1, msg, msg_len);
 	if (status != HAL_OK)
 	{
+#ifdef PRINT_TESTS_DEBUG
 		printf("spi1 -> spi4 TX failed\n");
+#endif
 		return TEST_FAILED;
 	}
 	while(!spi4_rx_done || !spi1_tx_done);
@@ -56,13 +62,17 @@ uint8_t SPI_Test_Perform(uint8_t *msg, uint8_t msg_len)
 	status = HAL_SPI_Transmit_DMA(&hspi4, spi4_rx_tx, msg_len);
 	if (status != HAL_OK)
 	{
+#ifdef PRINT_TESTS_DEBUG
 		printf("spi4 -> spi1 TX failed\n");
+#endif
 		return TEST_FAILED;
 	}
 	status = HAL_SPI_Receive_DMA(&hspi1, spi1_rx, msg_len);
 	if (status != HAL_OK)
 	{
+#ifdef PRINT_TESTS_DEBUG
 		printf("spi4 -> spi1 RX failed\n");
+#endif
 		return TEST_FAILED;
 	}
 	while(!spi1_rx_done || !spi4_tx_done);

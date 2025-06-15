@@ -23658,7 +23658,6 @@ Discarded input sections
  .group         0x00000000        0xc ./UUT/Src/hw_verif_udp.o
  .group         0x00000000        0xc ./UUT/Src/hw_verif_udp.o
  .group         0x00000000        0xc ./UUT/Src/hw_verif_udp.o
- .group         0x00000000        0xc ./UUT/Src/hw_verif_udp.o
  .text          0x00000000        0x0 ./UUT/Src/hw_verif_udp.o
  .data          0x00000000        0x0 ./UUT/Src/hw_verif_udp.o
  .bss           0x00000000        0x0 ./UUT/Src/hw_verif_udp.o
@@ -23903,7 +23902,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x56d ./UUT/Src/i2c_test.o
  .debug_macro   0x00000000       0x44 ./UUT/Src/i2c_test.o
  .debug_macro   0x00000000      0x14d ./UUT/Src/i2c_test.o
- .debug_macro   0x00000000       0x1c ./UUT/Src/i2c_test.o
+ .debug_macro   0x00000000       0x22 ./UUT/Src/i2c_test.o
  .debug_macro   0x00000000       0x61 ./UUT/Src/i2c_test.o
  .debug_macro   0x00000000       0x2a ./UUT/Src/i2c_test.o
  .debug_macro   0x00000000       0x43 ./UUT/Src/i2c_test.o
@@ -24042,7 +24041,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x56d ./UUT/Src/spi_test.o
  .debug_macro   0x00000000       0x44 ./UUT/Src/spi_test.o
  .debug_macro   0x00000000      0x14d ./UUT/Src/spi_test.o
- .debug_macro   0x00000000       0x1c ./UUT/Src/spi_test.o
+ .debug_macro   0x00000000       0x22 ./UUT/Src/spi_test.o
  .debug_macro   0x00000000       0x61 ./UUT/Src/spi_test.o
  .debug_macro   0x00000000       0x2a ./UUT/Src/spi_test.o
  .debug_macro   0x00000000       0x43 ./UUT/Src/spi_test.o
@@ -24098,6 +24097,7 @@ Discarded input sections
  .text.Test_N_Perform
                 0x00000000       0x60 ./UUT/Src/tests.o
  .debug_macro   0x00000000      0xad8 ./UUT/Src/tests.o
+ .debug_macro   0x00000000       0x22 ./UUT/Src/tests.o
  .debug_macro   0x00000000       0x22 ./UUT/Src/tests.o
  .debug_macro   0x00000000       0x8e ./UUT/Src/tests.o
  .debug_macro   0x00000000       0x51 ./UUT/Src/tests.o
@@ -24256,7 +24256,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x56d ./UUT/Src/uart_test.o
  .debug_macro   0x00000000       0x44 ./UUT/Src/uart_test.o
  .debug_macro   0x00000000      0x14d ./UUT/Src/uart_test.o
- .debug_macro   0x00000000       0x1c ./UUT/Src/uart_test.o
+ .debug_macro   0x00000000       0x22 ./UUT/Src/uart_test.o
  .debug_macro   0x00000000       0x61 ./UUT/Src/uart_test.o
  .debug_macro   0x00000000       0x2a ./UUT/Src/uart_test.o
  .debug_macro   0x00000000       0x43 ./UUT/Src/uart_test.o
@@ -27224,7 +27224,7 @@ LOAD /home/leah/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.ide.mcu.external
  .debug_rnglists
                 0x00001707       0x1a ./UUT/Src/uart_test.o
 
-.debug_macro    0x00000000    0x36834
+.debug_macro    0x00000000    0x3681d
  .debug_macro   0x00000000      0x215 ./Core/Src/crc.o
  .debug_macro   0x00000215      0xad8 ./Core/Src/crc.o
  .debug_macro   0x00000ced      0x2ad ./Core/Src/crc.o
@@ -27433,21 +27433,19 @@ LOAD /home/leah/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.ide.mcu.external
  .debug_macro   0x0003526a       0xee ./UUT/Src/hw_verif.o
  .debug_macro   0x00035358      0x21e ./UUT/Src/hw_verif_crc.o
  .debug_macro   0x00035576       0x16 ./UUT/Src/hw_verif_crc.o
- .debug_macro   0x0003558c      0x60a ./UUT/Src/hw_verif_udp.o
- .debug_macro   0x00035b96       0x16 ./UUT/Src/hw_verif_udp.o
- .debug_macro   0x00035bac       0x1c ./UUT/Src/hw_verif_udp.o
- .debug_macro   0x00035bc8      0x2fb ./UUT/Src/i2c_test.o
- .debug_macro   0x00035ec3       0x10 ./UUT/Src/i2c_test.o
- .debug_macro   0x00035ed3       0x16 ./UUT/Src/i2c_test.o
- .debug_macro   0x00035ee9       0x16 ./UUT/Src/i2c_test.o
- .debug_macro   0x00035eff      0x32b ./UUT/Src/spi_test.o
- .debug_macro   0x0003622a      0x14f ./UUT/Src/tests.o
- .debug_macro   0x00036379       0x10 ./UUT/Src/tests.o
- .debug_macro   0x00036389       0x9e ./UUT/Src/tests.o
- .debug_macro   0x00036427      0x112 ./UUT/Src/tests.o
- .debug_macro   0x00036539      0x2fb ./UUT/Src/uart_test.o
+ .debug_macro   0x0003558c      0x60f ./UUT/Src/hw_verif_udp.o
+ .debug_macro   0x00035b9b       0x22 ./UUT/Src/hw_verif_udp.o
+ .debug_macro   0x00035bbd      0x2fb ./UUT/Src/i2c_test.o
+ .debug_macro   0x00035eb8       0x10 ./UUT/Src/i2c_test.o
+ .debug_macro   0x00035ec8       0x16 ./UUT/Src/i2c_test.o
+ .debug_macro   0x00035ede       0x16 ./UUT/Src/i2c_test.o
+ .debug_macro   0x00035ef4      0x32b ./UUT/Src/spi_test.o
+ .debug_macro   0x0003621f      0x153 ./UUT/Src/tests.o
+ .debug_macro   0x00036372       0x9e ./UUT/Src/tests.o
+ .debug_macro   0x00036410      0x112 ./UUT/Src/tests.o
+ .debug_macro   0x00036522      0x2fb ./UUT/Src/uart_test.o
 
-.debug_line     0x00000000    0x3389c
+.debug_line     0x00000000    0x338ad
  .debug_line    0x00000000      0x765 ./Core/Src/crc.o
  .debug_line    0x00000765      0x725 ./Core/Src/dma.o
  .debug_line    0x00000e8a      0x717 ./Core/Src/gpio.o
@@ -27502,67 +27500,67 @@ LOAD /home/leah/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.ide.mcu.external
  .debug_line    0x00030a78      0xcc0 ./UUT/Src/hw_verif_udp.o
  .debug_line    0x00031738      0x985 ./UUT/Src/i2c_test.o
  .debug_line    0x000320bd      0x98d ./UUT/Src/spi_test.o
- .debug_line    0x00032a4a      0x53c ./UUT/Src/tests.o
- .debug_line    0x00032f86      0x916 ./UUT/Src/uart_test.o
+ .debug_line    0x00032a4a      0x54d ./UUT/Src/tests.o
+ .debug_line    0x00032f97      0x916 ./UUT/Src/uart_test.o
 
-.debug_str      0x00000000   0x105f0c
- .debug_str     0x00000000   0x105f0c ./Core/Src/crc.o
+.debug_str      0x00000000   0x105f20
+ .debug_str     0x00000000   0x105f20 ./Core/Src/crc.o
                               0xe9181 (size before relaxing)
- .debug_str     0x00105f0c    0xe953c ./Core/Src/dma.o
- .debug_str     0x00105f0c    0xe8f5b ./Core/Src/gpio.o
- .debug_str     0x00105f0c    0xe9e85 ./Core/Src/i2c.o
- .debug_str     0x00105f0c    0xf66b0 ./Core/Src/main.o
- .debug_str     0x00105f0c    0xe9b28 ./Core/Src/spi.o
- .debug_str     0x00105f0c    0xe8f5b ./Core/Src/stm32f7xx_hal_msp.o
- .debug_str     0x00105f0c    0xea00e ./Core/Src/stm32f7xx_it.o
- .debug_str     0x00105f0c    0xf2c2b ./Core/Src/syscalls.o
- .debug_str     0x00105f0c    0xf2271 ./Core/Src/sysmem.o
- .debug_str     0x00105f0c    0xe90d4 ./Core/Src/system_stm32f7xx.o
- .debug_str     0x00105f0c    0xe9dfb ./Core/Src/usart.o
- .debug_str     0x00105f0c       0x83 ./Core/Startup/startup_stm32f756zgtx.o
- .debug_str     0x00105f0c     0x5cab ./Drivers/BSP/Components/lan8742/lan8742.o
- .debug_str     0x00105f0c    0xe9a4c ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.o
- .debug_str     0x00105f0c    0xe9a69 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.o
- .debug_str     0x00105f0c    0xe910f ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.o
- .debug_str     0x00105f0c    0xe90c9 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.o
- .debug_str     0x00105f0c    0xe9413 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma.o
- .debug_str     0x00105f0c    0xea910 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_eth.o
- .debug_str     0x00105f0c    0xe9192 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.o
- .debug_str     0x00105f0c    0xea2e7 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.o
- .debug_str     0x00105f0c    0xe9566 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c_ex.o
- .debug_str     0x00105f0c    0xe9343 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr_ex.o
- .debug_str     0x00105f0c    0xe9436 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.o
- .debug_str     0x00105f0c    0xe936e ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.o
- .debug_str     0x00105f0c    0xe990e ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi.o
- .debug_str     0x00105f0c    0xe9d83 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.o
- .debug_str     0x00105f0c    0xf5d9d ./LWIP/App/lwip.o
- .debug_str     0x00105f0c    0xf8f51 ./LWIP/Target/ethernetif.o
- .debug_str     0x00105f0c    0xf2a9e ./Middlewares/Third_Party/LwIP/src/api/err.o
- .debug_str     0x00105f0c    0xf208d ./Middlewares/Third_Party/LwIP/src/core/def.o
- .debug_str     0x00105f0c    0xf88d7 ./Middlewares/Third_Party/LwIP/src/core/init.o
- .debug_str     0x00105f0c    0xf5e85 ./Middlewares/Third_Party/LwIP/src/core/ip.o
- .debug_str     0x00105f0c    0xf34d9 ./Middlewares/Third_Party/LwIP/src/core/mem.o
- .debug_str     0x00105f0c    0xf8f65 ./Middlewares/Third_Party/LwIP/src/core/memp.o
- .debug_str     0x00105f0c    0xf8f35 ./Middlewares/Third_Party/LwIP/src/core/netif.o
- .debug_str     0x00105f0c    0xf89a0 ./Middlewares/Third_Party/LwIP/src/core/pbuf.o
- .debug_str     0x00105f0c    0xf8718 ./Middlewares/Third_Party/LwIP/src/core/tcp.o
- .debug_str     0x00105f0c    0xf854f ./Middlewares/Third_Party/LwIP/src/core/tcp_in.o
- .debug_str     0x00105f0c    0xf857e ./Middlewares/Third_Party/LwIP/src/core/tcp_out.o
- .debug_str     0x00105f0c    0xf8a12 ./Middlewares/Third_Party/LwIP/src/core/timeouts.o
- .debug_str     0x00105f0c    0xf6d58 ./Middlewares/Third_Party/LwIP/src/core/udp.o
- .debug_str     0x00105f0c    0xf6564 ./Middlewares/Third_Party/LwIP/src/core/ipv4/etharp.o
- .debug_str     0x00105f0c    0xf63dc ./Middlewares/Third_Party/LwIP/src/core/ipv4/icmp.o
- .debug_str     0x00105f0c    0xf8224 ./Middlewares/Third_Party/LwIP/src/core/ipv4/ip4.o
- .debug_str     0x00105f0c    0xf51cc ./Middlewares/Third_Party/LwIP/src/core/ipv4/ip4_addr.o
- .debug_str     0x00105f0c    0xf6755 ./Middlewares/Third_Party/LwIP/src/core/ipv4/ip4_frag.o
- .debug_str     0x00105f0c    0xf69ae ./Middlewares/Third_Party/LwIP/src/netif/ethernet.o
- .debug_str     0x00105f0c    0xf5e0b ./UUT/Src/hw_verif.o
- .debug_str     0x00105f0c    0xe907b ./UUT/Src/hw_verif_crc.o
- .debug_str     0x00105f0c    0xf6335 ./UUT/Src/hw_verif_udp.o
- .debug_str     0x00105f0c    0xeccd5 ./UUT/Src/i2c_test.o
- .debug_str     0x00105f0c    0xecc3a ./UUT/Src/spi_test.o
- .debug_str     0x00105f0c     0x7956 ./UUT/Src/tests.o
- .debug_str     0x00105f0c    0xecbc3 ./UUT/Src/uart_test.o
+ .debug_str     0x00105f20    0xe953c ./Core/Src/dma.o
+ .debug_str     0x00105f20    0xe8f5b ./Core/Src/gpio.o
+ .debug_str     0x00105f20    0xe9e85 ./Core/Src/i2c.o
+ .debug_str     0x00105f20    0xf66b0 ./Core/Src/main.o
+ .debug_str     0x00105f20    0xe9b28 ./Core/Src/spi.o
+ .debug_str     0x00105f20    0xe8f5b ./Core/Src/stm32f7xx_hal_msp.o
+ .debug_str     0x00105f20    0xea00e ./Core/Src/stm32f7xx_it.o
+ .debug_str     0x00105f20    0xf2c2b ./Core/Src/syscalls.o
+ .debug_str     0x00105f20    0xf2271 ./Core/Src/sysmem.o
+ .debug_str     0x00105f20    0xe90d4 ./Core/Src/system_stm32f7xx.o
+ .debug_str     0x00105f20    0xe9dfb ./Core/Src/usart.o
+ .debug_str     0x00105f20       0x83 ./Core/Startup/startup_stm32f756zgtx.o
+ .debug_str     0x00105f20     0x5cab ./Drivers/BSP/Components/lan8742/lan8742.o
+ .debug_str     0x00105f20    0xe9a4c ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.o
+ .debug_str     0x00105f20    0xe9a69 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.o
+ .debug_str     0x00105f20    0xe910f ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.o
+ .debug_str     0x00105f20    0xe90c9 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.o
+ .debug_str     0x00105f20    0xe9413 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma.o
+ .debug_str     0x00105f20    0xea910 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_eth.o
+ .debug_str     0x00105f20    0xe9192 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.o
+ .debug_str     0x00105f20    0xea2e7 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.o
+ .debug_str     0x00105f20    0xe9566 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c_ex.o
+ .debug_str     0x00105f20    0xe9343 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr_ex.o
+ .debug_str     0x00105f20    0xe9436 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.o
+ .debug_str     0x00105f20    0xe936e ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.o
+ .debug_str     0x00105f20    0xe990e ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi.o
+ .debug_str     0x00105f20    0xe9d83 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.o
+ .debug_str     0x00105f20    0xf5d9d ./LWIP/App/lwip.o
+ .debug_str     0x00105f20    0xf8f51 ./LWIP/Target/ethernetif.o
+ .debug_str     0x00105f20    0xf2a9e ./Middlewares/Third_Party/LwIP/src/api/err.o
+ .debug_str     0x00105f20    0xf208d ./Middlewares/Third_Party/LwIP/src/core/def.o
+ .debug_str     0x00105f20    0xf88d7 ./Middlewares/Third_Party/LwIP/src/core/init.o
+ .debug_str     0x00105f20    0xf5e85 ./Middlewares/Third_Party/LwIP/src/core/ip.o
+ .debug_str     0x00105f20    0xf34d9 ./Middlewares/Third_Party/LwIP/src/core/mem.o
+ .debug_str     0x00105f20    0xf8f65 ./Middlewares/Third_Party/LwIP/src/core/memp.o
+ .debug_str     0x00105f20    0xf8f35 ./Middlewares/Third_Party/LwIP/src/core/netif.o
+ .debug_str     0x00105f20    0xf89a0 ./Middlewares/Third_Party/LwIP/src/core/pbuf.o
+ .debug_str     0x00105f20    0xf8718 ./Middlewares/Third_Party/LwIP/src/core/tcp.o
+ .debug_str     0x00105f20    0xf854f ./Middlewares/Third_Party/LwIP/src/core/tcp_in.o
+ .debug_str     0x00105f20    0xf857e ./Middlewares/Third_Party/LwIP/src/core/tcp_out.o
+ .debug_str     0x00105f20    0xf8a12 ./Middlewares/Third_Party/LwIP/src/core/timeouts.o
+ .debug_str     0x00105f20    0xf6d58 ./Middlewares/Third_Party/LwIP/src/core/udp.o
+ .debug_str     0x00105f20    0xf6564 ./Middlewares/Third_Party/LwIP/src/core/ipv4/etharp.o
+ .debug_str     0x00105f20    0xf63dc ./Middlewares/Third_Party/LwIP/src/core/ipv4/icmp.o
+ .debug_str     0x00105f20    0xf8224 ./Middlewares/Third_Party/LwIP/src/core/ipv4/ip4.o
+ .debug_str     0x00105f20    0xf51cc ./Middlewares/Third_Party/LwIP/src/core/ipv4/ip4_addr.o
+ .debug_str     0x00105f20    0xf6755 ./Middlewares/Third_Party/LwIP/src/core/ipv4/ip4_frag.o
+ .debug_str     0x00105f20    0xf69ae ./Middlewares/Third_Party/LwIP/src/netif/ethernet.o
+ .debug_str     0x00105f20    0xf5e0b ./UUT/Src/hw_verif.o
+ .debug_str     0x00105f20    0xe907b ./UUT/Src/hw_verif_crc.o
+ .debug_str     0x00105f20    0xf6349 ./UUT/Src/hw_verif_udp.o
+ .debug_str     0x00105f20    0xecce9 ./UUT/Src/i2c_test.o
+ .debug_str     0x00105f20    0xecc4e ./UUT/Src/spi_test.o
+ .debug_str     0x00105f20     0x798a ./UUT/Src/tests.o
+ .debug_str     0x00105f20    0xecbd7 ./UUT/Src/uart_test.o
 
 .comment        0x00000000       0x43
  .comment       0x00000000       0x43 ./Core/Src/crc.o

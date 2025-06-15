@@ -14,13 +14,17 @@ uint8_t Test_N_Perform(const char *test_name, TestFunction test_func, uint8_t n)
 	{
 		if (test_func() == TEST_FAILED)
 		{
+#ifdef PRINT_TESTS_DEBUG
 			printf("TEST %d: %s test failed\n", i + 1, test_name);
+#endif
 			return TEST_FAILED;
 		}
+#ifdef PRINT_TESTS_DEBUG
 		else
 		{
 			printf("TEST %d: %s test success\n", i + 1, test_name);
 		}
+#endif
 	}
 
 	return TEST_SUCCESS;
@@ -32,13 +36,17 @@ uint8_t Test_N_Perform_Msg(const char *test_name, MsgTestFunction test_func, uin
 	{
 		if (test_func(msg, msg_len) == TEST_FAILED)
 		{
+#ifdef PRINT_TESTS_DEBUG
 			printf("TEST %d: %s test failed\n", i + 1, test_name);
+#endif
 			return TEST_FAILED;
 		}
+#ifdef PRINT_TESTS_DEBUG
 		else
 		{
 			printf("TEST %d: %s test success\n", i + 1, test_name);
 		}
+#endif
 	}
 
 	return TEST_SUCCESS;

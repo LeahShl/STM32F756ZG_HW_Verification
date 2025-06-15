@@ -8,10 +8,8 @@
 #ifndef INC_TESTS_H_
 #define INC_TESTS_H_
 
+#include "test_consts.h"
 #include <stdint.h>
-
-#define TEST_SUCCESS 0x01
-#define TEST_FAILED 0xff
 
 typedef uint8_t (*TestFunction)(void);
 typedef uint8_t (*MsgTestFunction)(uint8_t *msg, uint8_t msg_len);

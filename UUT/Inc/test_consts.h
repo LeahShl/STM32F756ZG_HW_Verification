@@ -8,6 +8,9 @@
 #ifndef INC_TEST_CONSTS_H_
 #define INC_TEST_CONSTS_H_
 
+// Comment next line to disable debug prints
+#define PRINT_TESTS_DEBUG 1
+
 #define TEST_SUCCESS 0x01
 #define TEST_FAILED 0xff
 
