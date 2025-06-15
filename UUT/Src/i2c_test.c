@@ -64,12 +64,10 @@ uint8_t I2C_Test_Perform(uint8_t *msg, uint8_t msg_len)
 		printf("i2c2 -> i2c1 TX failed\n");
 		return TEST_FAILED;
 	}
-	HAL_Delay(10);
-	//while (!i2c1_rx_done);
+	while (!i2c1_rx_done || !i2c2_tx_done);
 
 	// compare crc
 	int crc_result = Match_CRC(msg, msg_len, i2c1_rx, msg_len);
-
 	if (crc_result == CRC_MATCH_OK) return TEST_SUCCESS;
 
 	return TEST_FAILED;

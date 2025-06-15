@@ -80,7 +80,7 @@ uint8_t perform_test()
 			return Test_N_Perform_Msg("UART", UART_Test_Perform, (uint8_t *)in_msg.payload, in_msg.p_len, in_msg.n_iter);
 			break;
 		case TEST_SPI:
-			return TEST_SUCCESS;
+			return Test_N_Perform_Msg("SPI", SPI_Test_Perform, (uint8_t *)in_msg.payload, in_msg.p_len, in_msg.n_iter);;
 			break;
 		case TEST_I2C:
 			return Test_N_Perform_Msg("I2C", I2C_Test_Perform, (uint8_t *)in_msg.payload, in_msg.p_len, in_msg.n_iter);
