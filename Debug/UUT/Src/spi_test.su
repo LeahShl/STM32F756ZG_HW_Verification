@@ -1,0 +1,3 @@
+../UUT/Src/spi_test.c:26:9:SPI_Test_Perform	544	static
+../UUT/Src/spi_test.c:87:6:HAL_SPI_TxCpltCallback	16	static
+../UUT/Src/spi_test.c:93:6:HAL_SPI_RxCpltCallback	16	static

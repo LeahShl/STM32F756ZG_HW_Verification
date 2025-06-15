@@ -31,6 +31,8 @@ UUT/Src/hw_verif_udp.o: ../UUT/Src/hw_verif_udp.c \
  ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_i2c_ex.h \
  ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr.h \
  ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr_ex.h \
+ ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_spi.h \
+ ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_spi_ex.h \
  ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h \
  ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h \
@@ -57,7 +59,9 @@ UUT/Src/hw_verif_udp.o: ../UUT/Src/hw_verif_udp.c \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/ip6.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/ip.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/udp.h \
- ../UUT/Inc/hw_verif_udp.h ../UUT/Inc/uart_test.h ../UUT/Inc/i2c_test.h
+ ../UUT/Inc/hw_verif_udp.h ../UUT/Inc/tests.h ../UUT/Inc/test_consts.h \
+ ../UUT/Inc/test_consts.h ../UUT/Inc/uart_test.h ../UUT/Inc/i2c_test.h \
+ ../UUT/Inc/spi_test.h
 ../Middlewares/Third_Party/LwIP/src/include/lwip/pbuf.h:
 ../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h:
 ../LWIP/Target/lwipopts.h:
@@ -91,6 +95,8 @@ UUT/Src/hw_verif_udp.o: ../UUT/Src/hw_verif_udp.c \
 ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_i2c_ex.h:
 ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr.h:
 ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr_ex.h:
+../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_spi.h:
+../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_spi_ex.h:
 ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h:
 ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h:
 ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h:
@@ -118,5 +124,9 @@ UUT/Src/hw_verif_udp.o: ../UUT/Src/hw_verif_udp.c \
 ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/ip.h:
 ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/udp.h:
 ../UUT/Inc/hw_verif_udp.h:
+../UUT/Inc/tests.h:
+../UUT/Inc/test_consts.h:
+../UUT/Inc/test_consts.h:
 ../UUT/Inc/uart_test.h:
 ../UUT/Inc/i2c_test.h:
+../UUT/Inc/spi_test.h:

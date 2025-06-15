@@ -7,8 +7,11 @@
 #include "lwip/pbuf.h"
 #include "lwip/udp.h"
 #include "hw_verif_udp.h"
+#include "tests.h"
+#include "test_consts.h"
 #include "uart_test.h"
 #include "i2c_test.h"
+#include "spi_test.h"
 #include <string.h>
 
 struct udp_pcb *upcb;
@@ -74,13 +77,13 @@ uint8_t perform_test()
 			return TEST_SUCCESS;
 			break;
 		case TEST_UART:
-			return UART_Test_N_Perform((uint8_t *)in_msg.payload, in_msg.p_len, in_msg.n_iter);
+			return Test_N_Perform_Msg("UART", UART_Test_Perform, (uint8_t *)in_msg.payload, in_msg.p_len, in_msg.n_iter);
 			break;
 		case TEST_SPI:
-			return TEST_SUCCESS;
+			return Test_N_Perform_Msg("SPI", SPI_Test_Perform, (uint8_t *)in_msg.payload, in_msg.p_len, in_msg.n_iter);;
 			break;
 		case TEST_I2C:
-			return I2C_Test_N_Perform((uint8_t *)in_msg.payload, in_msg.p_len, in_msg.n_iter);;
+			return Test_N_Perform_Msg("I2C", I2C_Test_Perform, (uint8_t *)in_msg.payload, in_msg.p_len, in_msg.n_iter);
 			break;
 		case TEST_ADC:
 			return TEST_SUCCESS;
