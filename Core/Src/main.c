@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "adc.h"
 #include "crc.h"
 #include "dma.h"
 #include "i2c.h"
@@ -112,6 +113,7 @@ int main(void)
   MX_I2C2_Init();
   MX_SPI1_Init();
   MX_SPI4_Init();
+  MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
   HW_Verification_Proccess();
   /* USER CODE END 2 */
