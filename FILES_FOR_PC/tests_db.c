@@ -35,7 +35,8 @@ int init_db (void)
     sqlite3 *db;
     char *err_msg = NULL;
 
-    if (sqlite3_open(db_path, &db) != SQLITE_OK) {
+    if (sqlite3_open(db_path, &db) != SQLITE_OK)
+    {
         fprintf(stderr, "Cannot open database: %s\n", sqlite3_errmsg(db));
         sqlite3_close(db);
         exit(EXIT_FAILURE);
@@ -48,7 +49,8 @@ int init_db (void)
         "duration REAL, "
         "result INTEGER);";
 
-    if (sqlite3_exec(db, sql, 0, 0, &err_msg) != SQLITE_OK) {
+    if (sqlite3_exec(db, sql, 0, 0, &err_msg) != SQLITE_OK)
+    {
         fprintf(stderr, "SQL error: %s\n", err_msg);
         sqlite3_free(err_msg);
         sqlite3_close(db);
@@ -66,7 +68,8 @@ int log_test (uint32_t test_id, const char *timestamp,
 	sqlite3 *db;
 
     int rc = sqlite3_open(db_path, &db);
-    if (rc != SQLITE_OK) {
+    if (rc != SQLITE_OK)
+    {
         fprintf(stderr, "Cannot open DB: %s\n", sqlite3_errmsg(db));
         return 0;
     }
@@ -76,7 +79,8 @@ int log_test (uint32_t test_id, const char *timestamp,
                              "VALUES (?, ?, ?, ?);";
 
     rc = sqlite3_prepare_v2(db, sql_insert, -1, &stmt, 0);
-    if (rc != SQLITE_OK) {
+    if (rc != SQLITE_OK)
+    {
         fprintf(stderr, "Insert prepare error: %s\n", sqlite3_errmsg(db));
         sqlite3_close(db);
         return 0;
@@ -88,7 +92,8 @@ int log_test (uint32_t test_id, const char *timestamp,
     sqlite3_bind_int(stmt, 4, result); 
 
     rc = sqlite3_step(stmt);
-    if (rc != SQLITE_DONE) {
+    if (rc != SQLITE_DONE)
+    {
         fprintf(stderr, "Insert step error: %s\n", sqlite3_errmsg(db));
     }
 
@@ -101,36 +106,38 @@ int print_all_logs (void)
 {
 	sqlite3 *db;
     sqlite3_stmt *stmt;
-    const char *sql = "SELECT test_id, timestamp, duration, result"
+    const char *sql = "SELECT test_id, timestamp, duration, result "
                       "FROM test_logs ORDER BY test_id ASC;";
 
     int rc = sqlite3_open(db_path, &db);
-    if (rc != SQLITE_OK) {
+    if (rc != SQLITE_OK)
+    {
         fprintf(stderr, "Cannot open DB: %s\n", sqlite3_errmsg(db));
         return 0;
     }
 
     rc = sqlite3_prepare_v2(db, sql, -1, &stmt, 0);
-    if (rc != SQLITE_OK) {
+    if (rc != SQLITE_OK)
+    {
         fprintf(stderr, "Failed to prepare statement: %s\n", sqlite3_errmsg(db));
         sqlite3_close(db);
         return 0;
     }
 
-    while ((rc = sqlite3_step(stmt)) == SQLITE_ROW) {
+    printf("test_id, timestamp, duration, result\n");
+
+    while ((rc = sqlite3_step(stmt)) == SQLITE_ROW)
+    {
         int id = sqlite3_column_int(stmt, 0);
         const unsigned char *timestamp = sqlite3_column_text(stmt, 1);
         double duration = sqlite3_column_double(stmt, 2);
         int result = sqlite3_column_int(stmt, 3);
 
-        printf("[id:%d %s] %s, duration: %.2f seconds\n",
-               id,
-               timestamp,
-               result ? "SUCCESS" : "FAILURE",
-               duration);
+        printf("%d,%s,%f,%d\n", id, timestamp, duration, result);
     }
 
-    if (rc != SQLITE_DONE) {
+    if (rc != SQLITE_DONE)
+    {
         fprintf(stderr, "Error while reading rows: %s\n", sqlite3_errmsg(db));
     }
 
@@ -147,13 +154,15 @@ int print_log_by_id (uint32_t test_id)
                       "FROM test_logs WHERE test_id = ?;";
 
     int rc = sqlite3_open(db_path, &db);
-    if (rc != SQLITE_OK) {
+    if (rc != SQLITE_OK)
+    {
         fprintf(stderr, "Cannot open DB: %s\n", sqlite3_errmsg(db));
         return 0;
     }
 
     rc = sqlite3_prepare_v2(db, sql, -1, &stmt, 0);
-    if (rc != SQLITE_OK) {
+    if (rc != SQLITE_OK)
+    {
         fprintf(stderr, "Failed to prepare statement: %s\n", sqlite3_errmsg(db));
         sqlite3_close(db);
         return 0;
@@ -162,7 +171,8 @@ int print_log_by_id (uint32_t test_id)
     sqlite3_bind_int(stmt, 1, test_id);
 
     rc = sqlite3_step(stmt);
-    if (rc == SQLITE_ROW) {
+    if (rc == SQLITE_ROW)
+    {
         int id = sqlite3_column_int(stmt, 0);
         const unsigned char *timestamp = sqlite3_column_text(stmt, 1);
         double duration = sqlite3_column_double(stmt, 2);
@@ -172,7 +182,9 @@ int print_log_by_id (uint32_t test_id)
         printf("Start Time: %s\n", timestamp);
         printf("Duration: %.6f seconds\n", duration);
         printf("Result: %s\n", result? "Success" : "Failure");
-    } else {
+    }
+    else
+    {
         printf("No record found for test ID %u.\n", test_id);
     }
 
@@ -187,23 +199,28 @@ int get_next_id (uint32_t *dest)
     sqlite3_stmt *res;
 
     int rc = sqlite3_open(db_path, &db);
-    if (rc != SQLITE_OK) {
+    if (rc != SQLITE_OK)
+    {
 		fprintf(stderr, "Cannot open DB: %s\n", sqlite3_errmsg(db));
         return 0;
     }
 
     const char *sql = "SELECT MAX(test_id) FROM test_logs;";
     rc = sqlite3_prepare_v2(db, sql, -1, &res, 0);
-    if (rc != SQLITE_OK) {
+    if (rc != SQLITE_OK)
+    {
 		fprintf(stderr, "Failed to prepare statement: %s\n", sqlite3_errmsg(db));
         sqlite3_close(db);
         return 0;
     }
 
     rc = sqlite3_step(res);
-    if (rc == SQLITE_ROW && sqlite3_column_type(res, 0) != SQLITE_NULL) {
+    if (rc == SQLITE_ROW && sqlite3_column_type(res, 0) != SQLITE_NULL)
+    {
         *dest = sqlite3_column_int(res, 0) + 1;
-    } else {
+    }
+    else
+    {
         *dest = 0; // no records yet
     }
 

@@ -12,6 +12,11 @@
  *  5) A stack that contains a or t must NOT be followed by a message.
  *  6) Separate flags like `-u "msg"` are allowed; same rules for message.
  *  7) Set number of test iterations with -n <int>, for example '-n 20'
+ * 
+ * DATA RETRIEVING
+ *  +) Use 'get' and 'export' to retrieve data
+ *  +) 'get' prints to stdout test data by test ID
+ *  +) 'export' prints to stdout all test data in a csv format (redirect to a file to save)
  */
 
 #include <sys/types.h>
@@ -77,7 +82,8 @@ static void init_network();
 static void send_data();
 static void receive_data();
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
     bool want_u = false, want_s = false, want_i = false,
          want_a = false, want_t = false;
     bool seen_u = false, seen_s = false, seen_i = false,
@@ -88,24 +94,81 @@ int main(int argc, char *argv[]) {
 
     uint8_t n = N_ITERATIONS;
 
-    if (argc < 2) {
+    if (argc < 2)
+    {
         print_usage(argv[0]);
         return EXIT_FAILURE;
     }
 
+    // Handle special commands
+    if (strcmp(argv[1], "get") == 0)
+    {
+        if (argc < 3)
+        {
+            perror("Error: 'get' command requires at least one ID.\n");
+            exit(EXIT_FAILURE);
+        }
+
+        int db_success = init_db();
+        if (!db_success)
+        {
+	        perror("databse init failed");
+		    exit(EXIT_FAILURE);
+	    }
+
+        for (int i = 2; i < argc; ++i)
+        {
+            char *endptr = NULL;
+            long tid = strtol(argv[i], &endptr, 10);
+
+            if (*endptr != '\0' || tid < 0)
+            {
+                fprintf(stderr, "Error: Invalid test ID '%s'. Must be non-negative integer.\n", argv[i]);
+                exit(EXIT_FAILURE);
+            }
+
+            print_log_by_id((uint32_t)tid);
+        }
+        exit(EXIT_SUCCESS);
+    }
+    else if (strcmp(argv[1], "export") == 0)
+    {
+        if (argc > 2)
+        {
+            perror("Error: 'export' does not take any arguments.\n");
+            return EXIT_FAILURE;
+        }
+
+        int db_success = init_db();
+        if (!db_success)
+        {
+	        perror("databse init failed");
+		    exit(EXIT_FAILURE);
+	    }
+
+        print_all_logs();
+
+        exit(EXIT_SUCCESS);
+    }
+
+    // Handle options
     int idx = 1;
-    while (idx < argc) {
+    while (idx < argc)
+    {
         char *arg = argv[idx];
 
         // Print help menu
-        if (strcmp(arg, "-h") == 0 || strcmp(arg, "--help") == 0) {
+        if (strcmp(arg, "-h") == 0 || strcmp(arg, "--help") == 0)
+        {
             print_usage(argv[0]);
             return EXIT_SUCCESS;
         }
 
         // Handle --all flag
-        if (strcmp(arg, "--all") == 0) {
-            if (used_all) {
+        if (strcmp(arg, "--all") == 0)
+        {
+            if (used_all)
+            {
                 perror("Error: '--all' cannot be repeated");
                 return EXIT_FAILURE;
             }
@@ -114,7 +177,8 @@ int main(int argc, char *argv[]) {
             seen_u = seen_s = seen_i = seen_a = seen_t = true;
             
             // Check for message
-            if ( (idx + 1) < argc && argv[idx+1][0] != '-' ) {
+            if ( (idx + 1) < argc && argv[idx+1][0] != '-' )
+            {
                 const char *shared = argv[idx+1];
                 msg_u = msg_s = msg_i = shared;
                 have_msg_u = have_msg_s = have_msg_i = true;
@@ -125,19 +189,22 @@ int main(int argc, char *argv[]) {
         }
 
         // Handle -n flag
-        if (strcmp(arg, "-n") == 0) {
+        if (strcmp(arg, "-n") == 0)
+        {
             if (used_n) {
                 perror("Error: '-n' cannot be repeated");
                 return EXIT_FAILURE;
             }
-            if ((idx + 1) >= argc) {
+            if ((idx + 1) >= argc)
+            {
                 perror("Error: '-n' requires [0-255] value.\n");
                 return EXIT_FAILURE;
             }
 
             char *endptr = NULL;
             long val = strtol(argv[idx + 1], &endptr, 10);
-            if (*endptr != '\0' || val < 0 || val > 255) {
+            if (*endptr != '\0' || val < 0 || val > 255)
+            {
                 perror("Error: '-n' requires [0-255] value.\n");
                 return EXIT_FAILURE;
             }
@@ -148,13 +215,15 @@ int main(int argc, char *argv[]) {
         }
 
         // Handle all other flags
-        if (arg[0] == '-' && arg[1] != '\0' && arg[1] != '-') {
+        if (arg[0] == '-' && arg[1] != '\0' && arg[1] != '-')
+        {
             size_t len = strlen(arg);
             bool stack_has_u = false, stack_has_s = false, stack_has_i = false;
             bool stack_has_a = false, stack_has_t = false;
             for (size_t k = 1; k < len; ++k) {
                 char c = arg[k];
-                switch (c) {
+                switch (c)
+                {
                     case 'u':
                         if (seen_u) { perror("Error: '-u' repeated"); return EXIT_FAILURE; }
                         seen_u = true; want_u = true; stack_has_u = true;
@@ -185,12 +254,15 @@ int main(int argc, char *argv[]) {
 
             // Check for message string
             bool next_is_msg = false;
-            if ( (idx + 1) < argc && argv[idx+1][0] != '-' ) {
+            if ( (idx + 1) < argc && argv[idx+1][0] != '-' )
+            {
                 next_is_msg = true;
             }
 
-            if (next_is_msg) {
-                if (stack_any_a_t) {
+            if (next_is_msg)
+            {
+                if (stack_any_a_t)
+                {
                     perror("Error: Cannot supply a message to a stack containing 'a' or 't'");
                     return EXIT_FAILURE;
                 }
@@ -211,7 +283,8 @@ int main(int argc, char *argv[]) {
         return EXIT_FAILURE;
     }
 
-    if (!(want_u || want_s || want_i || want_a || want_t)) {
+    if (!(want_u || want_s || want_i || want_a || want_t))
+    {
         perror("Error: At least one of -u, -s, -i, -a, -t, or --all must be provided");
         print_usage(argv[0]);
         return EXIT_FAILURE;
@@ -220,13 +293,16 @@ int main(int argc, char *argv[]) {
 
     // If reached here, then all the flags are ok
 
-    if (want_u && !have_msg_u) {
+    if (want_u && !have_msg_u)
+    {
         msg_u = DEFAULT_U_MSG;
     }
-    if (want_s && !have_msg_s) {
+    if (want_s && !have_msg_s)
+    {
         msg_s = DEFAULT_S_MSG;
     }
-    if (want_i && !have_msg_i) {
+    if (want_i && !have_msg_i)
+    {
         msg_i = DEFAULT_I_MSG;
     }
     
@@ -277,9 +353,11 @@ int main(int argc, char *argv[]) {
     return EXIT_SUCCESS;
 }
 
-static void print_usage (const char *progname) {
+static void print_usage (const char *progname)
+{
     fprintf(stdout,
         "Usage: %s [OPTIONS]\n"
+        "       %s [COMMAND]\n"
         "OPTIONS:\n"
         "  -n <int>       Optional: set number (0-255) of test iterations\n"
         "  -u [\"msg\"]   Run UART test (with optional message, default if none)\n"
@@ -294,8 +372,12 @@ static void print_usage (const char *progname) {
         "    %s -si \"shared message\" -a -t\n"
         "Flags a and t may be stacked with each other (e.g. -at), but if a or t appear\n"
         "in a stack, you cannot follow that stack with a message.\n\n"
-        "At least one of u, s, i, a, t (or --all) must be provided. No letter may appear twice.\n",
-        progname, progname
+        "At least one of u, s, i, a, t (or --all) must be provided. No letter may appear twice.\n"
+        "\n"
+        "COMMANDS:\n"
+        "  get <id1> <id2> ...   Print test data by test ID\n"
+        "  export                Print all available tests data in a csv format\n",
+        progname, progname, progname
     );
 }
 
