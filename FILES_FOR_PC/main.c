@@ -11,6 +11,7 @@
  *     that token is taken as the single message for all of {u,s,i} in the stack.
  *  5) A stack that contains a or t must NOT be followed by a message.
  *  6) Separate flags like `-u "msg"` are allowed; same rules for message.
+ *  7) Set number of test iterations with -n <int>, for example '-n 20'
  */
 
 #include <sys/types.h>
@@ -42,7 +43,7 @@
 #define TEST_SUCCESS 0x01
 #define TEST_FAILED 0xff
 
-#define N_ITERATIONS 20
+#define N_ITERATIONS 1
 
 static struct OutMsg
 {
@@ -69,7 +70,7 @@ static struct hostent *host;
 static char buf[BUFSIZE];
 
 static void print_usage(const char *progname);
-static void proccess_test(uint8_t peripheral, const char *msg);
+static void proccess_test(uint8_t peripheral, uint8_t n_iter, const char *msg);
 static void format_timestamp(struct timeval *tv, char *buffer, size_t size);
 static double get_elapsed_seconds(struct timeval start, struct timeval end);
 static void init_network();
@@ -81,9 +82,11 @@ int main(int argc, char *argv[]) {
          want_a = false, want_t = false;
     bool seen_u = false, seen_s = false, seen_i = false,
          seen_a = false, seen_t = false;
-    bool used_all = false;
+    bool used_all = false, used_n = false;
     const char *msg_u = NULL, *msg_s = NULL, *msg_i = NULL;
     bool have_msg_u = false, have_msg_s = false, have_msg_i = false;
+
+    uint8_t n = N_ITERATIONS;
 
     if (argc < 2) {
         print_usage(argv[0]);
@@ -118,6 +121,29 @@ int main(int argc, char *argv[]) {
                 idx += 1;
             }
             idx += 1;
+            continue;
+        }
+
+        // Handle -n flag
+        if (strcmp(arg, "-n") == 0) {
+            if (used_n) {
+                perror("Error: '-n' cannot be repeated");
+                return EXIT_FAILURE;
+            }
+            if ((idx + 1) >= argc) {
+                perror("Error: '-n' requires [0-255] value.\n");
+                return EXIT_FAILURE;
+            }
+
+            char *endptr = NULL;
+            long val = strtol(argv[idx + 1], &endptr, 10);
+            if (*endptr != '\0' || val < 0 || val > 255) {
+                perror("Error: '-n' requires [0-255] value.\n");
+                return EXIT_FAILURE;
+            }
+            n = (uint8_t)val;
+            used_n = true;
+            idx += 2;
             continue;
         }
 
@@ -216,35 +242,35 @@ int main(int argc, char *argv[]) {
     {
         printf("[UART] sending test message = \"%s\"\n", msg_u);
         
-        proccess_test(TEST_UART, msg_u);
+        proccess_test(TEST_UART, n, msg_u);
 		print_log_by_id(out_msg.test_id);
     }
     if (want_s)
     {
         printf("[SPI] message = \"%s\"\n", msg_s);
         
-        proccess_test(TEST_SPI, msg_s);
+        proccess_test(TEST_SPI, n, msg_s);
 		print_log_by_id(out_msg.test_id);
     }
     if (want_i)
     {
         printf("[I2C] message = \"%s\"\n", msg_i);
         
-        proccess_test(TEST_I2C, msg_i);
+        proccess_test(TEST_I2C, n, msg_i);
 		print_log_by_id(out_msg.test_id);
     }
     if (want_a)
     {
         printf("[ADC] (no message)\n");
         
-        proccess_test(TEST_ADC, "");
+        proccess_test(TEST_ADC, n, "");
 		print_log_by_id(out_msg.test_id);
     }
     if (want_t)
     {
         printf("[TIM] (no message)\n");
         
-        proccess_test(TEST_TIM, "");
+        proccess_test(TEST_TIM, n, "");
 		print_log_by_id(out_msg.test_id);
     }
 
@@ -255,6 +281,7 @@ static void print_usage (const char *progname) {
     fprintf(stdout,
         "Usage: %s [OPTIONS]\n"
         "OPTIONS:\n"
+        "  -n <int>       Optional: set number (0-255) of test iterations\n"
         "  -u [\"msg\"]   Run UART test (with optional message, default if none)\n"
         "  -s [\"msg\"]   Run SPI test (with optional message, default if none)\n"
         "  -i [\"msg\"]   Run I2C test (with optional message, default if none)\n"
@@ -272,7 +299,7 @@ static void print_usage (const char *progname) {
     );
 }
 
-static void proccess_test(uint8_t peripheral, const char *msg)
+static void proccess_test(uint8_t peripheral, uint8_t n_iter, const char *msg)
 {
 	// Load out_msg
     int load_success = get_next_id(&out_msg.test_id);
@@ -282,7 +309,7 @@ static void proccess_test(uint8_t peripheral, const char *msg)
 		exit(EXIT_FAILURE);
 	}
     out_msg.peripheral = peripheral;
-    out_msg.n_iter = N_ITERATIONS;
+    out_msg.n_iter = n_iter;
     out_msg.p_len = strlen(msg);
     strncpy(out_msg.payload, msg, strlen(msg));
         
