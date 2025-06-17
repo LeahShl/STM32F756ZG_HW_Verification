@@ -1,0 +1,2 @@
+../UUT/Src/timer_test.c:28:9:TIM_Test_Perform	16	static
+../UUT/Src/timer_test.c:65:6:HAL_TIM_PeriodElapsedCallback	16	static

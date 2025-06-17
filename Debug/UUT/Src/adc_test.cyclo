@@ -1,0 +1,2 @@
+../UUT/Src/adc_test.c:21:9:ADC_Test_Perform	4
+../UUT/Src/adc_test.c:50:6:HAL_ADC_ConvCpltCallback	2

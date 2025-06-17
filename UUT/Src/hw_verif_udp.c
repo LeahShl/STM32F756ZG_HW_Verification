@@ -12,6 +12,8 @@
 #include "uart_test.h"
 #include "i2c_test.h"
 #include "spi_test.h"
+#include "adc_test.h"
+#include "timer_test.h"
 #include <string.h>
 
 struct udp_pcb *upcb;
@@ -74,7 +76,7 @@ uint8_t perform_test()
 {
 	switch (in_msg.peripheral) {
 		case TEST_TIM:
-			return TEST_SUCCESS;
+			return Test_N_Perform("TIMER", TIM_Test_Perform, in_msg.n_iter);
 			break;
 		case TEST_UART:
 			return Test_N_Perform_Msg("UART", UART_Test_Perform, (uint8_t *)in_msg.payload, in_msg.p_len, in_msg.n_iter);
@@ -86,7 +88,7 @@ uint8_t perform_test()
 			return Test_N_Perform_Msg("I2C", I2C_Test_Perform, (uint8_t *)in_msg.payload, in_msg.p_len, in_msg.n_iter);
 			break;
 		case TEST_ADC:
-			return TEST_SUCCESS;
+			return Test_N_Perform("ADC", ADC_Test_Perform, in_msg.n_iter);
 			break;
 		default:
 			return TEST_FAILED;
