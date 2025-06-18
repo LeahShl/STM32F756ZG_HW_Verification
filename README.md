@@ -192,5 +192,40 @@ For more examples consult `FILES_FOR_PC/usage_example.sh` file and the [PC progr
    ```
    ./hw_verif --help
    ```
+## Communication Protocol
 
+### Command Format (PC -> STM32)
+```
+┌─────────────┬─────────────┬───────────┬─────────────┬─────────────────┐
+│  Test ID    │ Peripheral  │ Iterations│  Bit Length │   Bit Pattern   │
+│  (4 bytes)  │  (1 byte)   │ (1 byte)  │  (1 byte)   │  (0-255 bytes)  │
+└─────────────┴─────────────┴───────────┴─────────────┴─────────────────┘
+```
 
+### Response Format (STM32 -> PC)
+```
+┌─────────────┬─────────────┐
+│  Test ID    │   Result    │
+│  (4 bytes)  │  (1 byte)   │
+│             │ 0x01=PASS   │
+│             │ 0xFF=FAIL   │
+└─────────────┴─────────────┘
+```
+
+## Testing Methodology
+### Communication Peripherals (UART, SPI, I2C) - CRC Verified Loopback Test
+1. A bit pattern is sent from one peripheral to another.
+2. The bit pattern is sent back to the first peripheral.
+3. The incoming bit pattern is compared to the original via CRC.
+4. The peripheral passes the test if all iterations passed.
+
+### ADC Test
+1. A single test passes if ADC sample is within a specified tolerance.
+2. The peripheral passes the test if all iterations passed.
+
+### Timer Test
+1. TIM2 (advanced timer) is set to count up.
+2. TIM6 (basic timer) is set to restart every 100ms.
+3. TIM2 count is sampled every time TIM6 restarts, until N_SAMPLES(=5) are retrieved.
+4. A single test passes if all samples are spaced 5,400,000 counts from each other.
+5. The peripheral passes the test if all iterations passed.
