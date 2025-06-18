@@ -119,3 +119,27 @@ The STM32 board is configured at the static IP of `10.0.1.100`. Unless you alrea
 ### 4. Setup Hardware
 
 ### 5. Run Tests
+For more examples consult `FILES_FOR_PC/usage_example.sh` file and the [PC program's README](https://github.com/LeahShl/STM32F756ZG_HW_Verification/blob/main/FILES_FOR_PC/README.md ).
+
+1. Run tests
+   ```
+   ./hw_verif --all                          # Run all tests
+   ./hw_verif --all -n 10                    # Run all test with specified number of iterations
+   ./hw_verif -usi "bitpatternfoobar"        # Run specific tests with custom message (ascii bit pattern)
+   ./hw_verif -uit                           # Run specific tests without custom message
+   ```
+2. Print specific test(s) result(s) by test ID
+   ```
+   ./hw_verif get 123                        # Print single test
+   ./hw_verif get 12 34 56                   # Print multiple tests
+   ```
+3. Export all test data to CSV (defaut prints to stdout)
+   ```
+   ./hw_verif export > data.csv
+   ```
+4. Display help
+   ```
+   ./hw_verif --help
+   ```
+
+
