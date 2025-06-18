@@ -7,6 +7,10 @@
 
 static char *db_path;
 
+/****************************
+ * FUNCTION IMPLEMENTATION  *
+ ****************************/
+
 int init_db (void)
 {
 #ifdef LOCAL_DB_PATH
@@ -67,6 +71,7 @@ int log_test (uint32_t test_id, const char *timestamp,
 {
 	sqlite3 *db;
 
+    // open db
     int rc = sqlite3_open(db_path, &db);
     if (rc != SQLITE_OK)
     {
@@ -74,6 +79,7 @@ int log_test (uint32_t test_id, const char *timestamp,
         return 0;
     }
 
+    // prepare statement
     sqlite3_stmt *stmt;
     const char *sql_insert = "INSERT INTO test_logs (test_id, timestamp, duration, result) "
                              "VALUES (?, ?, ?, ?);";
@@ -86,11 +92,13 @@ int log_test (uint32_t test_id, const char *timestamp,
         return 0;
     }
 
+    // bind variables
     sqlite3_bind_int(stmt, 1, test_id);
     sqlite3_bind_text(stmt, 2, timestamp, -1, SQLITE_STATIC);
     sqlite3_bind_double(stmt, 3, duration_sec);
     sqlite3_bind_int(stmt, 4, result); 
 
+    // insert log
     rc = sqlite3_step(stmt);
     if (rc != SQLITE_DONE)
     {
@@ -109,6 +117,7 @@ int print_all_logs (void)
     const char *sql = "SELECT test_id, timestamp, duration, result "
                       "FROM test_logs ORDER BY test_id ASC;";
 
+    // open db
     int rc = sqlite3_open(db_path, &db);
     if (rc != SQLITE_OK)
     {
@@ -116,6 +125,7 @@ int print_all_logs (void)
         return 0;
     }
 
+    // prepare statement
     rc = sqlite3_prepare_v2(db, sql, -1, &stmt, 0);
     if (rc != SQLITE_OK)
     {
@@ -124,8 +134,10 @@ int print_all_logs (void)
         return 0;
     }
 
+    // csv header
     printf("test_id, timestamp, duration, result\n");
 
+    // csv data
     while ((rc = sqlite3_step(stmt)) == SQLITE_ROW)
     {
         int id = sqlite3_column_int(stmt, 0);
@@ -153,6 +165,7 @@ int print_log_by_id (uint32_t test_id)
     const char *sql = "SELECT test_id, timestamp, duration, result "
                       "FROM test_logs WHERE test_id = ?;";
 
+    // open db
     int rc = sqlite3_open(db_path, &db);
     if (rc != SQLITE_OK)
     {
@@ -160,6 +173,7 @@ int print_log_by_id (uint32_t test_id)
         return 0;
     }
 
+    // prepare statement
     rc = sqlite3_prepare_v2(db, sql, -1, &stmt, 0);
     if (rc != SQLITE_OK)
     {
@@ -168,8 +182,10 @@ int print_log_by_id (uint32_t test_id)
         return 0;
     }
 
+    // bind variable
     sqlite3_bind_int(stmt, 1, test_id);
 
+    // print record
     rc = sqlite3_step(stmt);
     if (rc == SQLITE_ROW)
     {
@@ -198,6 +214,7 @@ int get_next_id (uint32_t *dest)
 	sqlite3 *db;
     sqlite3_stmt *res;
 
+    // open db
     int rc = sqlite3_open(db_path, &db);
     if (rc != SQLITE_OK)
     {
@@ -205,6 +222,7 @@ int get_next_id (uint32_t *dest)
         return 0;
     }
 
+    // prepare statement
     const char *sql = "SELECT MAX(test_id) FROM test_logs;";
     rc = sqlite3_prepare_v2(db, sql, -1, &res, 0);
     if (rc != SQLITE_OK)
@@ -214,6 +232,7 @@ int get_next_id (uint32_t *dest)
         return 0;
     }
 
+    // find next ID
     rc = sqlite3_step(res);
     if (rc == SQLITE_ROW && sqlite3_column_type(res, 0) != SQLITE_NULL)
     {

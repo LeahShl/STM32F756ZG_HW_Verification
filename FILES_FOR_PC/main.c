@@ -34,53 +34,127 @@
 #include <stdbool.h>
 #include "tests_db.h"
 
-#define UUT_ADDR "10.0.1.100"
-#define PORT 54321
-#define BUFSIZE 263 // Max possible size of OutMsg
-#define IN_MSG_SIZE 5 // Incoming msg is always 5 bytes
+/*************************
+ * MACROS                *
+ *************************/
 
-#define TEST_TIM 1
-#define TEST_UART 2
-#define TEST_SPI 4
-#define TEST_I2C 8
-#define TEST_ADC 16
+#define UUT_ADDR "10.0.1.100"      // IP address of Unit Under Test (UUT)
+#define PORT 54321                 // Port for UDP communication
+#define BUFSIZE 263                // Max possible size of OutMsg
+#define IN_MSG_SIZE 5              // Incoming msg is always 5 bytes
 
-#define TEST_SUCCESS 0x01
-#define TEST_FAILED 0xff
+#define TEST_TIM 1                 // Timer test code
+#define TEST_UART 2                // UART test code
+#define TEST_SPI 4                 // SPI test code
+#define TEST_I2C 8                 // I2C test code
+#define TEST_ADC 16                // ADC test code
 
-#define N_ITERATIONS 1
+#define TEST_SUCCESS 0x01          // Test success code
+#define TEST_FAILED 0xff           // Test failed code
 
+#define N_ITERATIONS 1             // Default number of test iterations
+
+/*************************
+ * GLOBALS               *
+ *************************/
+
+/**
+ * @brief Holds data for outgoing communication
+ * 
+ * @struct OutMsg
+ */
 static struct OutMsg
 {
-	uint32_t test_id; 
-	uint8_t peripheral;
-	uint8_t n_iter;
-	uint8_t p_len;
-	char payload[256];
+	uint32_t test_id;              /** Unique test ID */
+	uint8_t peripheral;            /** Peripheral code */
+	uint8_t n_iter;                /** Number of iterations */
+	uint8_t p_len;                 /** Payload length */
+	char payload[256];             /** Payload buffer */
 }out_msg;
 
+/**
+ * @brief Holds data for incoming communication
+ * 
+ * @struct InMsg
+ */
 static struct InMsg
 {
-	uint32_t test_id;
-	uint8_t test_result;
+	uint32_t test_id;              /** Unique test ID */
+	uint8_t test_result;           /** Test result (success/fail) */
 }in_msg;
 
-static const char *DEFAULT_U_MSG = "Hello UART";
-static const char *DEFAULT_S_MSG = "Hello SPI";
-static const char *DEFAULT_I_MSG = "Hello I2C";
+static const char *DEFAULT_U_MSG = "Hello UART"; /** Default message (bit pattern) for UART test */
+static const char *DEFAULT_S_MSG = "Hello SPI";  /** Default message (bit pattern) for SPI test */
+static const char *DEFAULT_I_MSG = "Hello I2C";  /** Default message (bit pattern) for I2C test */
 
+/**
+ * Globals for UDP communication
+ */
 static int sock;
-static struct sockaddr_in server_addr;
+static struct sockaddr_in sock_addr;
 static struct hostent *host;
 static char buf[BUFSIZE];
 
+/*************************
+ * FUNCTION DECLERATIONS *
+ *************************/
+
+/**
+ * @brief Print usage info
+ * 
+ * @param progname Program's name
+ */
 static void print_usage(const char *progname);
+
+/**
+ * @brief Perform peripheral test based on parameters given
+ * 
+ * @param peripheral Peripheral code
+ * @param n_iter Number of test iterations
+ * @param msg Bit pattern for the test
+ */
 static void proccess_test(uint8_t peripheral, uint8_t n_iter, const char *msg);
+
+/**
+ * @brief Format timestamp into a string
+ * 
+ * @param tv Timestamp object
+ * @param buffer Destination buffer
+ * @param size Size of buffer
+ */
 static void format_timestamp(struct timeval *tv, char *buffer, size_t size);
+
+/**
+ * @brief Get the elapsed seconds between start and end
+ * 
+ * @param start Start timestamp
+ * @param end End timestamp
+ * @return double Elapsed seconds
+ */
 static double get_elapsed_seconds(struct timeval start, struct timeval end);
-static void init_network();
-static void send_data();
-static void receive_data();
+
+/**
+ * @brief Initiates udp network
+ * 
+ */
+static void udp_init_network();
+
+/**
+ * @brief Send OutMsg data via udp socket
+ * 
+ * @attention OutMsg must be loaded before calling this function
+ */
+static void udp_send_data();
+
+/**
+ * @brief receive udp data and load it to InMsg
+ * 
+ */
+static void udp_receive_data();
+
+/*************************
+ * MAIN                  *
+ *************************/
 
 int main(int argc, char *argv[])
 {
@@ -353,6 +427,10 @@ int main(int argc, char *argv[])
     return EXIT_SUCCESS;
 }
 
+/****************************
+ * FUNCTION IMPLEMENTATION  *
+ ****************************/
+
 static void print_usage (const char *progname)
 {
     fprintf(stdout,
@@ -429,7 +507,7 @@ static double get_elapsed_seconds (struct timeval start, struct timeval end)
            (double)(end.tv_usec - start.tv_usec) / 1e6;
 }
 
-static void init_network ()
+static void udp_init_network ()
 {
     host = (struct hostent *) gethostbyname((char *)UUT_ADDR);
 
@@ -439,14 +517,13 @@ static void init_network ()
         exit(EXIT_FAILURE);
     }
 
-    server_addr.sin_family = AF_INET;
-    server_addr.sin_port = htons(PORT);
-    server_addr.sin_addr = *((struct in_addr *)host->h_addr);
-    bzero(&(server_addr.sin_zero),8);
+    sock_addr.sin_family = AF_INET;
+    sock_addr.sin_port = htons(PORT);
+    sock_addr.sin_addr = *((struct in_addr *)host->h_addr);
+    bzero(&(sock_addr.sin_zero),8);
 }
 
-// up to main() to load out_msg before calling!
-static void send_data ()
+static void udp_send_data ()
 {	
 	// load buffer
 	size_t n_bytes = 0;
@@ -466,7 +543,7 @@ static void send_data ()
 	}
 	
 	// send
-	int sent_bytes = sendto(sock, buf, n_bytes, 0, (struct sockaddr *)&server_addr,
+	int sent_bytes = sendto(sock, buf, n_bytes, 0, (struct sockaddr *)&sock_addr,
 	                         sizeof(struct sockaddr));
 	if (sent_bytes < 0)
 	{
@@ -480,13 +557,13 @@ static void send_data ()
 	}
 }
 
-static void receive_data()
+static void udp_receive_data()
 {
 	int addr_len = sizeof(struct sockaddr);
 	char recv_buf[sizeof(in_msg)];
 	
 	int bytes_read = recvfrom(sock, recv_buf, sizeof(in_msg), 0,
-	                          (struct sockaddr *)&server_addr,
+	                          (struct sockaddr *)&sock_addr,
 	                          (socklen_t * restrict)&addr_len);
 	
 	if (bytes_read < 0)

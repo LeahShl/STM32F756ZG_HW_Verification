@@ -1,3 +1,4 @@
 FILES_FOR_PC/hw_tester
 FILES_FOR_PC/*.o
 FILES_FOR_PC/.vscode/*
+.vscode/*
