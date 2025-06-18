@@ -1,4 +1,4 @@
-# STM32F756ZG Tester
+# Linux CLI Program for STM32F756ZG Verification
 A Linux-based testing program for STM32F756ZG peripheral validation via UDP communication.
 
 ## Overview
