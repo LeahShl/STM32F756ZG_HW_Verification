@@ -54,6 +54,10 @@
 
 #define N_ITERATIONS 1             // Default number of test iterations
 
+#define ARGS_ERROR 1               // Error parsing command line arguments
+#define UDP_ERROR 2                // UDP communication error
+#define SQLITE_ERROR 3             // SQLite3 database error
+
 /*************************
  * GLOBALS               *
  *************************/
@@ -171,7 +175,7 @@ int main(int argc, char *argv[])
     if (argc < 2)
     {
         print_usage(argv[0]);
-        return EXIT_FAILURE;
+        exit(ARGS_ERROR);
     }
 
     // Handle special commands
@@ -180,14 +184,14 @@ int main(int argc, char *argv[])
         if (argc < 3)
         {
             perror("Error: 'get' command requires at least one ID.\n");
-            exit(EXIT_FAILURE);
+            exit(ARGS_ERROR);
         }
 
         int db_success = init_db();
         if (!db_success)
         {
 	        perror("databse init failed");
-		    exit(EXIT_FAILURE);
+		    exit(SQLITE_ERROR);
 	    }
 
         for (int i = 2; i < argc; ++i)
@@ -198,7 +202,7 @@ int main(int argc, char *argv[])
             if (*endptr != '\0' || tid < 0)
             {
                 fprintf(stderr, "Error: Invalid test ID '%s'. Must be non-negative integer.\n", argv[i]);
-                exit(EXIT_FAILURE);
+                exit(ARGS_ERROR);
             }
 
             print_log_by_id((uint32_t)tid);
@@ -210,14 +214,14 @@ int main(int argc, char *argv[])
         if (argc > 2)
         {
             perror("Error: 'export' does not take any arguments.\n");
-            return EXIT_FAILURE;
+            exit(ARGS_ERROR);
         }
 
         int db_success = init_db();
         if (!db_success)
         {
 	        perror("databse init failed");
-		    exit(EXIT_FAILURE);
+		    exit(SQLITE_ERROR);
 	    }
 
         print_all_logs();
@@ -235,7 +239,7 @@ int main(int argc, char *argv[])
         if (strcmp(arg, "-h") == 0 || strcmp(arg, "--help") == 0)
         {
             print_usage(argv[0]);
-            return EXIT_SUCCESS;
+            exit(EXIT_SUCCESS);
         }
 
         // Handle --all flag
@@ -244,7 +248,7 @@ int main(int argc, char *argv[])
             if (used_all)
             {
                 perror("Error: '--all' cannot be repeated");
-                return EXIT_FAILURE;
+                exit(ARGS_ERROR);
             }
             used_all = true;
             want_u = want_s = want_i = want_a = want_t = true;
@@ -267,12 +271,12 @@ int main(int argc, char *argv[])
         {
             if (used_n) {
                 perror("Error: '-n' cannot be repeated");
-                return EXIT_FAILURE;
+                exit(ARGS_ERROR);
             }
             if ((idx + 1) >= argc)
             {
                 perror("Error: '-n' requires [0-255] value.\n");
-                return EXIT_FAILURE;
+                exit(ARGS_ERROR);
             }
 
             char *endptr = NULL;
@@ -280,7 +284,7 @@ int main(int argc, char *argv[])
             if (*endptr != '\0' || val < 0 || val > 255)
             {
                 perror("Error: '-n' requires [0-255] value.\n");
-                return EXIT_FAILURE;
+                exit(ARGS_ERROR);
             }
             n = (uint8_t)val;
             used_n = true;
@@ -299,28 +303,28 @@ int main(int argc, char *argv[])
                 switch (c)
                 {
                     case 'u':
-                        if (seen_u) { perror("Error: '-u' repeated"); return EXIT_FAILURE; }
+                        if (seen_u) { perror("Error: '-u' repeated"); exit(ARGS_ERROR); }
                         seen_u = true; want_u = true; stack_has_u = true;
                         break;
                     case 's':
-                        if (seen_s) { perror("Error: '-s' repeated"); return EXIT_FAILURE; }
+                        if (seen_s) { perror("Error: '-s' repeated"); exit(ARGS_ERROR); }
                         seen_s = true; want_s = true; stack_has_s = true;
                         break;
                     case 'i':
-                        if (seen_i) { perror("Error: '-i' repeated"); return EXIT_FAILURE; }
+                        if (seen_i) { perror("Error: '-i' repeated"); exit(ARGS_ERROR); }
                         seen_i = true; want_i = true; stack_has_i = true;
                         break;
                     case 'a':
-                        if (seen_a) { perror("Error: '-a' repeated"); return EXIT_FAILURE; }
+                        if (seen_a) { perror("Error: '-a' repeated"); exit(ARGS_ERROR); }
                         seen_a = true; want_a = true; stack_has_a = true;
                         break;
                     case 't':
-                        if (seen_t) { perror("Error: '-t' repeated"); return EXIT_FAILURE; }
+                        if (seen_t) { perror("Error: '-t' repeated"); exit(ARGS_ERROR); }
                         seen_t = true; want_t = true; stack_has_t = true;
                         break;
                     default:
                         fprintf(stderr, "Error: Unknown option '-%c'.\n", c);
-                        return EXIT_FAILURE;
+                        exit(ARGS_ERROR);
                 }
             }
 
@@ -338,7 +342,7 @@ int main(int argc, char *argv[])
                 if (stack_any_a_t)
                 {
                     perror("Error: Cannot supply a message to a stack containing 'a' or 't'");
-                    return EXIT_FAILURE;
+                    exit(ARGS_ERROR);
                 }
 
                 const char *shared = argv[idx+1];
@@ -354,14 +358,14 @@ int main(int argc, char *argv[])
 
         // If reached here, there's an illegal argument
         fprintf(stderr, "Error: Unexpected token '%s'.\n", arg);
-        return EXIT_FAILURE;
+        exit(ARGS_ERROR);
     }
 
     if (!(want_u || want_s || want_i || want_a || want_t))
     {
         perror("Error: At least one of -u, -s, -i, -a, -t, or --all must be provided");
         print_usage(argv[0]);
-        return EXIT_FAILURE;
+        exit(ARGS_ERROR);
     }
 
 
@@ -385,7 +389,7 @@ int main(int argc, char *argv[])
     if (!db_success)
     {
 		perror("databse init failed");
-		exit(EXIT_FAILURE);
+		exit(SQLITE_ERROR);
 	}
 
     if (want_u)
@@ -466,7 +470,7 @@ static void proccess_test(uint8_t peripheral, uint8_t n_iter, const char *msg)
     if (!load_success)
     {
 		perror("loading id from database failed");
-		exit(EXIT_FAILURE);
+		exit(SQLITE_ERROR);
 	}
     out_msg.peripheral = peripheral;
     out_msg.n_iter = n_iter;
@@ -490,8 +494,8 @@ static void proccess_test(uint8_t peripheral, uint8_t n_iter, const char *msg)
     int log_success = log_test(out_msg.test_id, timestamp, duration, result);
     if(!log_success)
     {
-	perror("error logging to database");
-	exit(EXIT_FAILURE);
+	    perror("error logging to database");
+	    exit(SQLITE_ERROR);
 	}
 }
 
@@ -514,7 +518,7 @@ static void udp_init_network ()
     if ((sock = socket(AF_INET, SOCK_DGRAM, 0)) == -1)
     {
         perror("socket");
-        exit(EXIT_FAILURE);
+        exit(UDP_ERROR);
     }
 
     sock_addr.sin_family = AF_INET;
@@ -548,12 +552,12 @@ static void udp_send_data ()
 	if (sent_bytes < 0)
 	{
 		perror("send_data: socket error");
-		exit(EXIT_FAILURE);
+		exit(UDP_ERROR);
 	}
 	if ((size_t)sent_bytes != n_bytes)
 	{
 		perror("send_data: incomplete transaction");
-		exit(EXIT_FAILURE);
+		exit(UDP_ERROR);
 	}
 }
 
@@ -569,12 +573,12 @@ static void udp_receive_data()
 	if (bytes_read < 0)
 	{
 		perror("receive_data: socket error");
-		exit(EXIT_FAILURE);
+		exit(UDP_ERROR);
 	}
 	if (bytes_read != IN_MSG_SIZE)
 	{
 		perror("receive_data: incomplete transaction");
-		exit(EXIT_FAILURE);
+		exit(UDP_ERROR);
 	}
 	
 	// load in_msg

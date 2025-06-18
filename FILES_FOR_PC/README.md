@@ -116,6 +116,16 @@ When using `get` command, at least one test ID must be given.
 
 `export` command must show up alone.
 
+### Exit codes
+On successful run, the program returns 0. If an error occured, the program returns one of the following codes:
+
+| Error Name   | Code    | Description                       |
+| ------------ | ------- | --------------------------------- |
+| ARGS_ERROR | 1 | Error parsing command line arguments |
+| UDP_ERROR | 2 | UDP communication error |
+| SQLITE_ERROR | 3 | SQLite3 database error |
+
+
 ## Usage Examples
 ### Basic Testing
 ```
