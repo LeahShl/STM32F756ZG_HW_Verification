@@ -25,8 +25,8 @@ The system follows a client-server architecture:
 ### Hardware
 - STM32F746ZG development board
 - Ethernet connection between PC and STM32
-- Connectors for UART, SPI, I2C testing
-- Stable voltage reference for ADC testing
+- Connectors for UART, SPI, I2C, ADC testing
+- Stable voltage referenc for ADC testing
 
 ### Software
 - **PC Side**: Linux system with GCC and Make
@@ -49,7 +49,9 @@ HW_Verification/
 │   ├── tests_db.c                     # SQLite database source file
 │   ├── tests_db.h                     # SQLite database header file
 │   └── usage_example.sh               # Usage examples for PC server
+│   
 ├── README.md                          # <--- This file
+│   
 └── [STM32CUBE_project]                # STM32 Project files, automatically generated unchanged files skipped
     ├── [Core]
     │   ├── [Src]
@@ -81,3 +83,39 @@ HW_Verification/
 
 ```
 
+## Quick Start
+
+### 1. Build PC Program
+1. Open terminal and `cd` into `FILES_FOR_PC`
+2. run `make`
+
+### 2. Setup Network Configuration
+The STM32 board is configured at the static IP of `10.0.1.100`. Unless you already have a device on your network with this exact IP address, you don't need to change the board's configuration. You do, however, have to make sure your PC is on the same network. Here's how you set up your Linux PC:
+
+1. Identify your ethernet interface name using `ip addr show`. Look for a name like `eth0` or `enp3s0`. replace `<your-eth-interface>` with the name you found for the following commands.
+2. add a new IP address to the interface you found (Any IP in `10.0.1.x` range except `10.0.1.100`, I chose `10.0.1.101`):
+
+   ```
+   sudo ip addr add 10.0.1.101/24 dev <your-eth-interface>
+   ```
+3. Set your ether interface up using
+   ```
+   sudo ip link set <your-eth-interface> up
+   ```
+4. Verify that the new address is set and the interface is up using:
+   ```
+   ip addr show <your-eth-interface>
+   ```
+
+### 3. Build STM32 Firmware
+1. Open STM32CubeIDE
+2. Click `File > Open Projects from Filesystem...`
+3. Next to `Import source` choose `Directory..`
+4. Choose `STM32CUBE_project` from your filesystem
+5. Click `Finish`
+6. Connect your STM32 board to your PC through the ST-Link USB port.
+7. Build the project.
+
+### 4. Setup Hardware
+
+### 5. Run Tests
