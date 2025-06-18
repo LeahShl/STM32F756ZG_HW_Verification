@@ -5,6 +5,9 @@ A client-server testing framework for STM32F746ZG peripheral validation.
 This project implements a hardware verification system designed for manufacturing quality assurance of STM32F746ZG microcontroller cards. The system validates the correctness of critical peripherals through automated testing via UDP communication.
 
 ### Architecture
+
+![Project's Block Diagram](https://github.com/LeahShl/STM32F756ZG_HW_Verification/blob/main/block_diagram.png "Project's Block Diagram")
+
 The system follows a client-server architecture:
 - **Server (PC Testing Program)**: Linux-based C program that orchestrates tests and logs results
 - **Client (UUT Testing Program)**: STM32F746ZG firmware that executes peripheral tests
