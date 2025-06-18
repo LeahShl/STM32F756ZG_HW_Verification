@@ -83,7 +83,7 @@ HW_Verification/
 
 ```
 
-## Quick Start
+## Usage
 
 ### 1. Build PC Program
 1. Open terminal and `cd` into `FILES_FOR_PC`
@@ -117,6 +117,57 @@ The STM32 board is configured at the static IP of `10.0.1.100`. Unless you alrea
 7. Build the project.
 
 ### 4. Setup Hardware
+#### Ethernet
+**Setup**: Connect the STM32 board directly to PC with an Ethernet cable.
+#### UART
+UART GPIO Configuration:
+| Peripheral | Type | GPIO Port |
+|------------|-----|-----------|
+| UART4 | TX | PC10 |
+| UART4 | RX | PC11 |
+| UART5 | TX | PC12 |
+| UART5 | RX | PD2 |
+
+**Setup**: Connect PC10 (UART4_TX) to PD2 (UART5_RX) and PC11 (UART4_RX) to PD12 (UART5_TX).
+
+#### I2C
+I2C1 is set as master and I2C2 is set as slave.
+I2C GPIO Configuration:
+| Peripheral | Type | GPIO Port |
+|------------|-----|-----------|
+| I2C1 | SCL | PB8 |
+| I2C1 | SDA | PB9 |
+| I2C2 | SCL | PB10 |
+| I2C2 | SDA | PB11 |
+
+**Setup**: Connect PB8 (I2C1_SCL) to PB10 (I2C2_SCL) and PB9 (I2C1_SDA) to PB11 (I2C2_SDA).
+
+#### SPI
+SPI1 is set as master and SPI4 is set as slave. Hardware NSS is used.
+SPI GPIO configuration:
+| Peripheral | Type | GPIO Port |
+|------------|-----|-----------|
+| SPI1 | NSS | PA4 |
+| SPI1 | SCK | PA5 |
+| SPI1 | MISO | PA6 |
+| SPI1 | MOSI | PB5 |
+| SPI4 | NSS | PE4 |
+| SPI4 | SCK | PE2 |
+| SPI4 | MISO | PE5 |
+| SPI4 | MOSI | PE6 |
+
+**Setup**: Connect PA4 (SPI1_NSS) to PE4 (SPI4_NSS), PA5 (SPI1_SCK) to PE2 (SPI4_SCK), PA6 (SPI1_MISO) to PE5 (SPI4_MISO) and PB5 (SPI1_MOSI) to PE6 (SPI4_MOSI).
+
+#### ADC
+ADC GPIO configuration:
+| Peripheral | Type | GPIO Port |
+|------------|-----|-----------|
+| ADC1 | IN0 | PA0 |
+
+**Setup**: Connect PA0 (ADC1/0) to 3V3 voltage.
+
+#### Timer
+No hardware setup needed.
 
 ### 5. Run Tests
 For more examples consult `FILES_FOR_PC/usage_example.sh` file and the [PC program's README](https://github.com/LeahShl/STM32F756ZG_HW_Verification/blob/main/FILES_FOR_PC/README.md ).
@@ -133,7 +184,7 @@ For more examples consult `FILES_FOR_PC/usage_example.sh` file and the [PC progr
    ./hw_verif get 123                        # Print single test
    ./hw_verif get 12 34 56                   # Print multiple tests
    ```
-3. Export all test data to CSV (defaut prints to stdout)
+3. Export all test data to CSV (default prints to stdout)
    ```
    ./hw_verif export > data.csv
    ```
