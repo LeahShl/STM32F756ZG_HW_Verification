@@ -151,3 +151,25 @@ When using `get` command, at least one test ID must be given.
 # Export all results to CSV file
 ./hw_tester export > tests.csv
 ```
+## SQLite3 Database
+This program logs each test's metadata and result to a local SQLite3 database for tracking and review purposes.
+
+### Schema
+| Column       | Type    | Description                       |
+| ------------ | ------- | --------------------------------- |
+| `id` | INTEGER | Auto-incremented primary key |
+| `timestamp` | TEXT | ISO 8601-formatted time of test |
+| `test_type` | TEXT | Peripheral type (UART, SPI, etc.) |
+| `message` | TEXT | Optional message sent with the test |
+| `result` | INTEGER | Result code (1=PASS, 0=FAIL) |
+| `iterations` | INTEGER | Number of times the test was run |
+
+### Storage Location
+Unless `LOCAL_DB_PATH` is defined, the database will be stored in:
+```
+~/HW_tester/records.db
+```
+### Data retrieval
+See **Usage** and **Usage Examples** sections above.
+
+The raw database format and the exported CSV data are compatible to use for further view and data analysis with several tools like SQLite3 CLI, Excel, python's SQLite3 module and more.
