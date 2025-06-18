@@ -4,6 +4,22 @@ A Linux-based testing program for STM32F756ZG peripheral validation via UDP comm
 ## Overview
 This program sends test commands to an STM32F756ZG microcontroller over UDP and logs the results to a local database. It supports testing of multiple peripherals including UART, SPI, I2C, ADC, and Timer modules.
 
+### File Structure
+Key:
+- regular file
+- \[Directory\]
+```
+[FILES_FOR_PC]                     # PC server files
+├── [debug_tools]
+│   └── dummy_server.c             # Mock server to test main.c in abscence of a UUT
+├── main.c                         # Program's main file
+├── Makefile                       # Compile with GNU make
+├── README.md                      # <--- This file
+├── tests_db.c                     # SQLite database source file
+├── tests_db.h                     # SQLite database header file
+└── usage_example.sh               # Usage examples
+```
+
 ## Compilation
 ### Before compilation
 1. If you're using a different IP address, change `UUT_ADDR` in `main.c`
