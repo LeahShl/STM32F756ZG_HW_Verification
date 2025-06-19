@@ -194,6 +194,6 @@ Unless `LOCAL_DB_PATH` is defined, the database will be stored in:
 ~/HW_tester/records.db
 ```
 ### Data retrieval
-See **Usage** and **Usage Examples** sections above.
+See [**Usage**](#usage) and [**Usage Examples**](#usage-examples) sections above.
 
 The raw database format and the exported CSV data are compatible to use for further view and data analysis with several tools like SQLite3 CLI, Excel, python's SQLite3 module and more.
