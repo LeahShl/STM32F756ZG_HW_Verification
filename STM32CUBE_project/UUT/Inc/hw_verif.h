@@ -1,25 +1,20 @@
-/*
- * hw_verif.h
- *
- *  Created on: Jun 5, 2025
- *      Author: leah
+/**
+ * @file hw_verif.h
+ * @author leah
+ * @date 19-06-2025
+ * 
+ * @brief UUT Hardware verification program interface
+ * 
  */
 
 #ifndef INC_HW_VERIF_H_
 #define INC_HW_VERIF_H_
 
-#include "main.h"
-#include "inet.h"
-#include "lwip.h"
-#include "stm32f7xx_hal.h"
-#include "hw_verif_udp.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-
 /**
+ * @brief Keeps the UDP server up and running
  *
+ * Put it in the main(), right before its while(1) loop.
+ * In MX generated code it would be under 'USER CODE BEGIN 2'.
  */
 void HW_Verification_Proccess(void);
 

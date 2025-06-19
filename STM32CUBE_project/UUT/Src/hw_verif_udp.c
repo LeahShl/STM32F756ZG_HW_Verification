@@ -1,8 +1,10 @@
-/*
- * udp.c
+/**
+ * @file hw_verif_udp.c
+ * @author leah
+ * @date 19-06-2025
  *
- *  Created on: Jun 5, 2025
- *      Author: leah
+ * @brief UDP communication for UUT tester program
+ *
  */
 #include "lwip/pbuf.h"
 #include "lwip/udp.h"
@@ -16,12 +18,37 @@
 #include "timer_test.h"
 #include <string.h>
 
+/*************************
+ * GLOBALS               *
+ *************************/
+
 struct udp_pcb *upcb;
 struct InMsg in_msg;
 struct OutMsg out_msg;
 
+/*******************************
+ * LOCAL FUNCTION DECLERATIONS *
+ *******************************/
+
+/**
+ * @brief Performs hardware test
+ * 
+ * Reads test instructions from in_msg.
+ * 
+ * @return uint8_t Test result
+ */
 uint8_t perform_test();
+
+/**
+ * @brief Sends test result back to test requester
+ * 
+ * @param result Test result
+ */
 void send_result(uint8_t result);
+
+/****************************
+ * FUNCTION IMPLEMENTATION  *
+ ****************************/
 
 void UDP_Server_Init(void)
 {
@@ -65,10 +92,10 @@ void UDP_Recv_Callback(void* arg, struct udp_pcb* upcb, struct pbuf* p,
 	memcpy(&in_msg.p_len, &((uint8_t *)p->payload)[n_read++], 1);
 	memcpy(&in_msg.payload, &((char *)p->payload)[n_read], in_msg.p_len);
 
+    // actual test
 	uint8_t result = perform_test();
 	send_result(result);
 
-	// Free the p buffer
 	pbuf_free(p);
 }
 

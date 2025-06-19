@@ -71,8 +71,8 @@ all: main-build
 main-build: HW_Verification.elf secondary-outputs
 
 # Tool invocations
-HW_Verification.elf HW_Verification.map: $(OBJS) $(USER_OBJS) /home/leah/STM32CubeIDE/workspace_1.18.1/HW_Verification/STM32F756ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "HW_Verification.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"/home/leah/STM32CubeIDE/workspace_1.18.1/HW_Verification/STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW_Verification.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+HW_Verification.elf HW_Verification.map: $(OBJS) $(USER_OBJS) /home/leah/Documents/RT_Embedded_Course/HW_Verification/STM32CUBE_project/STM32F756ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "HW_Verification.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"/home/leah/Documents/RT_Embedded_Course/HW_Verification/STM32CUBE_project/STM32F756ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW_Verification.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

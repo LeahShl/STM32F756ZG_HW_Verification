@@ -69,9 +69,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/dhcp.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/timeouts.h \
  ../LWIP/Target/ethernetif.h ../Core/Inc/spi.h ../Core/Inc/tim.h \
- ../Core/Inc/usart.h ../Core/Inc/gpio.h ../UUT/Inc/hw_verif.h \
- ../Middlewares/Third_Party/LwIP/src/include/lwip/inet.h \
- ../UUT/Inc/hw_verif_udp.h
+ ../Core/Inc/usart.h ../Core/Inc/gpio.h ../UUT/Inc/hw_verif.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:
 ../Core/Inc/stm32f7xx_hal_conf.h:
@@ -152,5 +150,3 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Inc/usart.h:
 ../Core/Inc/gpio.h:
 ../UUT/Inc/hw_verif.h:
-../Middlewares/Third_Party/LwIP/src/include/lwip/inet.h:
-../UUT/Inc/hw_verif_udp.h:

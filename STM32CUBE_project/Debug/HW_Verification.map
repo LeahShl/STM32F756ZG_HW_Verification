@@ -733,10 +733,6 @@ Discarded input sections
  .group         0x00000000        0xc ./Core/Src/main.o
  .group         0x00000000        0xc ./Core/Src/main.o
  .group         0x00000000        0xc ./Core/Src/main.o
- .group         0x00000000        0xc ./Core/Src/main.o
- .group         0x00000000        0xc ./Core/Src/main.o
- .group         0x00000000        0xc ./Core/Src/main.o
- .group         0x00000000        0xc ./Core/Src/main.o
  .text          0x00000000        0x0 ./Core/Src/main.o
  .data          0x00000000        0x0 ./Core/Src/main.o
  .bss           0x00000000        0x0 ./Core/Src/main.o
@@ -2362,7 +2358,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x44 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_adc_ex.o
  .debug_macro   0x00000000      0x14d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_adc_ex.o
  .debug_line    0x00000000      0xe89 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_adc_ex.o
- .debug_str     0x00000000    0xf7018 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_adc_ex.o
+ .debug_str     0x00000000    0xf7029 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_adc_ex.o
  .comment       0x00000000       0x44 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_adc_ex.o
  .debug_frame   0x00000000      0x250 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_adc_ex.o
  .ARM.attributes
@@ -2990,7 +2986,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x44 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma_ex.o
  .debug_macro   0x00000000      0x14d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma_ex.o
  .debug_line    0x00000000     0x13bd ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma_ex.o
- .debug_str     0x00000000    0xf6bb9 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma_ex.o
+ .debug_str     0x00000000    0xf6bca ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma_ex.o
  .comment       0x00000000       0x44 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma_ex.o
  .debug_frame   0x00000000       0xac ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma_ex.o
  .ARM.attributes
@@ -3301,7 +3297,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x44 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_exti.o
  .debug_macro   0x00000000      0x14d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_exti.o
  .debug_line    0x00000000      0xa72 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_exti.o
- .debug_str     0x00000000    0xf6a51 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_exti.o
+ .debug_str     0x00000000    0xf6a62 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_exti.o
  .comment       0x00000000       0x44 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_exti.o
  .debug_frame   0x00000000      0x174 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_exti.o
  .ARM.attributes
@@ -3456,7 +3452,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x44 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash.o
  .debug_macro   0x00000000      0x14d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash.o
  .debug_line    0x00000000      0xb76 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash.o
- .debug_str     0x00000000    0xf6bee ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash.o
+ .debug_str     0x00000000    0xf6bff ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash.o
  .comment       0x00000000       0x44 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash.o
  .debug_frame   0x00000000      0x274 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash.o
  .ARM.attributes
@@ -3610,7 +3606,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x44 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash_ex.o
  .debug_macro   0x00000000      0x14d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash_ex.o
  .debug_line    0x00000000      0xb9d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash_ex.o
- .debug_str     0x00000000    0xf6c8b ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash_ex.o
+ .debug_str     0x00000000    0xf6c9c ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash_ex.o
  .comment       0x00000000       0x44 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash_ex.o
  .debug_frame   0x00000000      0x284 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash_ex.o
  .ARM.attributes
@@ -4193,7 +4189,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x44 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr.o
  .debug_macro   0x00000000      0x14d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr.o
  .debug_line    0x00000000      0x99f ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr.o
- .debug_str     0x00000000    0xf6d6c ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr.o
+ .debug_str     0x00000000    0xf6d7d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr.o
  .comment       0x00000000       0x44 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr.o
  .debug_frame   0x00000000      0x254 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr.o
  .ARM.attributes
@@ -4863,7 +4859,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x44 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi_ex.o
  .debug_macro   0x00000000      0x14d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi_ex.o
  .debug_line    0x00000000      0x7b4 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi_ex.o
- .debug_str     0x00000000    0xf6d12 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi_ex.o
+ .debug_str     0x00000000    0xf6d23 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi_ex.o
  .comment       0x00000000       0x44 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi_ex.o
  .debug_frame   0x00000000       0x38 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi_ex.o
  .ARM.attributes
@@ -5694,7 +5690,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x44 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart_ex.o
  .debug_macro   0x00000000      0x14d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart_ex.o
  .debug_line    0x00000000      0xa23 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart_ex.o
- .debug_str     0x00000000    0xf6ede ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart_ex.o
+ .debug_str     0x00000000    0xf6eef ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart_ex.o
  .comment       0x00000000       0x44 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart_ex.o
  .debug_frame   0x00000000       0xec ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart_ex.o
  .ARM.attributes
@@ -6208,8 +6204,6 @@ Discarded input sections
  .debug_macro   0x00000000       0x28 ./LWIP/Target/ethernetif.o
  .debug_macro   0x00000000       0x22 ./LWIP/Target/ethernetif.o
  .debug_macro   0x00000000       0x16 ./LWIP/Target/ethernetif.o
- .debug_macro   0x00000000       0x16 ./LWIP/Target/ethernetif.o
- .debug_macro   0x00000000       0x20 ./LWIP/Target/ethernetif.o
  .group         0x00000000        0xc ./Middlewares/Third_Party/LwIP/src/api/api_lib.o
  .group         0x00000000        0xc ./Middlewares/Third_Party/LwIP/src/api/api_lib.o
  .group         0x00000000        0xc ./Middlewares/Third_Party/LwIP/src/api/api_lib.o
@@ -6431,7 +6425,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x66 ./Middlewares/Third_Party/LwIP/src/api/api_lib.o
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/api/api_lib.o
  .debug_line    0x00000000      0xa9c ./Middlewares/Third_Party/LwIP/src/api/api_lib.o
- .debug_str     0x00000000    0xff64f ./Middlewares/Third_Party/LwIP/src/api/api_lib.o
+ .debug_str     0x00000000    0xff660 ./Middlewares/Third_Party/LwIP/src/api/api_lib.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/api/api_lib.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/api/api_lib.o
@@ -6656,7 +6650,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x66 ./Middlewares/Third_Party/LwIP/src/api/api_msg.o
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/api/api_msg.o
  .debug_line    0x00000000      0xa9c ./Middlewares/Third_Party/LwIP/src/api/api_msg.o
- .debug_str     0x00000000    0xff64f ./Middlewares/Third_Party/LwIP/src/api/api_msg.o
+ .debug_str     0x00000000    0xff660 ./Middlewares/Third_Party/LwIP/src/api/api_msg.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/api/api_msg.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/api/api_msg.o
@@ -7100,7 +7094,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x66 ./Middlewares/Third_Party/LwIP/src/api/if_api.o
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/api/if_api.o
  .debug_line    0x00000000      0xa9b ./Middlewares/Third_Party/LwIP/src/api/if_api.o
- .debug_str     0x00000000    0xff64e ./Middlewares/Third_Party/LwIP/src/api/if_api.o
+ .debug_str     0x00000000    0xff65f ./Middlewares/Third_Party/LwIP/src/api/if_api.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/api/if_api.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/api/if_api.o
@@ -7325,7 +7319,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x66 ./Middlewares/Third_Party/LwIP/src/api/netbuf.o
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/api/netbuf.o
  .debug_line    0x00000000      0xa9b ./Middlewares/Third_Party/LwIP/src/api/netbuf.o
- .debug_str     0x00000000    0xff64e ./Middlewares/Third_Party/LwIP/src/api/netbuf.o
+ .debug_str     0x00000000    0xff65f ./Middlewares/Third_Party/LwIP/src/api/netbuf.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/api/netbuf.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/api/netbuf.o
@@ -7550,7 +7544,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x66 ./Middlewares/Third_Party/LwIP/src/api/netdb.o
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/api/netdb.o
  .debug_line    0x00000000      0xaa5 ./Middlewares/Third_Party/LwIP/src/api/netdb.o
- .debug_str     0x00000000    0xff65f ./Middlewares/Third_Party/LwIP/src/api/netdb.o
+ .debug_str     0x00000000    0xff670 ./Middlewares/Third_Party/LwIP/src/api/netdb.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/api/netdb.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/api/netdb.o
@@ -7775,7 +7769,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x66 ./Middlewares/Third_Party/LwIP/src/api/netifapi.o
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/api/netifapi.o
  .debug_line    0x00000000      0xa9d ./Middlewares/Third_Party/LwIP/src/api/netifapi.o
- .debug_str     0x00000000    0xff650 ./Middlewares/Third_Party/LwIP/src/api/netifapi.o
+ .debug_str     0x00000000    0xff661 ./Middlewares/Third_Party/LwIP/src/api/netifapi.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/api/netifapi.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/api/netifapi.o
@@ -8000,7 +7994,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x66 ./Middlewares/Third_Party/LwIP/src/api/sockets.o
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/api/sockets.o
  .debug_line    0x00000000      0xa9c ./Middlewares/Third_Party/LwIP/src/api/sockets.o
- .debug_str     0x00000000    0xff64f ./Middlewares/Third_Party/LwIP/src/api/sockets.o
+ .debug_str     0x00000000    0xff660 ./Middlewares/Third_Party/LwIP/src/api/sockets.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/api/sockets.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/api/sockets.o
@@ -8225,7 +8219,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x66 ./Middlewares/Third_Party/LwIP/src/api/tcpip.o
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/api/tcpip.o
  .debug_line    0x00000000      0xa9a ./Middlewares/Third_Party/LwIP/src/api/tcpip.o
- .debug_str     0x00000000    0xff64d ./Middlewares/Third_Party/LwIP/src/api/tcpip.o
+ .debug_str     0x00000000    0xff65e ./Middlewares/Third_Party/LwIP/src/api/tcpip.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/api/tcpip.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/api/tcpip.o
@@ -8583,7 +8577,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x16 ./Middlewares/Third_Party/LwIP/src/apps/mqtt/mqtt.o
  .debug_macro   0x00000000       0x20 ./Middlewares/Third_Party/LwIP/src/apps/mqtt/mqtt.o
  .debug_line    0x00000000     0x1b53 ./Middlewares/Third_Party/LwIP/src/apps/mqtt/mqtt.o
- .debug_str     0x00000000   0x1058a9 ./Middlewares/Third_Party/LwIP/src/apps/mqtt/mqtt.o
+ .debug_str     0x00000000   0x1058ba ./Middlewares/Third_Party/LwIP/src/apps/mqtt/mqtt.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/apps/mqtt/mqtt.o
  .debug_frame   0x00000000      0x5b8 ./Middlewares/Third_Party/LwIP/src/apps/mqtt/mqtt.o
  .ARM.attributes
@@ -8809,7 +8803,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x66 ./Middlewares/Third_Party/LwIP/src/core/altcp.o
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/core/altcp.o
  .debug_line    0x00000000      0xa9b ./Middlewares/Third_Party/LwIP/src/core/altcp.o
- .debug_str     0x00000000    0xff64e ./Middlewares/Third_Party/LwIP/src/core/altcp.o
+ .debug_str     0x00000000    0xff65f ./Middlewares/Third_Party/LwIP/src/core/altcp.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/core/altcp.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/core/altcp.o
@@ -9034,7 +9028,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x66 ./Middlewares/Third_Party/LwIP/src/core/altcp_alloc.o
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/core/altcp_alloc.o
  .debug_line    0x00000000      0xaa1 ./Middlewares/Third_Party/LwIP/src/core/altcp_alloc.o
- .debug_str     0x00000000    0xff654 ./Middlewares/Third_Party/LwIP/src/core/altcp_alloc.o
+ .debug_str     0x00000000    0xff665 ./Middlewares/Third_Party/LwIP/src/core/altcp_alloc.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/core/altcp_alloc.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/core/altcp_alloc.o
@@ -9259,7 +9253,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x66 ./Middlewares/Third_Party/LwIP/src/core/altcp_tcp.o
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/core/altcp_tcp.o
  .debug_line    0x00000000      0xa9f ./Middlewares/Third_Party/LwIP/src/core/altcp_tcp.o
- .debug_str     0x00000000    0xff652 ./Middlewares/Third_Party/LwIP/src/core/altcp_tcp.o
+ .debug_str     0x00000000    0xff663 ./Middlewares/Third_Party/LwIP/src/core/altcp_tcp.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/core/altcp_tcp.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/core/altcp_tcp.o
@@ -9713,7 +9707,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x66 ./Middlewares/Third_Party/LwIP/src/core/dns.o
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/core/dns.o
  .debug_line    0x00000000      0xa99 ./Middlewares/Third_Party/LwIP/src/core/dns.o
- .debug_str     0x00000000    0xff64c ./Middlewares/Third_Party/LwIP/src/core/dns.o
+ .debug_str     0x00000000    0xff65d ./Middlewares/Third_Party/LwIP/src/core/dns.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/core/dns.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/core/dns.o
@@ -9973,7 +9967,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x16 ./Middlewares/Third_Party/LwIP/src/core/inet_chksum.o
  .debug_macro   0x00000000       0x20 ./Middlewares/Third_Party/LwIP/src/core/inet_chksum.o
  .debug_line    0x00000000      0xe21 ./Middlewares/Third_Party/LwIP/src/core/inet_chksum.o
- .debug_str     0x00000000   0x101a5d ./Middlewares/Third_Party/LwIP/src/core/inet_chksum.o
+ .debug_str     0x00000000   0x101a6e ./Middlewares/Third_Party/LwIP/src/core/inet_chksum.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/core/inet_chksum.o
  .debug_frame   0x00000000      0x158 ./Middlewares/Third_Party/LwIP/src/core/inet_chksum.o
  .ARM.attributes
@@ -11821,7 +11815,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x66 ./Middlewares/Third_Party/LwIP/src/core/raw.o
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/core/raw.o
  .debug_line    0x00000000      0xa99 ./Middlewares/Third_Party/LwIP/src/core/raw.o
- .debug_str     0x00000000    0xff64c ./Middlewares/Third_Party/LwIP/src/core/raw.o
+ .debug_str     0x00000000    0xff65d ./Middlewares/Third_Party/LwIP/src/core/raw.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/core/raw.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/core/raw.o
@@ -12046,7 +12040,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x66 ./Middlewares/Third_Party/LwIP/src/core/stats.o
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/core/stats.o
  .debug_line    0x00000000      0xa9b ./Middlewares/Third_Party/LwIP/src/core/stats.o
- .debug_str     0x00000000    0xff64e ./Middlewares/Third_Party/LwIP/src/core/stats.o
+ .debug_str     0x00000000    0xff65f ./Middlewares/Third_Party/LwIP/src/core/stats.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/core/stats.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/core/stats.o
@@ -12273,7 +12267,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/core/sys.o
  .debug_macro   0x00000000       0xe4 ./Middlewares/Third_Party/LwIP/src/core/sys.o
  .debug_line    0x00000000      0xaa2 ./Middlewares/Third_Party/LwIP/src/core/sys.o
- .debug_str     0x00000000    0xffbc8 ./Middlewares/Third_Party/LwIP/src/core/sys.o
+ .debug_str     0x00000000    0xffbd9 ./Middlewares/Third_Party/LwIP/src/core/sys.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/core/sys.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/core/sys.o
@@ -13874,7 +13868,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x66 ./Middlewares/Third_Party/LwIP/src/core/ipv4/autoip.o
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/core/ipv4/autoip.o
  .debug_line    0x00000000      0xaa1 ./Middlewares/Third_Party/LwIP/src/core/ipv4/autoip.o
- .debug_str     0x00000000    0xff654 ./Middlewares/Third_Party/LwIP/src/core/ipv4/autoip.o
+ .debug_str     0x00000000    0xff665 ./Middlewares/Third_Party/LwIP/src/core/ipv4/autoip.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/core/ipv4/autoip.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/core/ipv4/autoip.o
@@ -14099,7 +14093,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x66 ./Middlewares/Third_Party/LwIP/src/core/ipv4/dhcp.o
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/core/ipv4/dhcp.o
  .debug_line    0x00000000      0xa9f ./Middlewares/Third_Party/LwIP/src/core/ipv4/dhcp.o
- .debug_str     0x00000000    0xff652 ./Middlewares/Third_Party/LwIP/src/core/ipv4/dhcp.o
+ .debug_str     0x00000000    0xff663 ./Middlewares/Third_Party/LwIP/src/core/ipv4/dhcp.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/core/ipv4/dhcp.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/core/ipv4/dhcp.o
@@ -14840,7 +14834,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x66 ./Middlewares/Third_Party/LwIP/src/core/ipv4/igmp.o
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/core/ipv4/igmp.o
  .debug_line    0x00000000      0xa9f ./Middlewares/Third_Party/LwIP/src/core/ipv4/igmp.o
- .debug_str     0x00000000    0xff652 ./Middlewares/Third_Party/LwIP/src/core/ipv4/igmp.o
+ .debug_str     0x00000000    0xff663 ./Middlewares/Third_Party/LwIP/src/core/ipv4/igmp.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/core/ipv4/igmp.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/core/ipv4/igmp.o
@@ -15845,7 +15839,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x66 ./Middlewares/Third_Party/LwIP/src/core/ipv6/dhcp6.o
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/core/ipv6/dhcp6.o
  .debug_line    0x00000000      0xaa0 ./Middlewares/Third_Party/LwIP/src/core/ipv6/dhcp6.o
- .debug_str     0x00000000    0xff653 ./Middlewares/Third_Party/LwIP/src/core/ipv6/dhcp6.o
+ .debug_str     0x00000000    0xff664 ./Middlewares/Third_Party/LwIP/src/core/ipv6/dhcp6.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/core/ipv6/dhcp6.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/core/ipv6/dhcp6.o
@@ -16070,7 +16064,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x66 ./Middlewares/Third_Party/LwIP/src/core/ipv6/ethip6.o
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/core/ipv6/ethip6.o
  .debug_line    0x00000000      0xaa1 ./Middlewares/Third_Party/LwIP/src/core/ipv6/ethip6.o
- .debug_str     0x00000000    0xff654 ./Middlewares/Third_Party/LwIP/src/core/ipv6/ethip6.o
+ .debug_str     0x00000000    0xff665 ./Middlewares/Third_Party/LwIP/src/core/ipv6/ethip6.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/core/ipv6/ethip6.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/core/ipv6/ethip6.o
@@ -16295,7 +16289,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x66 ./Middlewares/Third_Party/LwIP/src/core/ipv6/icmp6.o
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/core/ipv6/icmp6.o
  .debug_line    0x00000000      0xaa0 ./Middlewares/Third_Party/LwIP/src/core/ipv6/icmp6.o
- .debug_str     0x00000000    0xff653 ./Middlewares/Third_Party/LwIP/src/core/ipv6/icmp6.o
+ .debug_str     0x00000000    0xff664 ./Middlewares/Third_Party/LwIP/src/core/ipv6/icmp6.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/core/ipv6/icmp6.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/core/ipv6/icmp6.o
@@ -16520,7 +16514,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x66 ./Middlewares/Third_Party/LwIP/src/core/ipv6/inet6.o
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/core/ipv6/inet6.o
  .debug_line    0x00000000      0xaa0 ./Middlewares/Third_Party/LwIP/src/core/ipv6/inet6.o
- .debug_str     0x00000000    0xff653 ./Middlewares/Third_Party/LwIP/src/core/ipv6/inet6.o
+ .debug_str     0x00000000    0xff664 ./Middlewares/Third_Party/LwIP/src/core/ipv6/inet6.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/core/ipv6/inet6.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/core/ipv6/inet6.o
@@ -16745,7 +16739,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x66 ./Middlewares/Third_Party/LwIP/src/core/ipv6/ip6.o
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/core/ipv6/ip6.o
  .debug_line    0x00000000      0xa9e ./Middlewares/Third_Party/LwIP/src/core/ipv6/ip6.o
- .debug_str     0x00000000    0xff651 ./Middlewares/Third_Party/LwIP/src/core/ipv6/ip6.o
+ .debug_str     0x00000000    0xff662 ./Middlewares/Third_Party/LwIP/src/core/ipv6/ip6.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/core/ipv6/ip6.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/core/ipv6/ip6.o
@@ -16970,7 +16964,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x66 ./Middlewares/Third_Party/LwIP/src/core/ipv6/ip6_addr.o
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/core/ipv6/ip6_addr.o
  .debug_line    0x00000000      0xaa3 ./Middlewares/Third_Party/LwIP/src/core/ipv6/ip6_addr.o
- .debug_str     0x00000000    0xff656 ./Middlewares/Third_Party/LwIP/src/core/ipv6/ip6_addr.o
+ .debug_str     0x00000000    0xff667 ./Middlewares/Third_Party/LwIP/src/core/ipv6/ip6_addr.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/core/ipv6/ip6_addr.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/core/ipv6/ip6_addr.o
@@ -17231,7 +17225,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x16 ./Middlewares/Third_Party/LwIP/src/core/ipv6/ip6_frag.o
  .debug_macro   0x00000000       0x20 ./Middlewares/Third_Party/LwIP/src/core/ipv6/ip6_frag.o
  .debug_line    0x00000000      0xc25 ./Middlewares/Third_Party/LwIP/src/core/ipv6/ip6_frag.o
- .debug_str     0x00000000   0x10366a ./Middlewares/Third_Party/LwIP/src/core/ipv6/ip6_frag.o
+ .debug_str     0x00000000   0x10367b ./Middlewares/Third_Party/LwIP/src/core/ipv6/ip6_frag.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/core/ipv6/ip6_frag.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/core/ipv6/ip6_frag.o
@@ -17456,7 +17450,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x66 ./Middlewares/Third_Party/LwIP/src/core/ipv6/mld6.o
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/core/ipv6/mld6.o
  .debug_line    0x00000000      0xa9f ./Middlewares/Third_Party/LwIP/src/core/ipv6/mld6.o
- .debug_str     0x00000000    0xff652 ./Middlewares/Third_Party/LwIP/src/core/ipv6/mld6.o
+ .debug_str     0x00000000    0xff663 ./Middlewares/Third_Party/LwIP/src/core/ipv6/mld6.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/core/ipv6/mld6.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/core/ipv6/mld6.o
@@ -17681,7 +17675,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x66 ./Middlewares/Third_Party/LwIP/src/core/ipv6/nd6.o
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/core/ipv6/nd6.o
  .debug_line    0x00000000      0xa9e ./Middlewares/Third_Party/LwIP/src/core/ipv6/nd6.o
- .debug_str     0x00000000    0xff651 ./Middlewares/Third_Party/LwIP/src/core/ipv6/nd6.o
+ .debug_str     0x00000000    0xff662 ./Middlewares/Third_Party/LwIP/src/core/ipv6/nd6.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/core/ipv6/nd6.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/core/ipv6/nd6.o
@@ -17956,7 +17950,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x16 ./Middlewares/Third_Party/LwIP/src/netif/bridgeif.o
  .debug_macro   0x00000000       0x20 ./Middlewares/Third_Party/LwIP/src/netif/bridgeif.o
  .debug_line    0x00000000      0xc8b ./Middlewares/Third_Party/LwIP/src/netif/bridgeif.o
- .debug_str     0x00000000   0x103ec0 ./Middlewares/Third_Party/LwIP/src/netif/bridgeif.o
+ .debug_str     0x00000000   0x103ed1 ./Middlewares/Third_Party/LwIP/src/netif/bridgeif.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/netif/bridgeif.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/netif/bridgeif.o
@@ -18212,7 +18206,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x16 ./Middlewares/Third_Party/LwIP/src/netif/bridgeif_fdb.o
  .debug_macro   0x00000000       0x20 ./Middlewares/Third_Party/LwIP/src/netif/bridgeif_fdb.o
  .debug_line    0x00000000      0xdaa ./Middlewares/Third_Party/LwIP/src/netif/bridgeif_fdb.o
- .debug_str     0x00000000   0x1003df ./Middlewares/Third_Party/LwIP/src/netif/bridgeif_fdb.o
+ .debug_str     0x00000000   0x1003f0 ./Middlewares/Third_Party/LwIP/src/netif/bridgeif_fdb.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/netif/bridgeif_fdb.o
  .debug_frame   0x00000000       0xc8 ./Middlewares/Third_Party/LwIP/src/netif/bridgeif_fdb.o
  .ARM.attributes
@@ -18701,7 +18695,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/netif/lowpan6.o
  .debug_macro   0x00000000       0x46 ./Middlewares/Third_Party/LwIP/src/netif/lowpan6.o
  .debug_line    0x00000000      0xaef ./Middlewares/Third_Party/LwIP/src/netif/lowpan6.o
- .debug_str     0x00000000    0xff82b ./Middlewares/Third_Party/LwIP/src/netif/lowpan6.o
+ .debug_str     0x00000000    0xff83c ./Middlewares/Third_Party/LwIP/src/netif/lowpan6.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/netif/lowpan6.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/netif/lowpan6.o
@@ -18928,7 +18922,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/netif/lowpan6_ble.o
  .debug_macro   0x00000000       0x46 ./Middlewares/Third_Party/LwIP/src/netif/lowpan6_ble.o
  .debug_line    0x00000000      0xaf7 ./Middlewares/Third_Party/LwIP/src/netif/lowpan6_ble.o
- .debug_str     0x00000000    0xff833 ./Middlewares/Third_Party/LwIP/src/netif/lowpan6_ble.o
+ .debug_str     0x00000000    0xff844 ./Middlewares/Third_Party/LwIP/src/netif/lowpan6_ble.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/netif/lowpan6_ble.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/netif/lowpan6_ble.o
@@ -19155,7 +19149,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/netif/lowpan6_common.o
  .debug_macro   0x00000000       0x46 ./Middlewares/Third_Party/LwIP/src/netif/lowpan6_common.o
  .debug_line    0x00000000      0xafd ./Middlewares/Third_Party/LwIP/src/netif/lowpan6_common.o
- .debug_str     0x00000000    0xff839 ./Middlewares/Third_Party/LwIP/src/netif/lowpan6_common.o
+ .debug_str     0x00000000    0xff84a ./Middlewares/Third_Party/LwIP/src/netif/lowpan6_common.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/netif/lowpan6_common.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/netif/lowpan6_common.o
@@ -19425,7 +19419,7 @@ Discarded input sections
  .debug_macro   0x00000000       0xc0 ./Middlewares/Third_Party/LwIP/src/netif/slipif.o
  .debug_macro   0x00000000       0xe4 ./Middlewares/Third_Party/LwIP/src/netif/slipif.o
  .debug_line    0x00000000      0xe3e ./Middlewares/Third_Party/LwIP/src/netif/slipif.o
- .debug_str     0x00000000   0x1037b1 ./Middlewares/Third_Party/LwIP/src/netif/slipif.o
+ .debug_str     0x00000000   0x1037c2 ./Middlewares/Third_Party/LwIP/src/netif/slipif.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/netif/slipif.o
  .debug_frame   0x00000000       0xe8 ./Middlewares/Third_Party/LwIP/src/netif/slipif.o
  .ARM.attributes
@@ -19653,7 +19647,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/netif/zepif.o
  .debug_macro   0x00000000       0x4c ./Middlewares/Third_Party/LwIP/src/netif/zepif.o
  .debug_line    0x00000000      0xaf8 ./Middlewares/Third_Party/LwIP/src/netif/zepif.o
- .debug_str     0x00000000    0xff83b ./Middlewares/Third_Party/LwIP/src/netif/zepif.o
+ .debug_str     0x00000000    0xff84c ./Middlewares/Third_Party/LwIP/src/netif/zepif.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/netif/zepif.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/netif/zepif.o
@@ -19880,7 +19874,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/netif/ppp/auth.o
  .debug_macro   0x00000000       0x2f ./Middlewares/Third_Party/LwIP/src/netif/ppp/auth.o
  .debug_line    0x00000000      0xae3 ./Middlewares/Third_Party/LwIP/src/netif/ppp/auth.o
- .debug_str     0x00000000    0xff714 ./Middlewares/Third_Party/LwIP/src/netif/ppp/auth.o
+ .debug_str     0x00000000    0xff725 ./Middlewares/Third_Party/LwIP/src/netif/ppp/auth.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/netif/ppp/auth.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/netif/ppp/auth.o
@@ -20107,7 +20101,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/netif/ppp/ccp.o
  .debug_macro   0x00000000       0x2f ./Middlewares/Third_Party/LwIP/src/netif/ppp/ccp.o
  .debug_line    0x00000000      0xae2 ./Middlewares/Third_Party/LwIP/src/netif/ppp/ccp.o
- .debug_str     0x00000000    0xff713 ./Middlewares/Third_Party/LwIP/src/netif/ppp/ccp.o
+ .debug_str     0x00000000    0xff724 ./Middlewares/Third_Party/LwIP/src/netif/ppp/ccp.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/netif/ppp/ccp.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/netif/ppp/ccp.o
@@ -20334,7 +20328,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/netif/ppp/chap-md5.o
  .debug_macro   0x00000000       0x2f ./Middlewares/Third_Party/LwIP/src/netif/ppp/chap-md5.o
  .debug_line    0x00000000      0xae7 ./Middlewares/Third_Party/LwIP/src/netif/ppp/chap-md5.o
- .debug_str     0x00000000    0xff718 ./Middlewares/Third_Party/LwIP/src/netif/ppp/chap-md5.o
+ .debug_str     0x00000000    0xff729 ./Middlewares/Third_Party/LwIP/src/netif/ppp/chap-md5.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/netif/ppp/chap-md5.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/netif/ppp/chap-md5.o
@@ -20561,7 +20555,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/netif/ppp/chap-new.o
  .debug_macro   0x00000000       0x2f ./Middlewares/Third_Party/LwIP/src/netif/ppp/chap-new.o
  .debug_line    0x00000000      0xae7 ./Middlewares/Third_Party/LwIP/src/netif/ppp/chap-new.o
- .debug_str     0x00000000    0xff718 ./Middlewares/Third_Party/LwIP/src/netif/ppp/chap-new.o
+ .debug_str     0x00000000    0xff729 ./Middlewares/Third_Party/LwIP/src/netif/ppp/chap-new.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/netif/ppp/chap-new.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/netif/ppp/chap-new.o
@@ -20788,7 +20782,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/netif/ppp/chap_ms.o
  .debug_macro   0x00000000       0x2f ./Middlewares/Third_Party/LwIP/src/netif/ppp/chap_ms.o
  .debug_line    0x00000000      0xae6 ./Middlewares/Third_Party/LwIP/src/netif/ppp/chap_ms.o
- .debug_str     0x00000000    0xff717 ./Middlewares/Third_Party/LwIP/src/netif/ppp/chap_ms.o
+ .debug_str     0x00000000    0xff728 ./Middlewares/Third_Party/LwIP/src/netif/ppp/chap_ms.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/netif/ppp/chap_ms.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/netif/ppp/chap_ms.o
@@ -21015,7 +21009,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/netif/ppp/demand.o
  .debug_macro   0x00000000       0x2f ./Middlewares/Third_Party/LwIP/src/netif/ppp/demand.o
  .debug_line    0x00000000      0xae5 ./Middlewares/Third_Party/LwIP/src/netif/ppp/demand.o
- .debug_str     0x00000000    0xff716 ./Middlewares/Third_Party/LwIP/src/netif/ppp/demand.o
+ .debug_str     0x00000000    0xff727 ./Middlewares/Third_Party/LwIP/src/netif/ppp/demand.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/netif/ppp/demand.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/netif/ppp/demand.o
@@ -21242,7 +21236,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/netif/ppp/eap.o
  .debug_macro   0x00000000       0x2f ./Middlewares/Third_Party/LwIP/src/netif/ppp/eap.o
  .debug_line    0x00000000      0xae2 ./Middlewares/Third_Party/LwIP/src/netif/ppp/eap.o
- .debug_str     0x00000000    0xff713 ./Middlewares/Third_Party/LwIP/src/netif/ppp/eap.o
+ .debug_str     0x00000000    0xff724 ./Middlewares/Third_Party/LwIP/src/netif/ppp/eap.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/netif/ppp/eap.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/netif/ppp/eap.o
@@ -21469,7 +21463,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/netif/ppp/ecp.o
  .debug_macro   0x00000000       0x2f ./Middlewares/Third_Party/LwIP/src/netif/ppp/ecp.o
  .debug_line    0x00000000      0xae2 ./Middlewares/Third_Party/LwIP/src/netif/ppp/ecp.o
- .debug_str     0x00000000    0xff713 ./Middlewares/Third_Party/LwIP/src/netif/ppp/ecp.o
+ .debug_str     0x00000000    0xff724 ./Middlewares/Third_Party/LwIP/src/netif/ppp/ecp.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/netif/ppp/ecp.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/netif/ppp/ecp.o
@@ -21696,7 +21690,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/netif/ppp/eui64.o
  .debug_macro   0x00000000       0x2f ./Middlewares/Third_Party/LwIP/src/netif/ppp/eui64.o
  .debug_line    0x00000000      0xae4 ./Middlewares/Third_Party/LwIP/src/netif/ppp/eui64.o
- .debug_str     0x00000000    0xff715 ./Middlewares/Third_Party/LwIP/src/netif/ppp/eui64.o
+ .debug_str     0x00000000    0xff726 ./Middlewares/Third_Party/LwIP/src/netif/ppp/eui64.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/netif/ppp/eui64.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/netif/ppp/eui64.o
@@ -21923,7 +21917,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/netif/ppp/fsm.o
  .debug_macro   0x00000000       0x2f ./Middlewares/Third_Party/LwIP/src/netif/ppp/fsm.o
  .debug_line    0x00000000      0xae2 ./Middlewares/Third_Party/LwIP/src/netif/ppp/fsm.o
- .debug_str     0x00000000    0xff713 ./Middlewares/Third_Party/LwIP/src/netif/ppp/fsm.o
+ .debug_str     0x00000000    0xff724 ./Middlewares/Third_Party/LwIP/src/netif/ppp/fsm.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/netif/ppp/fsm.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/netif/ppp/fsm.o
@@ -22150,7 +22144,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/netif/ppp/ipcp.o
  .debug_macro   0x00000000       0x2f ./Middlewares/Third_Party/LwIP/src/netif/ppp/ipcp.o
  .debug_line    0x00000000      0xae3 ./Middlewares/Third_Party/LwIP/src/netif/ppp/ipcp.o
- .debug_str     0x00000000    0xff714 ./Middlewares/Third_Party/LwIP/src/netif/ppp/ipcp.o
+ .debug_str     0x00000000    0xff725 ./Middlewares/Third_Party/LwIP/src/netif/ppp/ipcp.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/netif/ppp/ipcp.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/netif/ppp/ipcp.o
@@ -22377,7 +22371,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/netif/ppp/ipv6cp.o
  .debug_macro   0x00000000       0x2f ./Middlewares/Third_Party/LwIP/src/netif/ppp/ipv6cp.o
  .debug_line    0x00000000      0xae5 ./Middlewares/Third_Party/LwIP/src/netif/ppp/ipv6cp.o
- .debug_str     0x00000000    0xff716 ./Middlewares/Third_Party/LwIP/src/netif/ppp/ipv6cp.o
+ .debug_str     0x00000000    0xff727 ./Middlewares/Third_Party/LwIP/src/netif/ppp/ipv6cp.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/netif/ppp/ipv6cp.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/netif/ppp/ipv6cp.o
@@ -22604,7 +22598,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/netif/ppp/lcp.o
  .debug_macro   0x00000000       0x2f ./Middlewares/Third_Party/LwIP/src/netif/ppp/lcp.o
  .debug_line    0x00000000      0xae2 ./Middlewares/Third_Party/LwIP/src/netif/ppp/lcp.o
- .debug_str     0x00000000    0xff713 ./Middlewares/Third_Party/LwIP/src/netif/ppp/lcp.o
+ .debug_str     0x00000000    0xff724 ./Middlewares/Third_Party/LwIP/src/netif/ppp/lcp.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/netif/ppp/lcp.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/netif/ppp/lcp.o
@@ -22831,7 +22825,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/netif/ppp/magic.o
  .debug_macro   0x00000000       0x2f ./Middlewares/Third_Party/LwIP/src/netif/ppp/magic.o
  .debug_line    0x00000000      0xae4 ./Middlewares/Third_Party/LwIP/src/netif/ppp/magic.o
- .debug_str     0x00000000    0xff715 ./Middlewares/Third_Party/LwIP/src/netif/ppp/magic.o
+ .debug_str     0x00000000    0xff726 ./Middlewares/Third_Party/LwIP/src/netif/ppp/magic.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/netif/ppp/magic.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/netif/ppp/magic.o
@@ -23058,7 +23052,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/netif/ppp/mppe.o
  .debug_macro   0x00000000       0x2f ./Middlewares/Third_Party/LwIP/src/netif/ppp/mppe.o
  .debug_line    0x00000000      0xae3 ./Middlewares/Third_Party/LwIP/src/netif/ppp/mppe.o
- .debug_str     0x00000000    0xff714 ./Middlewares/Third_Party/LwIP/src/netif/ppp/mppe.o
+ .debug_str     0x00000000    0xff725 ./Middlewares/Third_Party/LwIP/src/netif/ppp/mppe.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/netif/ppp/mppe.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/netif/ppp/mppe.o
@@ -23285,7 +23279,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/netif/ppp/multilink.o
  .debug_macro   0x00000000       0x2f ./Middlewares/Third_Party/LwIP/src/netif/ppp/multilink.o
  .debug_line    0x00000000      0xae8 ./Middlewares/Third_Party/LwIP/src/netif/ppp/multilink.o
- .debug_str     0x00000000    0xff719 ./Middlewares/Third_Party/LwIP/src/netif/ppp/multilink.o
+ .debug_str     0x00000000    0xff72a ./Middlewares/Third_Party/LwIP/src/netif/ppp/multilink.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/netif/ppp/multilink.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/netif/ppp/multilink.o
@@ -23512,7 +23506,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/netif/ppp/ppp.o
  .debug_macro   0x00000000       0x2f ./Middlewares/Third_Party/LwIP/src/netif/ppp/ppp.o
  .debug_line    0x00000000      0xae2 ./Middlewares/Third_Party/LwIP/src/netif/ppp/ppp.o
- .debug_str     0x00000000    0xff713 ./Middlewares/Third_Party/LwIP/src/netif/ppp/ppp.o
+ .debug_str     0x00000000    0xff724 ./Middlewares/Third_Party/LwIP/src/netif/ppp/ppp.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/netif/ppp/ppp.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/netif/ppp/ppp.o
@@ -23739,7 +23733,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppapi.o
  .debug_macro   0x00000000       0x2f ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppapi.o
  .debug_line    0x00000000      0xae5 ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppapi.o
- .debug_str     0x00000000    0xff716 ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppapi.o
+ .debug_str     0x00000000    0xff727 ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppapi.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppapi.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppapi.o
@@ -23966,7 +23960,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppcrypt.o
  .debug_macro   0x00000000       0x2f ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppcrypt.o
  .debug_line    0x00000000      0xae7 ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppcrypt.o
- .debug_str     0x00000000    0xff718 ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppcrypt.o
+ .debug_str     0x00000000    0xff729 ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppcrypt.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppcrypt.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppcrypt.o
@@ -24193,7 +24187,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppoe.o
  .debug_macro   0x00000000       0x2f ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppoe.o
  .debug_line    0x00000000      0xae4 ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppoe.o
- .debug_str     0x00000000    0xff715 ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppoe.o
+ .debug_str     0x00000000    0xff726 ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppoe.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppoe.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppoe.o
@@ -24420,7 +24414,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppol2tp.o
  .debug_macro   0x00000000       0x2f ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppol2tp.o
  .debug_line    0x00000000      0xae7 ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppol2tp.o
- .debug_str     0x00000000    0xff718 ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppol2tp.o
+ .debug_str     0x00000000    0xff729 ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppol2tp.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppol2tp.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppol2tp.o
@@ -24647,7 +24641,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppos.o
  .debug_macro   0x00000000       0x2f ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppos.o
  .debug_line    0x00000000      0xae4 ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppos.o
- .debug_str     0x00000000    0xff715 ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppos.o
+ .debug_str     0x00000000    0xff726 ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppos.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppos.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/netif/ppp/pppos.o
@@ -24874,7 +24868,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/netif/ppp/upap.o
  .debug_macro   0x00000000       0x2f ./Middlewares/Third_Party/LwIP/src/netif/ppp/upap.o
  .debug_line    0x00000000      0xae3 ./Middlewares/Third_Party/LwIP/src/netif/ppp/upap.o
- .debug_str     0x00000000    0xff714 ./Middlewares/Third_Party/LwIP/src/netif/ppp/upap.o
+ .debug_str     0x00000000    0xff725 ./Middlewares/Third_Party/LwIP/src/netif/ppp/upap.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/netif/ppp/upap.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/netif/ppp/upap.o
@@ -25101,7 +25095,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/netif/ppp/utils.o
  .debug_macro   0x00000000       0x2f ./Middlewares/Third_Party/LwIP/src/netif/ppp/utils.o
  .debug_line    0x00000000      0xae4 ./Middlewares/Third_Party/LwIP/src/netif/ppp/utils.o
- .debug_str     0x00000000    0xff715 ./Middlewares/Third_Party/LwIP/src/netif/ppp/utils.o
+ .debug_str     0x00000000    0xff726 ./Middlewares/Third_Party/LwIP/src/netif/ppp/utils.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/netif/ppp/utils.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/netif/ppp/utils.o
@@ -25328,7 +25322,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x75d ./Middlewares/Third_Party/LwIP/src/netif/ppp/vj.o
  .debug_macro   0x00000000       0x2f ./Middlewares/Third_Party/LwIP/src/netif/ppp/vj.o
  .debug_line    0x00000000      0xae1 ./Middlewares/Third_Party/LwIP/src/netif/ppp/vj.o
- .debug_str     0x00000000    0xff712 ./Middlewares/Third_Party/LwIP/src/netif/ppp/vj.o
+ .debug_str     0x00000000    0xff723 ./Middlewares/Third_Party/LwIP/src/netif/ppp/vj.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/LwIP/src/netif/ppp/vj.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/LwIP/src/netif/ppp/vj.o
@@ -25731,7 +25725,6 @@ Discarded input sections
  .debug_macro   0x00000000       0x16 ./UUT/Src/hw_verif.o
  .debug_macro   0x00000000       0x10 ./UUT/Src/hw_verif.o
  .debug_macro   0x00000000       0x16 ./UUT/Src/hw_verif.o
- .debug_macro   0x00000000       0x34 ./UUT/Src/hw_verif.o
  .debug_macro   0x00000000       0x16 ./UUT/Src/hw_verif.o
  .debug_macro   0x00000000       0x20 ./UUT/Src/hw_verif.o
  .group         0x00000000        0xc ./UUT/Src/hw_verif_crc.o
@@ -29524,7 +29517,7 @@ LOAD /home/leah/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.ide.mcu.external
 LOAD /home/leah/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.linux64_1.0.0.202410170706/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a
 LOAD /home/leah/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.linux64_1.0.0.202410170706/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/libgcc.a
 
-.debug_info     0x00000000    0x30248
+.debug_info     0x00000000    0x3024a
  .debug_info    0x00000000      0x9f9 ./Core/Src/adc.o
  .debug_info    0x000009f9      0x50f ./Core/Src/crc.o
  .debug_info    0x00000f08      0x550 ./Core/Src/dma.o
@@ -29582,14 +29575,14 @@ LOAD /home/leah/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.ide.mcu.external
  .debug_info    0x0002cf3a      0x6a8 ./UUT/Src/adc_test.o
  .debug_info    0x0002d5e2       0xa7 ./UUT/Src/hw_verif.o
  .debug_info    0x0002d689      0x2fd ./UUT/Src/hw_verif_crc.o
- .debug_info    0x0002d986      0x7a4 ./UUT/Src/hw_verif_udp.o
- .debug_info    0x0002e12a      0x837 ./UUT/Src/i2c_test.o
- .debug_info    0x0002e961      0x781 ./UUT/Src/spi_test.o
- .debug_info    0x0002f0e2      0x1c0 ./UUT/Src/tests.o
- .debug_info    0x0002f2a2      0x7e5 ./UUT/Src/timer_test.o
- .debug_info    0x0002fa87      0x7c1 ./UUT/Src/uart_test.o
+ .debug_info    0x0002d986      0x7a6 ./UUT/Src/hw_verif_udp.o
+ .debug_info    0x0002e12c      0x837 ./UUT/Src/i2c_test.o
+ .debug_info    0x0002e963      0x781 ./UUT/Src/spi_test.o
+ .debug_info    0x0002f0e4      0x1c0 ./UUT/Src/tests.o
+ .debug_info    0x0002f2a4      0x7e5 ./UUT/Src/timer_test.o
+ .debug_info    0x0002fa89      0x7c1 ./UUT/Src/uart_test.o
 
-.debug_abbrev   0x00000000     0x81a1
+.debug_abbrev   0x00000000     0x81a0
  .debug_abbrev  0x00000000      0x205 ./Core/Src/adc.o
  .debug_abbrev  0x00000205      0x19b ./Core/Src/crc.o
  .debug_abbrev  0x000003a0      0x11b ./Core/Src/dma.o
@@ -29647,12 +29640,12 @@ LOAD /home/leah/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.ide.mcu.external
  .debug_abbrev  0x0000734d      0x1eb ./UUT/Src/adc_test.o
  .debug_abbrev  0x00007538       0x70 ./UUT/Src/hw_verif.o
  .debug_abbrev  0x000075a8      0x144 ./UUT/Src/hw_verif_crc.o
- .debug_abbrev  0x000076ec      0x22a ./UUT/Src/hw_verif_udp.o
- .debug_abbrev  0x00007916      0x1e1 ./UUT/Src/i2c_test.o
- .debug_abbrev  0x00007af7      0x1ef ./UUT/Src/spi_test.o
- .debug_abbrev  0x00007ce6       0xfb ./UUT/Src/tests.o
- .debug_abbrev  0x00007de1      0x1e6 ./UUT/Src/timer_test.o
- .debug_abbrev  0x00007fc7      0x1da ./UUT/Src/uart_test.o
+ .debug_abbrev  0x000076ec      0x229 ./UUT/Src/hw_verif_udp.o
+ .debug_abbrev  0x00007915      0x1e1 ./UUT/Src/i2c_test.o
+ .debug_abbrev  0x00007af6      0x1ef ./UUT/Src/spi_test.o
+ .debug_abbrev  0x00007ce5       0xfb ./UUT/Src/tests.o
+ .debug_abbrev  0x00007de0      0x1e6 ./UUT/Src/timer_test.o
+ .debug_abbrev  0x00007fc6      0x1da ./UUT/Src/uart_test.o
 
 .debug_aranges  0x00000000     0x2478
  .debug_aranges
@@ -29909,7 +29902,7 @@ LOAD /home/leah/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.ide.mcu.external
  .debug_rnglists
                 0x00001ca2       0x1a ./UUT/Src/uart_test.o
 
-.debug_macro    0x00000000    0x39453
+.debug_macro    0x00000000    0x3931a
  .debug_macro   0x00000000      0x242 ./Core/Src/adc.o
  .debug_macro   0x00000242      0xad8 ./Core/Src/adc.o
  .debug_macro   0x00000d1a      0x2b9 ./Core/Src/adc.o
@@ -29967,311 +29960,310 @@ LOAD /home/leah/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.ide.mcu.external
  .debug_macro   0x000259c3      0x242 ./Core/Src/dma.o
  .debug_macro   0x00025c05      0x242 ./Core/Src/gpio.o
  .debug_macro   0x00025e47      0x242 ./Core/Src/i2c.o
- .debug_macro   0x00026089      0x6a2 ./Core/Src/main.o
- .debug_macro   0x0002672b       0xc4 ./Core/Src/main.o
- .debug_macro   0x000267ef       0x16 ./Core/Src/main.o
- .debug_macro   0x00026805       0x10 ./Core/Src/main.o
- .debug_macro   0x00026815       0x2a ./Core/Src/main.o
- .debug_macro   0x0002683f       0x61 ./Core/Src/main.o
- .debug_macro   0x000268a0       0x43 ./Core/Src/main.o
- .debug_macro   0x000268e3       0x34 ./Core/Src/main.o
- .debug_macro   0x00026917       0x16 ./Core/Src/main.o
- .debug_macro   0x0002692d       0x3c ./Core/Src/main.o
- .debug_macro   0x00026969      0x370 ./Core/Src/main.o
- .debug_macro   0x00026cd9       0x16 ./Core/Src/main.o
- .debug_macro   0x00026cef       0x4a ./Core/Src/main.o
- .debug_macro   0x00026d39       0x34 ./Core/Src/main.o
- .debug_macro   0x00026d6d       0x10 ./Core/Src/main.o
- .debug_macro   0x00026d7d       0x58 ./Core/Src/main.o
- .debug_macro   0x00026dd5       0x8e ./Core/Src/main.o
- .debug_macro   0x00026e63       0x1c ./Core/Src/main.o
- .debug_macro   0x00026e7f      0x185 ./Core/Src/main.o
- .debug_macro   0x00027004       0x16 ./Core/Src/main.o
- .debug_macro   0x0002701a       0x29 ./Core/Src/main.o
- .debug_macro   0x00027043       0x1c ./Core/Src/main.o
- .debug_macro   0x0002705f       0x10 ./Core/Src/main.o
- .debug_macro   0x0002706f       0x1c ./Core/Src/main.o
- .debug_macro   0x0002708b       0x16 ./Core/Src/main.o
- .debug_macro   0x000270a1      0x146 ./Core/Src/main.o
- .debug_macro   0x000271e7       0x10 ./Core/Src/main.o
- .debug_macro   0x000271f7       0x22 ./Core/Src/main.o
- .debug_macro   0x00027219       0x10 ./Core/Src/main.o
- .debug_macro   0x00027229       0x1c ./Core/Src/main.o
- .debug_macro   0x00027245       0x52 ./Core/Src/main.o
- .debug_macro   0x00027297       0x10 ./Core/Src/main.o
- .debug_macro   0x000272a7       0x52 ./Core/Src/main.o
- .debug_macro   0x000272f9       0xc1 ./Core/Src/main.o
- .debug_macro   0x000273ba       0x1c ./Core/Src/main.o
- .debug_macro   0x000273d6       0x3d ./Core/Src/main.o
- .debug_macro   0x00027413       0xc8 ./Core/Src/main.o
- .debug_macro   0x000274db       0x16 ./Core/Src/main.o
- .debug_macro   0x000274f1       0x10 ./Core/Src/main.o
- .debug_macro   0x00027501       0x10 ./Core/Src/main.o
- .debug_macro   0x00027511       0x35 ./Core/Src/main.o
- .debug_macro   0x00027546       0x28 ./Core/Src/main.o
- .debug_macro   0x0002756e       0x10 ./Core/Src/main.o
- .debug_macro   0x0002757e       0x17 ./Core/Src/main.o
- .debug_macro   0x00027595       0x10 ./Core/Src/main.o
- .debug_macro   0x000275a5      0x460 ./Core/Src/main.o
- .debug_macro   0x00027a05       0x43 ./Core/Src/main.o
- .debug_macro   0x00027a48       0x7c ./Core/Src/main.o
- .debug_macro   0x00027ac4       0x17 ./Core/Src/main.o
- .debug_macro   0x00027adb      0x118 ./Core/Src/main.o
- .debug_macro   0x00027bf3       0x19 ./Core/Src/main.o
- .debug_macro   0x00027c0c      0x11f ./Core/Src/main.o
- .debug_macro   0x00027d2b       0x82 ./Core/Src/main.o
- .debug_macro   0x00027dad       0x66 ./Core/Src/main.o
- .debug_macro   0x00027e13      0x75d ./Core/Src/main.o
- .debug_macro   0x00028570       0x10 ./Core/Src/main.o
- .debug_macro   0x00028580       0x10 ./Core/Src/main.o
- .debug_macro   0x00028590       0x3f ./Core/Src/main.o
- .debug_macro   0x000285cf       0x25 ./Core/Src/main.o
- .debug_macro   0x000285f4      0x15b ./Core/Src/main.o
- .debug_macro   0x0002874f       0x22 ./Core/Src/main.o
- .debug_macro   0x00028771       0xb3 ./Core/Src/main.o
- .debug_macro   0x00028824       0x6a ./Core/Src/main.o
- .debug_macro   0x0002888e      0x1bd ./Core/Src/main.o
- .debug_macro   0x00028a4b       0x10 ./Core/Src/main.o
- .debug_macro   0x00028a5b      0x169 ./Core/Src/main.o
- .debug_macro   0x00028bc4      0x12f ./Core/Src/main.o
- .debug_macro   0x00028cf3       0xa0 ./Core/Src/main.o
- .debug_macro   0x00028d93       0x28 ./Core/Src/main.o
- .debug_macro   0x00028dbb       0x46 ./Core/Src/main.o
- .debug_macro   0x00028e01       0x22 ./Core/Src/main.o
- .debug_macro   0x00028e23       0x16 ./Core/Src/main.o
- .debug_macro   0x00028e39       0x10 ./Core/Src/main.o
- .debug_macro   0x00028e49       0x16 ./Core/Src/main.o
- .debug_macro   0x00028e5f       0xf4 ./Core/Src/main.o
- .debug_macro   0x00028f53       0x34 ./Core/Src/main.o
- .debug_macro   0x00028f87       0x16 ./Core/Src/main.o
- .debug_macro   0x00028f9d       0x20 ./Core/Src/main.o
- .debug_macro   0x00028fbd      0x242 ./Core/Src/spi.o
- .debug_macro   0x000291ff      0x238 ./Core/Src/stm32f7xx_hal_msp.o
- .debug_macro   0x00029437      0x242 ./Core/Src/stm32f7xx_it.o
- .debug_macro   0x00029679      0x510 ./Core/Src/syscalls.o
- .debug_macro   0x00029b89       0x5b ./Core/Src/syscalls.o
- .debug_macro   0x00029be4       0x94 ./Core/Src/syscalls.o
- .debug_macro   0x00029c78       0x57 ./Core/Src/syscalls.o
- .debug_macro   0x00029ccf       0x10 ./Core/Src/syscalls.o
- .debug_macro   0x00029cdf       0xcf ./Core/Src/syscalls.o
- .debug_macro   0x00029dae      0x12c ./Core/Src/syscalls.o
- .debug_macro   0x00029eda       0x5d ./Core/Src/syscalls.o
- .debug_macro   0x00029f37       0xbe ./Core/Src/syscalls.o
- .debug_macro   0x00029ff5       0x10 ./Core/Src/syscalls.o
- .debug_macro   0x0002a005       0xce ./Core/Src/syscalls.o
- .debug_macro   0x0002a0d3      0x31a ./Core/Src/syscalls.o
- .debug_macro   0x0002a3ed      0x190 ./Core/Src/syscalls.o
- .debug_macro   0x0002a57d       0x16 ./Core/Src/syscalls.o
- .debug_macro   0x0002a593      0x4e4 ./Core/Src/sysmem.o
- .debug_macro   0x0002aa77      0x22e ./Core/Src/system_stm32f7xx.o
- .debug_macro   0x0002aca5      0x242 ./Core/Src/tim.o
- .debug_macro   0x0002aee7      0x242 ./Core/Src/usart.o
- .debug_macro   0x0002b129       0x78 ./Drivers/BSP/Components/lan8742/lan8742.o
- .debug_macro   0x0002b1a1      0x45e ./Drivers/BSP/Components/lan8742/lan8742.o
- .debug_macro   0x0002b5ff      0x252 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.o
- .debug_macro   0x0002b851      0x22f ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_adc.o
- .debug_macro   0x0002ba80      0x22e ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.o
- .debug_macro   0x0002bcae      0x22e ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.o
- .debug_macro   0x0002bedc      0x22e ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.o
- .debug_macro   0x0002c10a      0x234 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma.o
- .debug_macro   0x0002c33e      0x308 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_eth.o
- .debug_macro   0x0002c646      0x234 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.o
- .debug_macro   0x0002c87a      0x2fa ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.o
- .debug_macro   0x0002cb74      0x22e ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c_ex.o
- .debug_macro   0x0002cda2      0x246 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr_ex.o
- .debug_macro   0x0002cfe8      0x252 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.o
- .debug_macro   0x0002d23a      0x22e ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.o
- .debug_macro   0x0002d468      0x23d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi.o
- .debug_macro   0x0002d6a5      0x22f ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim.o
- .debug_macro   0x0002d8d4      0x22e ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim_ex.o
- .debug_macro   0x0002db02      0x24b ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.o
- .debug_macro   0x0002dd4d      0x612 ./LWIP/App/lwip.o
- .debug_macro   0x0002e35f       0x5e ./LWIP/App/lwip.o
- .debug_macro   0x0002e3bd      0x647 ./LWIP/Target/ethernetif.o
- .debug_macro   0x0002ea04       0x10 ./LWIP/Target/ethernetif.o
- .debug_macro   0x0002ea14       0xb9 ./LWIP/Target/ethernetif.o
- .debug_macro   0x0002eacd      0x1c3 ./LWIP/Target/ethernetif.o
- .debug_macro   0x0002ec90      0x464 ./LWIP/Target/ethernetif.o
- .debug_macro   0x0002f0f4      0x4fa ./Middlewares/Third_Party/LwIP/src/api/err.o
- .debug_macro   0x0002f5ee       0xe4 ./Middlewares/Third_Party/LwIP/src/api/err.o
- .debug_macro   0x0002f6d2      0x320 ./Middlewares/Third_Party/LwIP/src/api/err.o
- .debug_macro   0x0002f9f2      0x504 ./Middlewares/Third_Party/LwIP/src/core/def.o
- .debug_macro   0x0002fef6      0x6e0 ./Middlewares/Third_Party/LwIP/src/core/init.o
- .debug_macro   0x000305d6       0x10 ./Middlewares/Third_Party/LwIP/src/core/init.o
- .debug_macro   0x000305e6       0x46 ./Middlewares/Third_Party/LwIP/src/core/init.o
- .debug_macro   0x0003062c       0x7c ./Middlewares/Third_Party/LwIP/src/core/init.o
- .debug_macro   0x000306a8      0x1d7 ./Middlewares/Third_Party/LwIP/src/core/init.o
- .debug_macro   0x0003087f       0x35 ./Middlewares/Third_Party/LwIP/src/core/init.o
- .debug_macro   0x000308b4      0x5c0 ./Middlewares/Third_Party/LwIP/src/core/ip.o
- .debug_macro   0x00030e74      0x5f8 ./Middlewares/Third_Party/LwIP/src/core/mem.o
- .debug_macro   0x0003146c      0x749 ./Middlewares/Third_Party/LwIP/src/core/memp.o
- .debug_macro   0x00031bb5      0x122 ./Middlewares/Third_Party/LwIP/src/core/memp.o
- .debug_macro   0x00031cd7       0x16 ./Middlewares/Third_Party/LwIP/src/core/memp.o
- .debug_macro   0x00031ced      0x6c1 ./Middlewares/Third_Party/LwIP/src/core/netif.o
- .debug_macro   0x000323ae       0xc0 ./Middlewares/Third_Party/LwIP/src/core/netif.o
- .debug_macro   0x0003246e      0x64a ./Middlewares/Third_Party/LwIP/src/core/pbuf.o
- .debug_macro   0x00032ab8      0x65b ./Middlewares/Third_Party/LwIP/src/core/tcp.o
- .debug_macro   0x00033113      0x13b ./Middlewares/Third_Party/LwIP/src/core/tcp.o
- .debug_macro   0x0003324e      0x648 ./Middlewares/Third_Party/LwIP/src/core/tcp_in.o
- .debug_macro   0x00033896       0x1c ./Middlewares/Third_Party/LwIP/src/core/tcp_in.o
- .debug_macro   0x000338b2      0x656 ./Middlewares/Third_Party/LwIP/src/core/tcp_out.o
- .debug_macro   0x00033f08      0x6c5 ./Middlewares/Third_Party/LwIP/src/core/timeouts.o
- .debug_macro   0x000345cd      0x659 ./Middlewares/Third_Party/LwIP/src/core/udp.o
- .debug_macro   0x00034c26      0x656 ./Middlewares/Third_Party/LwIP/src/core/ipv4/etharp.o
- .debug_macro   0x0003527c      0x614 ./Middlewares/Third_Party/LwIP/src/core/ipv4/icmp.o
- .debug_macro   0x00035890      0x693 ./Middlewares/Third_Party/LwIP/src/core/ipv4/ip4.o
- .debug_macro   0x00035f23      0x580 ./Middlewares/Third_Party/LwIP/src/core/ipv4/ip4_addr.o
- .debug_macro   0x000364a3      0x63b ./Middlewares/Third_Party/LwIP/src/core/ipv4/ip4_frag.o
- .debug_macro   0x00036ade       0x10 ./Middlewares/Third_Party/LwIP/src/core/ipv4/ip4_frag.o
- .debug_macro   0x00036aee      0x639 ./Middlewares/Third_Party/LwIP/src/netif/ethernet.o
- .debug_macro   0x00037127      0x325 ./UUT/Src/adc_test.o
- .debug_macro   0x0003744c       0x22 ./UUT/Src/adc_test.o
- .debug_macro   0x0003746e       0x16 ./UUT/Src/adc_test.o
- .debug_macro   0x00037484       0x16 ./UUT/Src/adc_test.o
- .debug_macro   0x0003749a      0x640 ./UUT/Src/hw_verif.o
- .debug_macro   0x00037ada       0xee ./UUT/Src/hw_verif.o
- .debug_macro   0x00037bc8      0x24b ./UUT/Src/hw_verif_crc.o
- .debug_macro   0x00037e13       0x16 ./UUT/Src/hw_verif_crc.o
- .debug_macro   0x00037e29      0x650 ./UUT/Src/hw_verif_udp.o
- .debug_macro   0x00038479      0x328 ./UUT/Src/i2c_test.o
- .debug_macro   0x000387a1       0x10 ./UUT/Src/i2c_test.o
- .debug_macro   0x000387b1      0x358 ./UUT/Src/spi_test.o
- .debug_macro   0x00038b09      0x153 ./UUT/Src/tests.o
- .debug_macro   0x00038c5c       0x9e ./UUT/Src/tests.o
- .debug_macro   0x00038cfa      0x112 ./UUT/Src/tests.o
- .debug_macro   0x00038e0c      0x31f ./UUT/Src/timer_test.o
- .debug_macro   0x0003912b      0x328 ./UUT/Src/uart_test.o
+ .debug_macro   0x00026089      0x667 ./Core/Src/main.o
+ .debug_macro   0x000266f0       0xc4 ./Core/Src/main.o
+ .debug_macro   0x000267b4       0x16 ./Core/Src/main.o
+ .debug_macro   0x000267ca       0x10 ./Core/Src/main.o
+ .debug_macro   0x000267da       0x2a ./Core/Src/main.o
+ .debug_macro   0x00026804       0x61 ./Core/Src/main.o
+ .debug_macro   0x00026865       0x43 ./Core/Src/main.o
+ .debug_macro   0x000268a8       0x34 ./Core/Src/main.o
+ .debug_macro   0x000268dc       0x16 ./Core/Src/main.o
+ .debug_macro   0x000268f2       0x3c ./Core/Src/main.o
+ .debug_macro   0x0002692e      0x370 ./Core/Src/main.o
+ .debug_macro   0x00026c9e       0x16 ./Core/Src/main.o
+ .debug_macro   0x00026cb4       0x4a ./Core/Src/main.o
+ .debug_macro   0x00026cfe       0x34 ./Core/Src/main.o
+ .debug_macro   0x00026d32       0x10 ./Core/Src/main.o
+ .debug_macro   0x00026d42       0x58 ./Core/Src/main.o
+ .debug_macro   0x00026d9a       0x8e ./Core/Src/main.o
+ .debug_macro   0x00026e28       0x1c ./Core/Src/main.o
+ .debug_macro   0x00026e44      0x185 ./Core/Src/main.o
+ .debug_macro   0x00026fc9       0x16 ./Core/Src/main.o
+ .debug_macro   0x00026fdf       0x29 ./Core/Src/main.o
+ .debug_macro   0x00027008       0x1c ./Core/Src/main.o
+ .debug_macro   0x00027024       0x10 ./Core/Src/main.o
+ .debug_macro   0x00027034       0x1c ./Core/Src/main.o
+ .debug_macro   0x00027050       0x16 ./Core/Src/main.o
+ .debug_macro   0x00027066      0x146 ./Core/Src/main.o
+ .debug_macro   0x000271ac       0x10 ./Core/Src/main.o
+ .debug_macro   0x000271bc       0x22 ./Core/Src/main.o
+ .debug_macro   0x000271de       0x10 ./Core/Src/main.o
+ .debug_macro   0x000271ee       0x1c ./Core/Src/main.o
+ .debug_macro   0x0002720a       0x52 ./Core/Src/main.o
+ .debug_macro   0x0002725c       0x10 ./Core/Src/main.o
+ .debug_macro   0x0002726c       0x52 ./Core/Src/main.o
+ .debug_macro   0x000272be       0xc1 ./Core/Src/main.o
+ .debug_macro   0x0002737f       0x1c ./Core/Src/main.o
+ .debug_macro   0x0002739b       0x3d ./Core/Src/main.o
+ .debug_macro   0x000273d8       0xc8 ./Core/Src/main.o
+ .debug_macro   0x000274a0       0x16 ./Core/Src/main.o
+ .debug_macro   0x000274b6       0x10 ./Core/Src/main.o
+ .debug_macro   0x000274c6       0x10 ./Core/Src/main.o
+ .debug_macro   0x000274d6       0x35 ./Core/Src/main.o
+ .debug_macro   0x0002750b       0x28 ./Core/Src/main.o
+ .debug_macro   0x00027533       0x10 ./Core/Src/main.o
+ .debug_macro   0x00027543       0x17 ./Core/Src/main.o
+ .debug_macro   0x0002755a       0x10 ./Core/Src/main.o
+ .debug_macro   0x0002756a      0x460 ./Core/Src/main.o
+ .debug_macro   0x000279ca       0x43 ./Core/Src/main.o
+ .debug_macro   0x00027a0d       0x7c ./Core/Src/main.o
+ .debug_macro   0x00027a89       0x17 ./Core/Src/main.o
+ .debug_macro   0x00027aa0      0x118 ./Core/Src/main.o
+ .debug_macro   0x00027bb8       0x19 ./Core/Src/main.o
+ .debug_macro   0x00027bd1      0x11f ./Core/Src/main.o
+ .debug_macro   0x00027cf0       0x82 ./Core/Src/main.o
+ .debug_macro   0x00027d72       0x66 ./Core/Src/main.o
+ .debug_macro   0x00027dd8      0x75d ./Core/Src/main.o
+ .debug_macro   0x00028535       0x10 ./Core/Src/main.o
+ .debug_macro   0x00028545       0x10 ./Core/Src/main.o
+ .debug_macro   0x00028555       0x3f ./Core/Src/main.o
+ .debug_macro   0x00028594       0x25 ./Core/Src/main.o
+ .debug_macro   0x000285b9      0x15b ./Core/Src/main.o
+ .debug_macro   0x00028714       0x22 ./Core/Src/main.o
+ .debug_macro   0x00028736       0xb3 ./Core/Src/main.o
+ .debug_macro   0x000287e9       0x6a ./Core/Src/main.o
+ .debug_macro   0x00028853      0x1bd ./Core/Src/main.o
+ .debug_macro   0x00028a10       0x10 ./Core/Src/main.o
+ .debug_macro   0x00028a20      0x169 ./Core/Src/main.o
+ .debug_macro   0x00028b89      0x12f ./Core/Src/main.o
+ .debug_macro   0x00028cb8       0xa0 ./Core/Src/main.o
+ .debug_macro   0x00028d58       0x28 ./Core/Src/main.o
+ .debug_macro   0x00028d80       0x46 ./Core/Src/main.o
+ .debug_macro   0x00028dc6       0x22 ./Core/Src/main.o
+ .debug_macro   0x00028de8       0x16 ./Core/Src/main.o
+ .debug_macro   0x00028dfe       0x10 ./Core/Src/main.o
+ .debug_macro   0x00028e0e       0x16 ./Core/Src/main.o
+ .debug_macro   0x00028e24      0x242 ./Core/Src/spi.o
+ .debug_macro   0x00029066      0x238 ./Core/Src/stm32f7xx_hal_msp.o
+ .debug_macro   0x0002929e      0x242 ./Core/Src/stm32f7xx_it.o
+ .debug_macro   0x000294e0      0x510 ./Core/Src/syscalls.o
+ .debug_macro   0x000299f0       0x5b ./Core/Src/syscalls.o
+ .debug_macro   0x00029a4b       0x94 ./Core/Src/syscalls.o
+ .debug_macro   0x00029adf       0x57 ./Core/Src/syscalls.o
+ .debug_macro   0x00029b36       0x10 ./Core/Src/syscalls.o
+ .debug_macro   0x00029b46       0xcf ./Core/Src/syscalls.o
+ .debug_macro   0x00029c15      0x12c ./Core/Src/syscalls.o
+ .debug_macro   0x00029d41       0x5d ./Core/Src/syscalls.o
+ .debug_macro   0x00029d9e       0xbe ./Core/Src/syscalls.o
+ .debug_macro   0x00029e5c       0x10 ./Core/Src/syscalls.o
+ .debug_macro   0x00029e6c       0xce ./Core/Src/syscalls.o
+ .debug_macro   0x00029f3a      0x31a ./Core/Src/syscalls.o
+ .debug_macro   0x0002a254      0x190 ./Core/Src/syscalls.o
+ .debug_macro   0x0002a3e4       0x16 ./Core/Src/syscalls.o
+ .debug_macro   0x0002a3fa      0x4e4 ./Core/Src/sysmem.o
+ .debug_macro   0x0002a8de      0x22e ./Core/Src/system_stm32f7xx.o
+ .debug_macro   0x0002ab0c      0x242 ./Core/Src/tim.o
+ .debug_macro   0x0002ad4e      0x242 ./Core/Src/usart.o
+ .debug_macro   0x0002af90       0x78 ./Drivers/BSP/Components/lan8742/lan8742.o
+ .debug_macro   0x0002b008      0x45e ./Drivers/BSP/Components/lan8742/lan8742.o
+ .debug_macro   0x0002b466      0x252 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.o
+ .debug_macro   0x0002b6b8      0x22f ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_adc.o
+ .debug_macro   0x0002b8e7      0x22e ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.o
+ .debug_macro   0x0002bb15      0x22e ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.o
+ .debug_macro   0x0002bd43      0x22e ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.o
+ .debug_macro   0x0002bf71      0x234 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma.o
+ .debug_macro   0x0002c1a5      0x308 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_eth.o
+ .debug_macro   0x0002c4ad      0x234 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.o
+ .debug_macro   0x0002c6e1      0x2fa ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.o
+ .debug_macro   0x0002c9db      0x22e ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c_ex.o
+ .debug_macro   0x0002cc09      0x246 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr_ex.o
+ .debug_macro   0x0002ce4f      0x252 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.o
+ .debug_macro   0x0002d0a1      0x22e ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.o
+ .debug_macro   0x0002d2cf      0x23d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi.o
+ .debug_macro   0x0002d50c      0x22f ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim.o
+ .debug_macro   0x0002d73b      0x22e ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim_ex.o
+ .debug_macro   0x0002d969      0x24b ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.o
+ .debug_macro   0x0002dbb4      0x612 ./LWIP/App/lwip.o
+ .debug_macro   0x0002e1c6       0x5e ./LWIP/App/lwip.o
+ .debug_macro   0x0002e224      0x647 ./LWIP/Target/ethernetif.o
+ .debug_macro   0x0002e86b       0x10 ./LWIP/Target/ethernetif.o
+ .debug_macro   0x0002e87b       0xb9 ./LWIP/Target/ethernetif.o
+ .debug_macro   0x0002e934      0x1c3 ./LWIP/Target/ethernetif.o
+ .debug_macro   0x0002eaf7      0x464 ./LWIP/Target/ethernetif.o
+ .debug_macro   0x0002ef5b       0x16 ./LWIP/Target/ethernetif.o
+ .debug_macro   0x0002ef71       0x20 ./LWIP/Target/ethernetif.o
+ .debug_macro   0x0002ef91      0x4fa ./Middlewares/Third_Party/LwIP/src/api/err.o
+ .debug_macro   0x0002f48b       0xe4 ./Middlewares/Third_Party/LwIP/src/api/err.o
+ .debug_macro   0x0002f56f      0x320 ./Middlewares/Third_Party/LwIP/src/api/err.o
+ .debug_macro   0x0002f88f      0x504 ./Middlewares/Third_Party/LwIP/src/core/def.o
+ .debug_macro   0x0002fd93      0x6e0 ./Middlewares/Third_Party/LwIP/src/core/init.o
+ .debug_macro   0x00030473       0x10 ./Middlewares/Third_Party/LwIP/src/core/init.o
+ .debug_macro   0x00030483       0x46 ./Middlewares/Third_Party/LwIP/src/core/init.o
+ .debug_macro   0x000304c9       0x7c ./Middlewares/Third_Party/LwIP/src/core/init.o
+ .debug_macro   0x00030545      0x1d7 ./Middlewares/Third_Party/LwIP/src/core/init.o
+ .debug_macro   0x0003071c       0x35 ./Middlewares/Third_Party/LwIP/src/core/init.o
+ .debug_macro   0x00030751      0x5c0 ./Middlewares/Third_Party/LwIP/src/core/ip.o
+ .debug_macro   0x00030d11      0x5f8 ./Middlewares/Third_Party/LwIP/src/core/mem.o
+ .debug_macro   0x00031309      0x749 ./Middlewares/Third_Party/LwIP/src/core/memp.o
+ .debug_macro   0x00031a52      0x122 ./Middlewares/Third_Party/LwIP/src/core/memp.o
+ .debug_macro   0x00031b74       0x16 ./Middlewares/Third_Party/LwIP/src/core/memp.o
+ .debug_macro   0x00031b8a      0x6c1 ./Middlewares/Third_Party/LwIP/src/core/netif.o
+ .debug_macro   0x0003224b       0xc0 ./Middlewares/Third_Party/LwIP/src/core/netif.o
+ .debug_macro   0x0003230b      0x64a ./Middlewares/Third_Party/LwIP/src/core/pbuf.o
+ .debug_macro   0x00032955      0x65b ./Middlewares/Third_Party/LwIP/src/core/tcp.o
+ .debug_macro   0x00032fb0      0x13b ./Middlewares/Third_Party/LwIP/src/core/tcp.o
+ .debug_macro   0x000330eb      0x648 ./Middlewares/Third_Party/LwIP/src/core/tcp_in.o
+ .debug_macro   0x00033733       0x1c ./Middlewares/Third_Party/LwIP/src/core/tcp_in.o
+ .debug_macro   0x0003374f      0x656 ./Middlewares/Third_Party/LwIP/src/core/tcp_out.o
+ .debug_macro   0x00033da5      0x6c5 ./Middlewares/Third_Party/LwIP/src/core/timeouts.o
+ .debug_macro   0x0003446a      0x659 ./Middlewares/Third_Party/LwIP/src/core/udp.o
+ .debug_macro   0x00034ac3      0x656 ./Middlewares/Third_Party/LwIP/src/core/ipv4/etharp.o
+ .debug_macro   0x00035119      0x614 ./Middlewares/Third_Party/LwIP/src/core/ipv4/icmp.o
+ .debug_macro   0x0003572d      0x693 ./Middlewares/Third_Party/LwIP/src/core/ipv4/ip4.o
+ .debug_macro   0x00035dc0      0x580 ./Middlewares/Third_Party/LwIP/src/core/ipv4/ip4_addr.o
+ .debug_macro   0x00036340      0x63b ./Middlewares/Third_Party/LwIP/src/core/ipv4/ip4_frag.o
+ .debug_macro   0x0003697b       0x10 ./Middlewares/Third_Party/LwIP/src/core/ipv4/ip4_frag.o
+ .debug_macro   0x0003698b      0x639 ./Middlewares/Third_Party/LwIP/src/netif/ethernet.o
+ .debug_macro   0x00036fc4      0x325 ./UUT/Src/adc_test.o
+ .debug_macro   0x000372e9       0x22 ./UUT/Src/adc_test.o
+ .debug_macro   0x0003730b       0x16 ./UUT/Src/adc_test.o
+ .debug_macro   0x00037321       0x16 ./UUT/Src/adc_test.o
+ .debug_macro   0x00037337      0x636 ./UUT/Src/hw_verif.o
+ .debug_macro   0x0003796d       0xee ./UUT/Src/hw_verif.o
+ .debug_macro   0x00037a5b       0x34 ./UUT/Src/hw_verif.o
+ .debug_macro   0x00037a8f      0x24b ./UUT/Src/hw_verif_crc.o
+ .debug_macro   0x00037cda       0x16 ./UUT/Src/hw_verif_crc.o
+ .debug_macro   0x00037cf0      0x650 ./UUT/Src/hw_verif_udp.o
+ .debug_macro   0x00038340      0x328 ./UUT/Src/i2c_test.o
+ .debug_macro   0x00038668       0x10 ./UUT/Src/i2c_test.o
+ .debug_macro   0x00038678      0x358 ./UUT/Src/spi_test.o
+ .debug_macro   0x000389d0      0x153 ./UUT/Src/tests.o
+ .debug_macro   0x00038b23       0x9e ./UUT/Src/tests.o
+ .debug_macro   0x00038bc1      0x112 ./UUT/Src/tests.o
+ .debug_macro   0x00038cd3      0x31f ./UUT/Src/timer_test.o
+ .debug_macro   0x00038ff2      0x328 ./UUT/Src/uart_test.o
 
-.debug_line     0x00000000    0x3db04
+.debug_line     0x00000000    0x3dab6
  .debug_line    0x00000000      0x82b ./Core/Src/adc.o
  .debug_line    0x0000082b      0x7c7 ./Core/Src/crc.o
  .debug_line    0x00000ff2      0x78b ./Core/Src/dma.o
  .debug_line    0x0000177d      0x779 ./Core/Src/gpio.o
  .debug_line    0x00001ef6      0x972 ./Core/Src/i2c.o
- .debug_line    0x00002868      0xde0 ./Core/Src/main.o
- .debug_line    0x00003648      0x937 ./Core/Src/spi.o
- .debug_line    0x00003f7f      0x778 ./Core/Src/stm32f7xx_hal_msp.o
- .debug_line    0x000046f7      0xa67 ./Core/Src/stm32f7xx_it.o
- .debug_line    0x0000515e      0xcba ./Core/Src/syscalls.o
- .debug_line    0x00005e18      0xac6 ./Core/Src/sysmem.o
- .debug_line    0x000068de      0x7ec ./Core/Src/system_stm32f7xx.o
- .debug_line    0x000070ca      0x884 ./Core/Src/tim.o
- .debug_line    0x0000794e      0x983 ./Core/Src/usart.o
- .debug_line    0x000082d1       0x7a ./Core/Startup/startup_stm32f756zgtx.o
- .debug_line    0x0000834b      0x7cc ./Drivers/BSP/Components/lan8742/lan8742.o
- .debug_line    0x00008b17      0xa9f ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.o
- .debug_line    0x000095b6     0x1264 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_adc.o
- .debug_line    0x0000a81a      0xd1f ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.o
- .debug_line    0x0000b539      0xa39 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.o
- .debug_line    0x0000bf72      0x835 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.o
- .debug_line    0x0000c7a7      0xfec ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma.o
- .debug_line    0x0000d793     0x1a7f ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_eth.o
- .debug_line    0x0000f212      0xbf9 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.o
- .debug_line    0x0000fe0b     0x37d6 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.o
- .debug_line    0x000135e1      0x84a ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c_ex.o
- .debug_line    0x00013e2b      0xa6f ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr_ex.o
- .debug_line    0x0001489a      0xf92 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.o
- .debug_line    0x0001582c      0xed0 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.o
- .debug_line    0x000166fc     0x20a5 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi.o
- .debug_line    0x000187a1     0x3d3a ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim.o
- .debug_line    0x0001c4db     0x1acd ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim_ex.o
- .debug_line    0x0001dfa8     0x2cda ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.o
- .debug_line    0x00020c82      0xce2 ./LWIP/App/lwip.o
- .debug_line    0x00021964     0x10fb ./LWIP/Target/ethernetif.o
- .debug_line    0x00022a5f      0xae6 ./Middlewares/Third_Party/LwIP/src/api/err.o
- .debug_line    0x00023545      0xc82 ./Middlewares/Third_Party/LwIP/src/core/def.o
- .debug_line    0x000241c7      0xd2b ./Middlewares/Third_Party/LwIP/src/core/init.o
- .debug_line    0x00024ef2      0xbc8 ./Middlewares/Third_Party/LwIP/src/core/ip.o
- .debug_line    0x00025aba      0xfb7 ./Middlewares/Third_Party/LwIP/src/core/mem.o
- .debug_line    0x00026a71      0xf2a ./Middlewares/Third_Party/LwIP/src/core/memp.o
- .debug_line    0x0002799b     0x13d0 ./Middlewares/Third_Party/LwIP/src/core/netif.o
- .debug_line    0x00028d6b     0x16f0 ./Middlewares/Third_Party/LwIP/src/core/pbuf.o
- .debug_line    0x0002a45b     0x1ea7 ./Middlewares/Third_Party/LwIP/src/core/tcp.o
- .debug_line    0x0002c302     0x2039 ./Middlewares/Third_Party/LwIP/src/core/tcp_in.o
- .debug_line    0x0002e33b     0x1cce ./Middlewares/Third_Party/LwIP/src/core/tcp_out.o
- .debug_line    0x00030009      0xf9a ./Middlewares/Third_Party/LwIP/src/core/timeouts.o
- .debug_line    0x00030fa3     0x1484 ./Middlewares/Third_Party/LwIP/src/core/udp.o
- .debug_line    0x00032427     0x1330 ./Middlewares/Third_Party/LwIP/src/core/ipv4/etharp.o
- .debug_line    0x00033757      0xe12 ./Middlewares/Third_Party/LwIP/src/core/ipv4/icmp.o
- .debug_line    0x00034569      0xfd3 ./Middlewares/Third_Party/LwIP/src/core/ipv4/ip4.o
- .debug_line    0x0003553c      0xe5f ./Middlewares/Third_Party/LwIP/src/core/ipv4/ip4_addr.o
- .debug_line    0x0003639b     0x12f1 ./Middlewares/Third_Party/LwIP/src/core/ipv4/ip4_frag.o
- .debug_line    0x0003768c      0xdc3 ./Middlewares/Third_Party/LwIP/src/netif/ethernet.o
- .debug_line    0x0003844f      0x926 ./UUT/Src/adc_test.o
- .debug_line    0x00038d75      0xcc6 ./UUT/Src/hw_verif.o
- .debug_line    0x00039a3b      0x7a1 ./UUT/Src/hw_verif_crc.o
- .debug_line    0x0003a1dc      0xd40 ./UUT/Src/hw_verif_udp.o
- .debug_line    0x0003af1c      0x9e7 ./UUT/Src/i2c_test.o
- .debug_line    0x0003b903      0x9ef ./UUT/Src/spi_test.o
- .debug_line    0x0003c2f2      0x54d ./UUT/Src/tests.o
- .debug_line    0x0003c83f      0x94d ./UUT/Src/timer_test.o
- .debug_line    0x0003d18c      0x978 ./UUT/Src/uart_test.o
+ .debug_line    0x00002868      0xd9f ./Core/Src/main.o
+ .debug_line    0x00003607      0x937 ./Core/Src/spi.o
+ .debug_line    0x00003f3e      0x778 ./Core/Src/stm32f7xx_hal_msp.o
+ .debug_line    0x000046b6      0xa67 ./Core/Src/stm32f7xx_it.o
+ .debug_line    0x0000511d      0xcba ./Core/Src/syscalls.o
+ .debug_line    0x00005dd7      0xac6 ./Core/Src/sysmem.o
+ .debug_line    0x0000689d      0x7ec ./Core/Src/system_stm32f7xx.o
+ .debug_line    0x00007089      0x884 ./Core/Src/tim.o
+ .debug_line    0x0000790d      0x983 ./Core/Src/usart.o
+ .debug_line    0x00008290       0x7a ./Core/Startup/startup_stm32f756zgtx.o
+ .debug_line    0x0000830a      0x7cc ./Drivers/BSP/Components/lan8742/lan8742.o
+ .debug_line    0x00008ad6      0xa9f ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.o
+ .debug_line    0x00009575     0x1264 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_adc.o
+ .debug_line    0x0000a7d9      0xd1f ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.o
+ .debug_line    0x0000b4f8      0xa39 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.o
+ .debug_line    0x0000bf31      0x835 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.o
+ .debug_line    0x0000c766      0xfec ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma.o
+ .debug_line    0x0000d752     0x1a7f ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_eth.o
+ .debug_line    0x0000f1d1      0xbf9 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.o
+ .debug_line    0x0000fdca     0x37d6 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.o
+ .debug_line    0x000135a0      0x84a ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c_ex.o
+ .debug_line    0x00013dea      0xa6f ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr_ex.o
+ .debug_line    0x00014859      0xf92 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.o
+ .debug_line    0x000157eb      0xed0 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.o
+ .debug_line    0x000166bb     0x20a5 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi.o
+ .debug_line    0x00018760     0x3d3a ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim.o
+ .debug_line    0x0001c49a     0x1acd ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim_ex.o
+ .debug_line    0x0001df67     0x2cda ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.o
+ .debug_line    0x00020c41      0xce2 ./LWIP/App/lwip.o
+ .debug_line    0x00021923     0x10fb ./LWIP/Target/ethernetif.o
+ .debug_line    0x00022a1e      0xae6 ./Middlewares/Third_Party/LwIP/src/api/err.o
+ .debug_line    0x00023504      0xc82 ./Middlewares/Third_Party/LwIP/src/core/def.o
+ .debug_line    0x00024186      0xd2b ./Middlewares/Third_Party/LwIP/src/core/init.o
+ .debug_line    0x00024eb1      0xbc8 ./Middlewares/Third_Party/LwIP/src/core/ip.o
+ .debug_line    0x00025a79      0xfb7 ./Middlewares/Third_Party/LwIP/src/core/mem.o
+ .debug_line    0x00026a30      0xf2a ./Middlewares/Third_Party/LwIP/src/core/memp.o
+ .debug_line    0x0002795a     0x13d0 ./Middlewares/Third_Party/LwIP/src/core/netif.o
+ .debug_line    0x00028d2a     0x16f0 ./Middlewares/Third_Party/LwIP/src/core/pbuf.o
+ .debug_line    0x0002a41a     0x1ea7 ./Middlewares/Third_Party/LwIP/src/core/tcp.o
+ .debug_line    0x0002c2c1     0x2039 ./Middlewares/Third_Party/LwIP/src/core/tcp_in.o
+ .debug_line    0x0002e2fa     0x1cce ./Middlewares/Third_Party/LwIP/src/core/tcp_out.o
+ .debug_line    0x0002ffc8      0xf9a ./Middlewares/Third_Party/LwIP/src/core/timeouts.o
+ .debug_line    0x00030f62     0x1484 ./Middlewares/Third_Party/LwIP/src/core/udp.o
+ .debug_line    0x000323e6     0x1330 ./Middlewares/Third_Party/LwIP/src/core/ipv4/etharp.o
+ .debug_line    0x00033716      0xe12 ./Middlewares/Third_Party/LwIP/src/core/ipv4/icmp.o
+ .debug_line    0x00034528      0xfd3 ./Middlewares/Third_Party/LwIP/src/core/ipv4/ip4.o
+ .debug_line    0x000354fb      0xe5f ./Middlewares/Third_Party/LwIP/src/core/ipv4/ip4_addr.o
+ .debug_line    0x0003635a     0x12f1 ./Middlewares/Third_Party/LwIP/src/core/ipv4/ip4_frag.o
+ .debug_line    0x0003764b      0xdc3 ./Middlewares/Third_Party/LwIP/src/netif/ethernet.o
+ .debug_line    0x0003840e      0x926 ./UUT/Src/adc_test.o
+ .debug_line    0x00038d34      0xcb8 ./UUT/Src/hw_verif.o
+ .debug_line    0x000399ec      0x7a1 ./UUT/Src/hw_verif_crc.o
+ .debug_line    0x0003a18d      0xd41 ./UUT/Src/hw_verif_udp.o
+ .debug_line    0x0003aece      0x9e7 ./UUT/Src/i2c_test.o
+ .debug_line    0x0003b8b5      0x9ef ./UUT/Src/spi_test.o
+ .debug_line    0x0003c2a4      0x54d ./UUT/Src/tests.o
+ .debug_line    0x0003c7f1      0x94d ./UUT/Src/timer_test.o
+ .debug_line    0x0003d13e      0x978 ./UUT/Src/uart_test.o
 
-.debug_str      0x00000000   0x11558f
- .debug_str     0x00000000   0x11558f ./Core/Src/adc.o
-                              0xf6eb5 (size before relaxing)
- .debug_str     0x0011558f    0xf6b78 ./Core/Src/crc.o
- .debug_str     0x0011558f    0xf6f33 ./Core/Src/dma.o
- .debug_str     0x0011558f    0xf6952 ./Core/Src/gpio.o
- .debug_str     0x0011558f    0xf787c ./Core/Src/i2c.o
- .debug_str     0x0011558f   0x1040e4 ./Core/Src/main.o
- .debug_str     0x0011558f    0xf751f ./Core/Src/spi.o
- .debug_str     0x0011558f    0xf6952 ./Core/Src/stm32f7xx_hal_msp.o
- .debug_str     0x0011558f    0xf7d90 ./Core/Src/stm32f7xx_it.o
- .debug_str     0x0011558f   0x100622 ./Core/Src/syscalls.o
- .debug_str     0x0011558f    0xffc68 ./Core/Src/sysmem.o
- .debug_str     0x0011558f    0xf6acb ./Core/Src/system_stm32f7xx.o
- .debug_str     0x0011558f    0xf7692 ./Core/Src/tim.o
- .debug_str     0x0011558f    0xf77f2 ./Core/Src/usart.o
- .debug_str     0x0011558f       0x83 ./Core/Startup/startup_stm32f756zgtx.o
- .debug_str     0x0011558f     0x5cab ./Drivers/BSP/Components/lan8742/lan8742.o
- .debug_str     0x0011558f    0xf7443 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.o
- .debug_str     0x0011558f    0xf6fcb ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_adc.o
- .debug_str     0x0011558f    0xf7460 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.o
- .debug_str     0x0011558f    0xf6b06 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.o
- .debug_str     0x0011558f    0xf6ac0 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.o
- .debug_str     0x0011558f    0xf6e0a ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma.o
- .debug_str     0x0011558f    0xf8307 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_eth.o
- .debug_str     0x0011558f    0xf6b89 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.o
- .debug_str     0x0011558f    0xf7cde ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.o
- .debug_str     0x0011558f    0xf6f5d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c_ex.o
- .debug_str     0x0011558f    0xf6d3a ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr_ex.o
- .debug_str     0x0011558f    0xf6e2d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.o
- .debug_str     0x0011558f    0xf6d65 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.o
- .debug_str     0x0011558f    0xf7305 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi.o
- .debug_str     0x0011558f    0xf7dee ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim.o
- .debug_str     0x0011558f    0xf7634 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim_ex.o
- .debug_str     0x0011558f    0xf777a ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.o
- .debug_str     0x0011558f   0x103794 ./LWIP/App/lwip.o
- .debug_str     0x0011558f   0x106948 ./LWIP/Target/ethernetif.o
- .debug_str     0x0011558f   0x100495 ./Middlewares/Third_Party/LwIP/src/api/err.o
- .debug_str     0x0011558f    0xffa84 ./Middlewares/Third_Party/LwIP/src/core/def.o
- .debug_str     0x0011558f   0x1062ce ./Middlewares/Third_Party/LwIP/src/core/init.o
- .debug_str     0x0011558f   0x10387c ./Middlewares/Third_Party/LwIP/src/core/ip.o
- .debug_str     0x0011558f   0x100ed0 ./Middlewares/Third_Party/LwIP/src/core/mem.o
- .debug_str     0x0011558f   0x10695c ./Middlewares/Third_Party/LwIP/src/core/memp.o
- .debug_str     0x0011558f   0x10692c ./Middlewares/Third_Party/LwIP/src/core/netif.o
- .debug_str     0x0011558f   0x106397 ./Middlewares/Third_Party/LwIP/src/core/pbuf.o
- .debug_str     0x0011558f   0x10610f ./Middlewares/Third_Party/LwIP/src/core/tcp.o
- .debug_str     0x0011558f   0x105f46 ./Middlewares/Third_Party/LwIP/src/core/tcp_in.o
- .debug_str     0x0011558f   0x105f75 ./Middlewares/Third_Party/LwIP/src/core/tcp_out.o
- .debug_str     0x0011558f   0x106409 ./Middlewares/Third_Party/LwIP/src/core/timeouts.o
- .debug_str     0x0011558f   0x10474f ./Middlewares/Third_Party/LwIP/src/core/udp.o
- .debug_str     0x0011558f   0x103f5b ./Middlewares/Third_Party/LwIP/src/core/ipv4/etharp.o
- .debug_str     0x0011558f   0x103dd3 ./Middlewares/Third_Party/LwIP/src/core/ipv4/icmp.o
- .debug_str     0x0011558f   0x105c1b ./Middlewares/Third_Party/LwIP/src/core/ipv4/ip4.o
- .debug_str     0x0011558f   0x102bc3 ./Middlewares/Third_Party/LwIP/src/core/ipv4/ip4_addr.o
- .debug_str     0x0011558f   0x10414c ./Middlewares/Third_Party/LwIP/src/core/ipv4/ip4_frag.o
- .debug_str     0x0011558f   0x1043a5 ./Middlewares/Third_Party/LwIP/src/netif/ethernet.o
- .debug_str     0x0011558f    0xfa4ef ./UUT/Src/adc_test.o
- .debug_str     0x0011558f   0x103802 ./UUT/Src/hw_verif.o
- .debug_str     0x0011558f    0xf6a72 ./UUT/Src/hw_verif_crc.o
- .debug_str     0x0011558f   0x103da2 ./UUT/Src/hw_verif_udp.o
- .debug_str     0x0011558f    0xfa6e0 ./UUT/Src/i2c_test.o
- .debug_str     0x0011558f    0xfa645 ./UUT/Src/spi_test.o
- .debug_str     0x0011558f     0x798a ./UUT/Src/tests.o
- .debug_str     0x0011558f    0xfa685 ./UUT/Src/timer_test.o
- .debug_str     0x0011558f    0xfa5ce ./UUT/Src/uart_test.o
+.debug_str      0x00000000   0x1155df
+ .debug_str     0x00000000   0x1155df ./Core/Src/adc.o
+                              0xf6ec6 (size before relaxing)
+ .debug_str     0x001155df    0xf6b89 ./Core/Src/crc.o
+ .debug_str     0x001155df    0xf6f44 ./Core/Src/dma.o
+ .debug_str     0x001155df    0xf6963 ./Core/Src/gpio.o
+ .debug_str     0x001155df    0xf788d ./Core/Src/i2c.o
+ .debug_str     0x001155df   0x103a8e ./Core/Src/main.o
+ .debug_str     0x001155df    0xf7530 ./Core/Src/spi.o
+ .debug_str     0x001155df    0xf6963 ./Core/Src/stm32f7xx_hal_msp.o
+ .debug_str     0x001155df    0xf7da1 ./Core/Src/stm32f7xx_it.o
+ .debug_str     0x001155df   0x100633 ./Core/Src/syscalls.o
+ .debug_str     0x001155df    0xffc79 ./Core/Src/sysmem.o
+ .debug_str     0x001155df    0xf6adc ./Core/Src/system_stm32f7xx.o
+ .debug_str     0x001155df    0xf76a3 ./Core/Src/tim.o
+ .debug_str     0x001155df    0xf7803 ./Core/Src/usart.o
+ .debug_str     0x001155df       0x83 ./Core/Startup/startup_stm32f756zgtx.o
+ .debug_str     0x001155df     0x5cab ./Drivers/BSP/Components/lan8742/lan8742.o
+ .debug_str     0x001155df    0xf7454 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.o
+ .debug_str     0x001155df    0xf6fdc ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_adc.o
+ .debug_str     0x001155df    0xf7471 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.o
+ .debug_str     0x001155df    0xf6b17 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.o
+ .debug_str     0x001155df    0xf6ad1 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.o
+ .debug_str     0x001155df    0xf6e1b ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma.o
+ .debug_str     0x001155df    0xf8318 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_eth.o
+ .debug_str     0x001155df    0xf6b9a ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.o
+ .debug_str     0x001155df    0xf7cef ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.o
+ .debug_str     0x001155df    0xf6f6e ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c_ex.o
+ .debug_str     0x001155df    0xf6d4b ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr_ex.o
+ .debug_str     0x001155df    0xf6e3e ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.o
+ .debug_str     0x001155df    0xf6d76 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.o
+ .debug_str     0x001155df    0xf7316 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi.o
+ .debug_str     0x001155df    0xf7dff ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim.o
+ .debug_str     0x001155df    0xf7645 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim_ex.o
+ .debug_str     0x001155df    0xf778b ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.o
+ .debug_str     0x001155df   0x1037a5 ./LWIP/App/lwip.o
+ .debug_str     0x001155df   0x106959 ./LWIP/Target/ethernetif.o
+ .debug_str     0x001155df   0x1004a6 ./Middlewares/Third_Party/LwIP/src/api/err.o
+ .debug_str     0x001155df    0xffa95 ./Middlewares/Third_Party/LwIP/src/core/def.o
+ .debug_str     0x001155df   0x1062df ./Middlewares/Third_Party/LwIP/src/core/init.o
+ .debug_str     0x001155df   0x10388d ./Middlewares/Third_Party/LwIP/src/core/ip.o
+ .debug_str     0x001155df   0x100ee1 ./Middlewares/Third_Party/LwIP/src/core/mem.o
+ .debug_str     0x001155df   0x10696d ./Middlewares/Third_Party/LwIP/src/core/memp.o
+ .debug_str     0x001155df   0x10693d ./Middlewares/Third_Party/LwIP/src/core/netif.o
+ .debug_str     0x001155df   0x1063a8 ./Middlewares/Third_Party/LwIP/src/core/pbuf.o
+ .debug_str     0x001155df   0x106120 ./Middlewares/Third_Party/LwIP/src/core/tcp.o
+ .debug_str     0x001155df   0x105f57 ./Middlewares/Third_Party/LwIP/src/core/tcp_in.o
+ .debug_str     0x001155df   0x105f86 ./Middlewares/Third_Party/LwIP/src/core/tcp_out.o
+ .debug_str     0x001155df   0x10641a ./Middlewares/Third_Party/LwIP/src/core/timeouts.o
+ .debug_str     0x001155df   0x104760 ./Middlewares/Third_Party/LwIP/src/core/udp.o
+ .debug_str     0x001155df   0x103f6c ./Middlewares/Third_Party/LwIP/src/core/ipv4/etharp.o
+ .debug_str     0x001155df   0x103de4 ./Middlewares/Third_Party/LwIP/src/core/ipv4/icmp.o
+ .debug_str     0x001155df   0x105c2c ./Middlewares/Third_Party/LwIP/src/core/ipv4/ip4.o
+ .debug_str     0x001155df   0x102bd4 ./Middlewares/Third_Party/LwIP/src/core/ipv4/ip4_addr.o
+ .debug_str     0x001155df   0x10415d ./Middlewares/Third_Party/LwIP/src/core/ipv4/ip4_frag.o
+ .debug_str     0x001155df   0x1043b6 ./Middlewares/Third_Party/LwIP/src/netif/ethernet.o
+ .debug_str     0x001155df    0xfa500 ./UUT/Src/adc_test.o
+ .debug_str     0x001155df   0x103802 ./UUT/Src/hw_verif.o
+ .debug_str     0x001155df    0xf6a83 ./UUT/Src/hw_verif_crc.o
+ .debug_str     0x001155df   0x103db3 ./UUT/Src/hw_verif_udp.o
+ .debug_str     0x001155df    0xfa6f1 ./UUT/Src/i2c_test.o
+ .debug_str     0x001155df    0xfa656 ./UUT/Src/spi_test.o
+ .debug_str     0x001155df     0x799b ./UUT/Src/tests.o
+ .debug_str     0x001155df    0xfa696 ./UUT/Src/timer_test.o
+ .debug_str     0x001155df    0xfa5ce ./UUT/Src/uart_test.o
 
 .comment        0x00000000       0x43
  .comment       0x00000000       0x43 ./Core/Src/adc.o
