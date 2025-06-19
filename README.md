@@ -1,5 +1,5 @@
 # STM32F746ZG Hardware Verification System
-A client-server testing framework for STM32F746ZG peripheral validation.
+A client-server testing framework for STM32F746ZG peripheral verification.
 
 ## Content
 1. [Project Overview](#project-overview)
