@@ -1,6 +1,14 @@
 # Linux CLI Program for STM32F756ZG Verification
 A Linux-based testing program for STM32F756ZG peripheral validation via UDP communication.
 
+## Content
+1. [Overview](#overview)
+2. [Compilation](#compilation)
+3. [Network Configuration](#network-configuration)
+4. [Usage](#usage)
+5. [Usage Examples](#usage-examples)
+6. [SQLite3 Database](#sqlite3-database)
+
 ## Overview
 This program sends test commands to an STM32F756ZG microcontroller over UDP and logs the results to a local database. It supports testing of multiple peripherals including UART, SPI, I2C, ADC, and Timer modules.
 
@@ -194,6 +202,6 @@ Unless `LOCAL_DB_PATH` is defined, the database will be stored in:
 ~/HW_tester/records.db
 ```
 ### Data retrieval
-See **Usage** and **Usage Examples** sections above.
+See [**Usage**](#usage) and [**Usage Examples**](#usage-examples) sections above.
 
 The raw database format and the exported CSV data are compatible to use for further view and data analysis with several tools like SQLite3 CLI, Excel, python's SQLite3 module and more.
