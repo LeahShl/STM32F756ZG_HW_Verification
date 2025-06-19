@@ -1,12 +1,18 @@
-/*
- * tests.c
- *
- *  Created on: Jun 14, 2025
- *      Author: leah
+/**
+ * @file tests.c
+ * @author leah
+ * @date 19-06-2025
+ * 
+ * @brief Generic testing functions 
+ * 
  */
 
 #include "tests.h"
 #include <stdio.h>
+
+/****************************
+ * FUNCTION IMPLEMENTATION  *
+ ****************************/
 
 uint8_t Test_N_Perform(const char *test_name, TestFunction test_func, uint8_t n)
 {

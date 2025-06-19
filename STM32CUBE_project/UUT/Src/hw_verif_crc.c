@@ -1,11 +1,17 @@
-/*
- * crc.c
- *
- *  Created on: Jun 5, 2025
- *      Author: leah
+/**
+ * @file hw_verif_crc.c
+ * @author leah
+ * @date 19-06-2025
+ * 
+ * @brief CRC check implementation for UUT tester program
+ * 
  */
 #include "crc.h"
 #include "hw_verif_crc.h"
+
+/****************************
+ * FUNCTION IMPLEMENTATION  *
+ ****************************/
 
 int Match_CRC(uint8_t *buf1, uint8_t buf1_len, uint8_t *buf2, uint8_t buf2_len)
 {
