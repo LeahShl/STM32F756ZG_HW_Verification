@@ -16,11 +16,12 @@
 /**
  * @brief Enable debug prints
  * 
- * Comment next line to disable debug prints.
+ * Comment/Uncomment next line to disable/enable debug prints.
  * The value doesn't matter, but could be used in the future
  * to implement different debug levels.
  */
-#define PRINT_TESTS_DEBUG 1
+
+//#define PRINT_TESTS_DEBUG 1
 
 /**
  * @brief Available test results
