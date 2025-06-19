@@ -1,6 +1,14 @@
 # Linux CLI Program for STM32F756ZG Verification
 A Linux-based testing program for STM32F756ZG peripheral validation via UDP communication.
 
+## Content
+1. [Overview](#overview)
+2. [Compilation](#compilation)
+3. [Network Configuration](#network-configuration)
+4. [Usage](#usage)
+5. [Usage Examples](#usage-examples)
+6. [SQLite3 Database](#sqlite3-database)
+
 ## Overview
 This program sends test commands to an STM32F756ZG microcontroller over UDP and logs the results to a local database. It supports testing of multiple peripherals including UART, SPI, I2C, ADC, and Timer modules.
 
