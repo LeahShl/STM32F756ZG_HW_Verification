@@ -1,8 +1,10 @@
-/*
- * spi_test.h
- *
- *  Created on: Jun 5, 2025
- *      Author: leah
+/**
+ * @file spi_test.h
+ * @author leah
+ * @date 2025-06-19
+ * 
+ * @brief SPI test header
+ * 
  */
 
 #ifndef INC_SPI_TEST_H_
@@ -10,6 +12,17 @@
 
 #include <stdint.h>
 
+/*************************
+ * FUNCTION DECLARATIONS *
+ *************************/
+
+/**
+ * @brief Perform SPI test
+ * 
+ * @param msg Buffer containing bit pattern for the test
+ * @param msg_len Length of msg
+ * @return uint8_t TEST_SUCCESS if the test passed, TEST_FAILED otherwise
+ */
 uint8_t SPI_Test_Perform(uint8_t *msg, uint8_t msg_len);
 
 #endif /* INC_SPI_TEST_H_ */

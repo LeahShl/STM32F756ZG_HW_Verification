@@ -1,8 +1,9 @@
-/*
- * adc_test.c
- *
- *  Created on: Jun 5, 2025
- *      Author: leah
+/**
+ * @file adc_test.c
+ * @author leah
+ * @date 19-06-2025
+ * 
+ * @brief Implementation of ADC test
  */
 #include "stm32f7xx_hal.h"
 #include "main.h"
@@ -10,13 +11,25 @@
 #include <stdio.h>
 #include <stdint.h>
 
-#define EXPECTED_3V3 4095
-#define ERR_TOLERANCE_3V3 95
+/*************************
+ * MACROS                *
+ *************************/
 
-extern ADC_HandleTypeDef hadc1;
+#define EXPECTED_3V3 4095          /** Expected reading from a 3.3v source */
+#define ERR_TOLERANCE_3V3 95       /** Error tolerance for 3.3v reading */
 
-uint16_t adc_buf[MAX_BUF];
-int adc_ready = 0;
+/*************************
+ * GLOBALS               *
+ *************************/
+
+extern ADC_HandleTypeDef hadc1;    /** ADC1 handle */
+
+uint16_t adc_buf[MAX_BUF];         /** Buffer for ADC samples */
+int adc_ready = 0;                 /** Ready flag for DMA synchronization */
+
+/****************************
+ * FUNCTION IMPLEMENTATION  *
+ ****************************/
 
 uint8_t ADC_Test_Perform(void)
 {
@@ -46,6 +59,10 @@ uint8_t ADC_Test_Perform(void)
 
 	return TEST_FAILED;
 }
+
+/****************************
+ * CALLBACK IMPLEMENTATION  *
+ ****************************/
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 {

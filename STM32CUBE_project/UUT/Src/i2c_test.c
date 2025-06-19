@@ -1,8 +1,9 @@
-/*
- * i2c_test.c
- *
- *  Created on: Jun 5, 2025
- *      Author: leah
+/**
+ * @file i2c_test.c
+ * @author leah
+ * @date 19-06-2025
+ * 
+ * @brief Implementation of I2C test
  */
 #include "hw_verif_crc.h"
 #include "stm32f7xx_hal.h"

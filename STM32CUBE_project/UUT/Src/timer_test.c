@@ -1,8 +1,15 @@
-/*
- * timer_test.c
- *
- *  Created on: Jun 5, 2025
- *      Author: leah
+/**
+ * @file timer_test.c
+ * @author leah
+ * @date 19-06-2025
+ * 
+ * @brief Implementation of timer test
+ * 
+ * @attention N_SAMPES will influence test duration significantly.
+ * 
+ * TIM6 is configured to reset every 100 ms, then TIM2
+ * count will be written to DMA buffer. The difference
+ * between every sample of TIM2 should be exactly 5400000.
  */
 
 #include "stm32f7xx_hal.h"
@@ -11,20 +18,27 @@
 #include <stdio.h>
 #include <stdint.h>
 
-#define N_SAMPLES 5
+/*************************
+ * MACROS                *
+ *************************/
 
-extern TIM_HandleTypeDef htim2; // Advanced timer
-extern TIM_HandleTypeDef htim6; // basic timer
-extern DMA_HandleTypeDef hdma_tim6_up;
+#define N_SAMPLES 3                          /** Number of samples */
 
-volatile int tim6_count;
-uint32_t tim2_samples[N_SAMPLES];
+/*************************
+ * GLOBALS               *
+ *************************/
 
-/*
- * TIM6 is configured to reset every 100 ms, then TIM2
- * count will be written to DMA buffer. The difference
- * between every sample of TIM2 should be exactly 5400000.
- */
+extern TIM_HandleTypeDef htim2;              /** Advanced timer handle */
+extern TIM_HandleTypeDef htim6;              /** Basic timer handle */
+extern DMA_HandleTypeDef hdma_tim6_up;       /** DMA handle */
+
+volatile int tim6_count;                     /** Count of basic timer resets */
+uint32_t tim2_samples[N_SAMPLES];            /** Buffer for advanced timer samples */
+
+/****************************
+ * FUNCTION IMPLEMENTATION  *
+ ****************************/
+
 uint8_t TIM_Test_Perform(void)
 {
 #ifdef PRINT_TESTS_DEBUG
@@ -61,6 +75,10 @@ uint8_t TIM_Test_Perform(void)
 
 	return TEST_SUCCESS;
 }
+
+/****************************
+ * CALLBACK IMPLEMENTATION  *
+ ****************************/
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
