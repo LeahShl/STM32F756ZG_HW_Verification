@@ -183,12 +183,10 @@ This program logs each test's metadata and result to a local SQLite3 database fo
 ### Schema
 | Column       | Type    | Description                       |
 | ------------ | ------- | --------------------------------- |
-| `id` | INTEGER | Auto-incremented primary key |
+| `test_id` | INTEGER | Auto-incremented primary key |
 | `timestamp` | TEXT | ISO 8601-formatted time of test |
-| `test_type` | TEXT | Peripheral type (UART, SPI, etc.) |
-| `message` | TEXT | Optional message sent with the test |
+| `duration` | REAL| Test duration in seconds |
 | `result` | INTEGER | Result code (1=PASS, 0=FAIL) |
-| `iterations` | INTEGER | Number of times the test was run |
 
 ### Storage Location
 Unless `LOCAL_DB_PATH` is defined, the database will be stored in:
