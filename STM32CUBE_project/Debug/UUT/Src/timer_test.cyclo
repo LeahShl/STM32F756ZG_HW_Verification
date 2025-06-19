@@ -1,2 +1,2 @@
-../UUT/Src/timer_test.c:28:9:TIM_Test_Perform	4
-../UUT/Src/timer_test.c:65:6:HAL_TIM_PeriodElapsedCallback	2
+../UUT/Src/timer_test.c:42:9:TIM_Test_Perform	4
+../UUT/Src/timer_test.c:83:6:HAL_TIM_PeriodElapsedCallback	2

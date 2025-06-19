@@ -1,2 +1,2 @@
-../UUT/Src/adc_test.c:21:9:ADC_Test_Perform	16	static
-../UUT/Src/adc_test.c:50:6:HAL_ADC_ConvCpltCallback	16	static
+../UUT/Src/adc_test.c:34:9:ADC_Test_Perform	16	static
+../UUT/Src/adc_test.c:67:6:HAL_ADC_ConvCpltCallback	16	static

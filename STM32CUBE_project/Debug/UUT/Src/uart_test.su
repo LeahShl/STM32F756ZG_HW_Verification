@@ -1,2 +1,2 @@
-../UUT/Src/uart_test.c:21:9:UART_Test_Perform	544	static
-../UUT/Src/uart_test.c:74:6:HAL_UART_RxCpltCallback	16	static
+../UUT/Src/uart_test.c:22:9:UART_Test_Perform	544	static
+../UUT/Src/uart_test.c:75:6:HAL_UART_RxCpltCallback	16	static

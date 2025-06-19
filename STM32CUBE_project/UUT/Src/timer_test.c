@@ -7,9 +7,9 @@
  * 
  * @attention N_SAMPES will influence test duration significantly.
  * 
- * TIM6 is configured to reset every 100 ms, then TIM2
+ * TIM6 is configured to reset every 10 ms, then TIM2
  * count will be written to DMA buffer. The difference
- * between every sample of TIM2 should be exactly 5400000.
+ * between every sample of TIM2 should be exactly 54000.
  */
 
 #include "stm32f7xx_hal.h"
@@ -22,7 +22,7 @@
  * MACROS                *
  *************************/
 
-#define N_SAMPLES 3                          /** Number of samples */
+#define N_SAMPLES 10                          /** Number of samples */
 
 /*************************
  * GLOBALS               *
@@ -69,7 +69,7 @@ uint8_t TIM_Test_Perform(void)
 			   tim2_samples[i] - tim2_samples[i-1]);
 #endif
 
-		if (tim2_samples[i] - tim2_samples[i-1] != 5400000)
+		if (tim2_samples[i] - tim2_samples[i-1] != 54000)
 			return TEST_FAILED;
 	}
 
