@@ -4,6 +4,11 @@
  * @date 19-06-2025
  * 
  * @brief Implementation of ADC test
+ * 
+ * ADC test protocol:
+ *  1) ADC1/0 is connected to 3v3
+ *  2) ADC reads value
+ *  3) Test succeeds if value is within a specified tolerance
  */
 #include "stm32f7xx_hal.h"
 #include "main.h"

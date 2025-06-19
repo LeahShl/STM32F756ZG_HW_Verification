@@ -4,7 +4,17 @@
  * @date 19-06-2025
  * 
  * @brief Implementation of UART test
+ * 
+ * UART testing protocol:
+ *  1. UART4 sends a bit pattern to UART5.
+ *  2. UART5 sends the bit pattern back to UART4.
+ *  3. The loopbacked bit pattern is compared to the original via CRC.
+ *  4. The test succeeds if the CRC codes match.
+ * 
+ * DMA is only implemented on RX pins in order to save DMA streams for 
+ * more important applications.
  */
+
 #include "hw_verif_crc.h"
 #include "stm32f7xx_hal.h"
 #include "main.h"
@@ -12,12 +22,22 @@
 #include <stdio.h>
 #include <stdint.h>
 
-extern UART_HandleTypeDef huart4;
-extern UART_HandleTypeDef huart5;
+/*************************
+ * GLOBALS               *
+ *************************/
 
-// DMA synchronization
-volatile uint8_t uart4_rx_done;
-volatile uint8_t uart5_rx_done;
+extern UART_HandleTypeDef huart4;                   /** UART4 handle */
+extern UART_HandleTypeDef huart5;                   /** UART5 handle */
+
+/**
+ * @brief DMA syncronization
+ */
+volatile uint8_t uart4_rx_done;                     /** UART4 receive completed */
+volatile uint8_t uart5_rx_done;                     /** UART5 receive completed */
+
+/****************************
+ * FUNCTION IMPLEMENTATION  *
+ ****************************/
 
 uint8_t UART_Test_Perform(uint8_t *msg, uint8_t msg_len)
 {
@@ -71,6 +91,10 @@ uint8_t UART_Test_Perform(uint8_t *msg, uint8_t msg_len)
 
 	return TEST_FAILED;
 }
+
+/****************************
+ * CALLBACK IMPLEMENTATION  *
+ ****************************/
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
     if (huart == &huart4) uart4_rx_done = 1;

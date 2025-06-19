@@ -236,7 +236,7 @@ For more examples consult `FILES_FOR_PC/usage_example.sh` file and the [PC progr
 
 ### Timer Test
 1. TIM2 (advanced timer) is set to count up.
-2. TIM6 (basic timer) is set to restart every 100ms.
-3. TIM2 count is sampled every time TIM6 restarts, until N_SAMPLES(=5) are retrieved.
-4. A single test passes if all samples are spaced 5,400,000 counts from each other.
+2. TIM6 (basic timer) is set to restart every 10ms.
+3. TIM2 count is sampled every time TIM6 restarts, until N_SAMPLES(=10) are retrieved.
+4. A single test passes if all samples are spaced 54,000 counts from each other.
 5. The peripheral passes the test if all iterations passed.

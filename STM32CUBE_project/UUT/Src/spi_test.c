@@ -4,6 +4,12 @@
  * @date 19-06-2025
  * 
  * @brief Implementation of SPI test
+ * 
+ * SPI testing protocol:
+ *  1. SPI1 (Master) sends a bit pattern to SPI4 (Slave).
+ *  2. SPI4 (Slave) sends the bit pattern back to SPI1 (Master).
+ *  3. The loopbacked bit pattern is compared to the original via CRC.
+ *  4. The test succeeds if the CRC codes match.
  */
 
 #include "hw_verif_crc.h"
@@ -14,14 +20,24 @@
 #include <string.h>
 #include <stdint.h>
 
-extern SPI_HandleTypeDef hspi1; // Master
-extern SPI_HandleTypeDef hspi4; // Slave
+/*************************
+ * GLOBALS               *
+ *************************/
 
-// DMA synchronization
-volatile uint8_t spi1_tx_done;
-volatile uint8_t spi1_rx_done;
-volatile uint8_t spi4_tx_done;
-volatile uint8_t spi4_rx_done;
+extern SPI_HandleTypeDef hspi1;                   /** SPI1 (Master) handle */
+extern SPI_HandleTypeDef hspi4;                   /** SPI4 (Slave) handle */
+
+/**
+ * @brief DMA syncronization
+ */
+volatile uint8_t spi1_tx_done;                    /** SPI1 (Master) transmit completed */
+volatile uint8_t spi1_rx_done;                    /** SPI1 (Master) receive completed */
+volatile uint8_t spi4_tx_done;                    /** SPI4 (Slave) transmit completed */
+volatile uint8_t spi4_rx_done;                    /** SPI4 (Slave) receive completed */
+
+/****************************
+ * FUNCTION IMPLEMENTATION  *
+ ****************************/
 
 uint8_t SPI_Test_Perform(uint8_t *msg, uint8_t msg_len)
 {
@@ -83,6 +99,10 @@ uint8_t SPI_Test_Perform(uint8_t *msg, uint8_t msg_len)
 
 	return TEST_FAILED;
 }
+
+/****************************
+ * CALLBACK IMPLEMENTATION  *
+ ****************************/
 
 void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi)
 {

@@ -4,7 +4,14 @@
  * @date 19-06-2025
  * 
  * @brief Implementation of I2C test
+ * 
+ * I2C testing protocol:
+ *  1. I2C1 (Master) sends a bit pattern to I2C2 (Slave).
+ *  2. I2C2 (Slave) sends the bit pattern back to I2C1 (Master).
+ *  3. The loopbacked bit pattern is compared to the original via CRC.
+ *  4. The test succeeds if the CRC codes match.
  */
+
 #include "hw_verif_crc.h"
 #include "stm32f7xx_hal.h"
 #include "main.h"
@@ -12,14 +19,24 @@
 #include <stdio.h>
 #include <stdint.h>
 
-extern I2C_HandleTypeDef hi2c1; // Master
-extern I2C_HandleTypeDef hi2c2; // Slave
+/*************************
+ * GLOBALS               *
+ *************************/
 
-// DMA synchronization
-volatile uint8_t i2c1_tx_done;
-volatile uint8_t i2c1_rx_done;
-volatile uint8_t i2c2_tx_done;
-volatile uint8_t i2c2_rx_done;
+extern I2C_HandleTypeDef hi2c1;                   /** I2C1 (Master) handle */
+extern I2C_HandleTypeDef hi2c2;                   /** I2C2 (Slave) handle */
+
+/**
+ * @brief DMA syncronization
+ */
+volatile uint8_t i2c1_tx_done;                    /** I2C1 (Master) transmit completed */
+volatile uint8_t i2c1_rx_done;                    /** I2C1 (Master) receive completed */
+volatile uint8_t i2c2_tx_done;                    /** I2C2 (Slave) transmit completed */
+volatile uint8_t i2c2_rx_done;                    /** I2C2 (Slave) receive completed */
+
+/****************************
+ * FUNCTION IMPLEMENTATION  *
+ ****************************/
 
 uint8_t I2C_Test_Perform(uint8_t *msg, uint8_t msg_len)
 {
@@ -83,6 +100,10 @@ uint8_t I2C_Test_Perform(uint8_t *msg, uint8_t msg_len)
 
 	return TEST_FAILED;
 }
+
+/****************************
+ * CALLBACK IMPLEMENTATION  *
+ ****************************/
 
 void HAL_I2C_MasterTxCpltCallback(I2C_HandleTypeDef *hi2c)
 {
