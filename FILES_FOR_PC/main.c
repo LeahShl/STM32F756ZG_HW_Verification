@@ -384,7 +384,7 @@ int main(int argc, char *argv[])
         msg_i = DEFAULT_I_MSG;
     }
     
-    init_network();
+    udp_init_network();
     int db_success = init_db();
     if (!db_success)
     {
@@ -481,8 +481,8 @@ static void proccess_test(uint8_t peripheral, uint8_t n_iter, const char *msg)
     struct timeval start_time, end_time;
         
     gettimeofday(&start_time, NULL);
-    send_data();
-    receive_data();
+    udp_send_data();
+    udp_receive_data();
     gettimeofday(&end_time, NULL);
         
     // Save log
@@ -551,12 +551,12 @@ static void udp_send_data ()
 	                         sizeof(struct sockaddr));
 	if (sent_bytes < 0)
 	{
-		perror("send_data: socket error");
+		perror("udp_send_data: socket error");
 		exit(UDP_ERROR);
 	}
 	if ((size_t)sent_bytes != n_bytes)
 	{
-		perror("send_data: incomplete transaction");
+		perror("udp_send_data: incomplete transaction");
 		exit(UDP_ERROR);
 	}
 }
@@ -572,12 +572,12 @@ static void udp_receive_data()
 	
 	if (bytes_read < 0)
 	{
-		perror("receive_data: socket error");
+		perror("udp_receive_data: socket error");
 		exit(UDP_ERROR);
 	}
 	if (bytes_read != IN_MSG_SIZE)
 	{
-		perror("receive_data: incomplete transaction");
+		perror("udp_receive_data: incomplete transaction");
 		exit(UDP_ERROR);
 	}
 	
