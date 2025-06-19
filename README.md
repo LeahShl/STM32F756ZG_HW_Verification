@@ -1,6 +1,14 @@
 # STM32F746ZG Hardware Verification System
 A client-server testing framework for STM32F746ZG peripheral validation.
 
+## Content
+1. [Project Overview](#project-overview)
+2. [System Requirements](#system-requirements)
+3. [Project Structure](#project-structure)
+4. [Usage](#usage)
+5. [Communication Protocol](#communication-protocol)
+6. [Testing Methodology](#testing-methodology)
+
 ## Project Overview
 This project implements a hardware verification system designed for manufacturing quality assurance of STM32F746ZG microcontroller cards. The system validates the correctness of critical peripherals through automated testing via UDP communication.
 
@@ -27,9 +35,9 @@ The system follows a client-server architecture:
 
 ### Hardware
 - STM32F746ZG development board
-- Ethernet connection between PC and STM32
+- PC with Ethernet port
+- Ethernet cable to connect PC and STM32
 - Connectors for UART, SPI, I2C, ADC testing
-- Stable voltage referenc for ADC testing
 
 ### Software
 - **PC Side**: Linux system with GCC and Make
