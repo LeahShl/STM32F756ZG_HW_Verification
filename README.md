@@ -14,7 +14,7 @@ This project implements a hardware verification system designed for manufacturin
 
 ### Architecture
 
-![Project's Block Diagram](https://github.com/LeahShl/STM32F756ZG_HW_Verification/media/blob/main/block_diagram.png "Project's Block Diagram")
+![Project's Block Diagram](https://github.com/LeahShl/STM32F756ZG_HW_Verification/blob/main/media/block_diagram.png "Project's Block Diagram")
 
 The system follows a client-server architecture:
 - **Server (PC Testing Program)**: Linux-based C program that orchestrates tests and logs results
